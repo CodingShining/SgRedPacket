@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+	<head> 
+		<meta charset="UTF-8">
+		  <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,width=device-width,initial-scale=1.0" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../plug_in/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="../../plug_in/public_style.css" />
+		<link rel="stylesheet" type="text/css" href="style/gamemain.css" />
+	</head>
+	<body>
+		<div class="spaceHeadBox" style="background:inherit;">
+			<a id="kingGameBack"></a>
+			<h1>王者胜利</h1>
+			<span id="gameexplain">游戏说明</span>
+		</div>
+		<div class="spaceContentBox" style="padding:10px 20px">
+			<div class="gameAwaName">
+				<span><i id="gameTitle"></i>奖池</span>
+				<span><i id="game3dTitle"></i>3D奖池</span>
+			</div>
+			<div class="gameAwaName">
+				<span style="color:#f3aa17"><i id="gameBalanZs"></i>KVGC</span>
+				<span style="color:#f3aa17"><i id="game3dTitleCon"></i>KVGC</span>
+			</div>
+			<div class="gameRanking"><a>游戏榜单</a></div>
+			<div class="gametitle">开奖倒计时</div>
+			<div class="gameTimeDown">
+				<span id="gameTimeH_1">2</span>
+				<span id="gameTimeH_2">4</span>
+				<i>:</i>
+				<span id="gameTimeM_1">0</span>
+				<span id="gameTimeM_2">0</span>
+				<i>:</i>
+				<span id="gameTimeS_1">0</span>
+				<span id="gameTimeS_2">0</span>
+			</div>
+			<!--<div class="gameRecord">
+				<div class="gameRecordContent">
+					<ul>
+						<li>用户<i>186****5633</i>投入<i>5000</i>YXB</li>
+					</ul>
+				</div>
+			</div>-->
+			<div class="gameData">
+				<div id="gameFinaBut1">
+					<span id="usergameData1">00.00</span>
+					<span>已投入(KVGC)</span>
+				</div>
+				<div id="gameFinaBut2">
+					<span id="usergameData2">00.00</span>
+					<span>已分红(SVGC)</span>
+				</div>
+				<div id="gameFinaBut3">
+					<span id="usergameData3">佣金明细</span>
+					<span>佣金(SVGC)</span>
+				</div>
+				<div id="gameFinaBut4">	
+					<span id="usergameData4">00.00</span>
+					<span>预计收益(SVGC)</span>
+				</div>
+			</div>
+		</div>
+		<div class="gameMesOutBox" style="display:none">
+			<div class="gameMessageBox outIconBox">
+				<div><img src="img/notice.png"></div>
+				<div class="gameMoveBox">
+					<div class="gameMoveItem" id="gameOutMan"></div>
+				</div>
+			</div>
+			<div class="gameMessageBox newIconBox" style="border-top:none">
+				<div><img src="img/rankingicon.png"></div>
+				<div class="gameMoveBox">
+					<div class="gameMoveItem" id="gameNewMan"></div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="gameButBox">
+			<a id="gameYuyue" data-toggle="0">预约</a> 
+			<a id="gameTouru" data-toggle="0">投入</a>
+		</div>
+		
+		<!--预约排队栏-->
+		<div class="gamemainLineUp" id="gameContMain1" style="display:none">
+			<div class="gamecolumnHead">
+				<span id="geameHideYuyue"></span>
+			</div>
+			<h1 class="gamecolumnTitle">预约排队</h1>
+			<div class="gameLineUpInput">
+				<span id="gamePusDown1">-</span>
+				<div class="gameLineUpInputContent"><input id="gameTouruInput1" type="text" placeholder="请输入预约投入数量"/></div>
+				<span id="gamePusUp1">+</span>
+			</div>
+			<div class="gameBalText">
+				<span>KVGC余额：</span>
+				<span>SVGC余额：</span>
+			</div>
+			<div class="gameBalText">
+				<span><i class="syyxb">00.00</i>KVGC</span>
+				<span><i class="syptb">00.00</i>SVGC</span>
+			</div>
+			<div class="gameLineUpBut">
+				<a id="gameYuyueBut">确定预约</a>
+				<a class="gameButclear">取消</a>
+			</div>
+		</div>
+		
+		<!--投入栏-->
+		<div class="gamemainLineUp" id="gameContMain2" style="display:none">
+			<div class="gamecolumnHead">
+				<span id="gameHideTouru"></span>
+			</div>
+			<h1 class="gamecolumnTitle">游戏投入</h1>
+			<div class="gameLineUpInput">
+				<span id="gamePusDown2">-</span>
+				<div class="gameLineUpInputContent"><input type="text" placeholder="请输入投入数量" id="gameTouruInput2" /></div>
+				<span id="gamePusUp2">+</span>
+			</div>
+			<div class="gameBalText">
+				<span>KVGC余额：</span>
+				<span>SVGC余额：</span>
+			</div>
+			<div class="gameBalText">
+				<span><i class="syyxb"></i>KVGC</span>
+				<span><i class="syptb"></i>SVGC</span>
+			</div>
+			<div class="gameLineUpBut">
+				<a id="gameTouRuBut">确定投入</a>
+				<a class="gameButclear">取消</a>
+			</div>
+		</div>
+		
+		<!--抽奖开始-->
+		<div class="lotteryMainBox" style="display:none">
+			<div class="lotteryContentBox">
+				<h1>恭喜您获得3D抽奖机会！</h1>
+				<div class="lotteryPeriods">第<i id="lotteryPerNumb"></i>期</div>
+				<div class="lotteryControlBox">
+					<span><i data-select="0">0</i></span>
+					<span><i data-select="0">1</i></span>
+					<span><i data-select="0">2</i></span>
+					<span><i data-select="0">3</i></span>
+					<span><i data-select="0">4</i></span>
+					<span><i data-select="0">5</i></span>
+					<span><i data-select="0">6</i></span>
+					<span><i data-select="0">7</i></span>
+					<span><i data-select="0">8</i></span>
+					<span><i data-select="0">9</i></span>
+				</div>
+				<div class="lotteryTextSow">
+					<span>已选：</span>
+					<span id="lotterTextBox" style="letter-spacing:8px;"></span>
+				</div>
+				<div class="lotteryControlBut">
+					<a id="lotterBut1">清空所选</a>
+					<a id="lotterBut2">确定</a>
+				</div>
+				<div class="lotteryAlert">
+					<p>*抽奖机会只有一次，关闭后将不能再次投注</p>
+					<p>*随意选3个数字提交，买中3个号码并且顺序一致就算中奖，每天奖池中的20%用来开奖</p>
+					<p>*开奖结果在"我的-3D开奖结果"查询</p>
+				</div>
+				<div class="lotteryClear">
+					<img src="img/lotteryClear.png" />
+				</div>
+			</div>
+		</div>
+
+		<!--安全小键盘开始-->
+		<div class="safetyKey">
+			<div class="safetKeyTopImg">
+				<span></span>
+			</div>
+			<div class="safetyKeyTitle">安全验证</div>
+			<div class="safetyKeyBrief">输入支付密码</div>
+			<ul class="pwshow">
+				<li class="mm"></li>
+				<li class="mm"></li>
+				<li class="mm"></li>
+				<li class="mm"></li>
+				<li class="mm"></li>
+				<li class="mm"></li>
+			</ul>
+			<div class="safetyKeyBut">
+				<a>确定</a>
+			</div>
+			<div class="safetKeyMain">
+				<ul>
+					<li class="safetKeyItem">1</li>
+					<li class="safetKeyItem">2</li>
+					<li class="safetKeyItem">3</li>
+					<li class="safetKeyItem">4</li>
+					<li class="safetKeyItem">5</li>
+					<li class="safetKeyItem">6</li>
+					<li class="safetKeyItem">7</li>
+					<li class="safetKeyItem">8</li>
+					<li class="safetKeyItem">9</li>
+					<li class="safetClean">取消</li>
+					<li class="safetKeyItem">0</li>
+					<li class="safetKeyDelete"></li>
+				</ul>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../plug_in/zepto.min.js"></script>
+	<script type="text/javascript" src="../../plug_in/touch.js"></script>
+	<script type="text/javascript" src="../../plug_in/public.js"></script>
+	<script type="text/javascript" src="script/gamemain.js"></script>
+</html>

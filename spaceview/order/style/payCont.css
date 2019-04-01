@@ -1,0 +1,140 @@
+.payContTitle{
+	width:100%;
+	height:40px;
+	box-sizing:border-box;
+	border-bottom:1px solid #343743;
+	display:flex;
+	flex-direction:row;
+	justify-content:space-between;
+}
+
+.payContTitle>span{
+	display:inline-block;
+	height:39px;
+	line-height:39px;
+}
+
+.payContTitle>span>i{
+	color:#f6ab10;
+}
+
+.payContMessage{
+	width:100%;
+	box-sizing:border-box;
+	padding:20px 0px;
+	border-bottom:1px solid #343743;
+}
+
+.payMesItem{
+	width:100%;
+	height:30px;
+	display:flex;
+	flex-direction:row;
+	justify-content:flex-start;
+	position:relative;
+	margin-bottom:10px;
+}
+
+.payMesItem>span{
+	display:inline-block;
+	height:30px;
+	line-height:30px;
+	color:#8e8f9e;
+}
+
+.payMesItem>span>i{
+	color:#FFFFFF;
+}
+
+.payMesItem>span:first-child::after{
+	content:"";
+	display:inline-block;
+	width:100%;
+	height:30px;
+}
+
+.payMesItem>span:first-child{
+	width:20%;
+	text-align:justify;
+}
+
+.copyPay{
+	display:inline-block;
+	width:70px;
+	height:29px;
+	line-height:26px;
+	text-align:center;
+	box-sizing:border-box;
+	border:1px solid #f6ab10;
+	border-radius:29px;
+	position:absolute;
+	right:0px;
+	top:0px;
+}
+
+.payVoucher{
+	width:100%;
+	height:180px;
+	box-sizing:border-box;
+	padding-top:20px;
+}
+
+.payVoucher>label{
+	display:inline-block;
+	width:100%;
+	height:180px;
+	line-height:180px; 
+	box-sizing:border-box;
+	text-align:center;
+	border:1px dashed #555869;
+	color:#555869;
+	overflow:hidden;
+}
+
+.payContBut{
+	width:100%;
+	height:40px;
+	display:flex;
+	flex-direction:row;
+	justify-content:space-between;
+	text-align:center;
+	margin-top:30px;
+}
+
+.payContBut>a{
+	display:inline-block;
+	width:40%;
+	height:40px;
+	line-height:40px;
+	text-align:center;
+	color:#343743;
+	background-color:#f6ab10;
+	border-radius:40px;
+}
+
+.payContBut>a:last-child{
+	background-color:#ea2f2f;
+}
+
+.payVoucherImg{
+	width:100%;
+	height:180px;
+	overflow:hidden;
+	margin-top:20px;
+}
+
+.payVoucherImg>img{
+	width:100%;
+	height:100%;
+	border-radius:10px;
+}
+
+.payImgBox{
+	width:100%;
+	height:180px;
+}
+
+.payImgBox>img{
+	width:100%;
+	height:100%;
+}

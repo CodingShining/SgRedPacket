@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head> 
+		<meta charset="UTF-8">
+		  <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,width=device-width,initial-scale=1.0" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../plug_in/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="../../plug_in/public_style.css" />
+		<style>
+			.scanviewButBox{
+				width:100%;
+				height:60px;
+				box-sizing:border-box;
+				padding:0px 30px;
+				display:flex;
+				flex-direction:row;
+				justify-content:space-around;
+				position:fixed;
+				bottom:0px;
+				left:0px;
+			}
+			
+			.scanviewButBox>a{
+				display:inline-block;
+				width:40%;
+				height:40px;
+				line-height:40px;
+				text-align:center;
+				background-color:#528bc0;
+				box-sizing:border-box;
+				border-radius:10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="scanviewButBox">
+			<a id="scanClane">取消</a>
+			<a id="scanGrelly">相册</a>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../plug_in/zepto.min.js"></script>
+	<script type="text/javascript" src="../../plug_in/touch.js"></script>
+	<script type="text/javascript" src="../../plug_in/public.js"></script>
+	<script type="text/javascript">
+		$(document).bind("plusready",function(){
+			//获取扫描控件对象
+			var barcode = plus.barcode.create("barcode",[plus.barcode.QR],{
+				top:"0px",
+				left:"0px",
+				width:"100%",
+				height:"90%",
+				position:"static"
+				
+			});
+			
+			//绑定扫描城后的回调函数
+			barcode.onmarked = startBarcode;
+			
+			//将扫描对象插入到页面中
+			plus.webview.currentWebview().append(barcode);
+			
+			//开启扫描控件
+			barcode.start();
+			
+			//为相册按钮绑定事件
+			$("#scanGrelly").bind("tap",function(){
+				//前往相册
+				plus.gallery.pick(function(file){
+					var path = file;
+					plus.barcode.scan(path,function(type,code){
+						//保存二维码值到本地
+						localStorage.setItem("scanValue",code);
+						//刷新父级页面
+						resLoadParent();
+						//关闭本页面
+						plus.webview.currentWebview().close();
+					},function(e){
+						toast("失败"+e.message);
+					});
+				},function(e){
+					toast("失败"+e.message);
+				});
+			});
+			
+			//为取消按钮绑定事件
+			$("#scanClane").bind("tap",function(){
+				//关闭本页
+				plus.webview.currentWebview().close();
+			});
+			
+			//定义扫描成功函数
+			function startBarcode(type,code){
+				//保存二维码值到本地
+				localStorage.setItem("scanValue",code);
+				//刷新父级页面
+				resLoadParent();
+				//关闭本页面
+				plus.webview.currentWebview().close();
+			}
+		});
+	</script>
+</html>

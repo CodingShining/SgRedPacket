@@ -1,0 +1,52 @@
+.lotteryListTitle{
+	width:100%;
+	height:30px;
+	display:flex;
+	flex-direction:row;
+	justify-content:space-between;
+}
+
+.lotteryListTitle>span{
+	display:inline-block;
+	width:33.33%;
+	height:30px;
+	line-height:30px;
+	color:#525567;
+	
+}
+
+.lotteryListTitle>span:last-child{
+	text-align:right;
+}
+
+.lotteryListUl{
+	width:100%;
+	margin-top:10px;
+}
+
+.lotteryListUl>li{
+	width:100%;
+	height:50px;
+	display:flex;
+	flex-direction:row;
+	justify-content:space-between;
+	box-sizing:border-box;
+	border-bottom:1px solid #343743;
+	margin-bottom:10px;
+}
+
+.lotteryListUl>li>span{
+	display:inline-block;
+	width:33.33%;
+	height:50px;
+	line-height:50px;
+}
+
+.lotteryListUl>li>span:last-child{
+	text-align:right;
+	color:#f6ab10;
+}
+
+.lotteryListUl>li>span:first-child{
+	line-height:20px;
+}

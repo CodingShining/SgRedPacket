@@ -1,0 +1,104 @@
+.issueBalance{
+	width:100%;
+	height:30px;
+	display:flex;
+	flex-direction:row;
+	justify-content:space-between;
+	margin-bottom:20px;
+}
+
+.issueBalance>span{
+	display:inline-block;
+	width:50%;
+	height:30px;
+	line-height:30px;
+	color:#999aaa;
+}
+
+.issueBalance>span:last-child{
+	text-align:right;
+	color:#f6ab10;
+}
+
+.issueInputBox{
+	width:100%;
+	height:100px;
+	position:relative;
+}
+
+.issueInputTitle{
+	width:100%;
+	height:30px;
+	line-height:30px;
+	color:#999aaa;
+}
+
+.issueInputCon{
+	width:100%;
+	height:30px;
+	box-sizing:border-box;
+	border-bottom:1px solid #414153;
+}
+
+.issueInputCon>input{
+	width:100%;
+	height:29px;
+	line-height:29px;
+	border:none;
+	color:#FFFFFF;
+}
+
+.issueUnit{
+	width:100px;
+	height:30px;
+	line-height:30px;
+	text-align:right;
+	position:absolute;
+	top:30px;
+	right:0px;
+	color:#999aaa;
+}
+
+.issueConvers{
+	width:100%;
+	height:20px;
+	line-height:20px;
+	font-size:12px;
+	color:#f6ab10;
+}
+
+.issuePayType,.issuekhh{
+	width:100%;
+	height:40px;
+	box-sizing: border-box;
+	border-bottom:1px solid #414153;
+	background:url(../img/rightIcon.png)no-repeat;
+	background-size:10px 10px;
+	background-position:right center;
+}
+
+.issuePayType>span,.issuekhh>span{
+	display:inline-block;
+	width:100%;
+	height:40px;
+	line-height:40px;
+}
+
+.issueBut{
+	width:100%;
+	height:40px;
+	margin-top:20px;
+	text-align:center;
+}
+
+.issueBut>a{
+	display:inline-block;
+	width:80%;
+	height:40px;
+	line-height:40px;
+	text-align:center;
+	background-color:#f6ab10;
+	color:#343743;
+	border-radius:40px;
+}
+

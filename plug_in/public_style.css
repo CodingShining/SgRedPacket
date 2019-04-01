@@ -1,0 +1,266 @@
+body{
+	background-color:#232430;
+	color:#FFFFFF;
+	font-size:14px;
+}
+
+ul,li{
+	list-style:none;
+	margin:0px;
+	padding:0px;
+}
+
+h1,h2,h3,h4,h5,h6{
+	padding:0px;
+	margin:0px;
+}
+
+i{
+	font-style:normal;
+}
+
+input{
+	margin:0px;
+	padding:0px;
+	outline:none;
+	background-color:inherit;
+}
+
+.spaceHeadBox{
+	width:100%;
+	height:70px;
+	background-color:#232430;
+	box-sizing:border-box;
+	overflow:hidden;
+	padding:20px 20px 0px 20px;
+	z-index:999;
+	position:fixed;
+	top:0px;
+	left:0px;
+}
+
+.spaceHeadBox>a{
+	display:inline-block;
+	width:24px;
+	height:24px;
+	background:url(../img/backicon.png) no-repeat;
+	background-size:100%;
+	position:absolute;
+	left:20px;
+	top:40px;
+}
+
+.spaceHeadBox>h1{
+	text-align:center;
+	width:100%;
+	height:60px;
+	line-height:60px;
+	font-size:18px;
+}
+
+.spaceHeadBox>span{
+	position:absolute;
+	top:43px;
+	right:20px;
+	color:#c38a1a;
+	font-size:14px;
+}
+
+.spaceContentBox{
+	width:100%;
+	box-sizing:border-box;
+	padding:30px 20px;
+}
+
+.spaceContentBox::before{
+	content:"";
+	display:inline-block;
+	width:100%;
+	height:70px;
+}
+
+.bottomBut{
+	width:100%;
+	height:50px;
+	text-align:center;
+	margin-top:30px;
+}
+
+.bottomBut>a{
+	display:inline-block;
+	width:90%;
+	height:50px;
+	line-height:50px;
+	text-align:center;
+	border-radius:50px;
+}
+
+.butStyle1{
+	color:#343743;
+	background-color:#f6ab10;
+}
+
+.publicBut{
+	width:100%;
+	height:50px;
+	text-align:center;
+	margin-top:20px;
+}
+
+.publicBut>a{
+	display:inline-block;
+	width:90%;
+	height:50px;
+	line-height:50px;
+	text-align:center;
+	border-radius:50px;
+}
+
+.safetyKey{
+	width:100%;
+	height:450px;
+	background-color:#FFFFFF;
+	position:relative;
+	box-sizing:border-box;
+	border-top-left-radius:10px;
+	border-top-right-radius:10px;
+	position:fixed;
+	bottom:-450px;
+	left:0px;
+}
+
+.safetKeyTopImg{
+	text-align: center;
+}
+
+.safetKeyTopImg>span{
+	display:inline-block;
+	width:40px;
+	height:5px;
+	background-color:#d8d8d8;
+	box-sizing:border-box;
+	border-radius:5px;
+}
+
+.safetyKeyTitle{
+	text-align:center;
+	color:#2f2f32;
+	margin-top:10px;
+}
+
+.safetyKeyBrief{
+	text-align:center;
+	color:#adadb3;
+	font-size:12px;
+	margin-top:10px;
+}
+
+.pwshow{
+	width:100%;
+	height:50px;
+	box-sizing:border-box;
+	padding:0px 20px;
+	display:flex;
+	flex-direction:row;
+	justify-content:space-between;
+	margin-top:10px;
+}
+
+.pwshow>li{
+	width:15%;
+	height:50px;
+	box-sizing:border-box;
+	border:1px solid #ececee;
+	border-radius:10px;
+	text-align:center;
+}
+
+.selectRadius::before{
+	content:"";
+	display:inline-block;
+	width:20px;
+	height:20px;
+	background-color:#2f2f32;
+	border-radius:30px;
+	margin-top:14px;
+}
+
+.safetyKeyForget{
+	width:100%;
+	height:30px;
+	text-align:right;
+	box-sizing:border-box;
+	padding:0px 20px;
+}
+
+.safetyKeyForget>a{
+	display:inline-block;
+	width:100%;
+	height:30px;
+	line-height:30px;
+	color:#adadb3;
+}
+
+.safetyKeyBut{
+	width:100%;
+	height:50px;
+	text-align:center;
+	margin-top:10px;
+}
+
+.safetyKeyBut>a{
+	display:inline-block;
+	width:90%;
+	height:50px;
+	line-height:50px;
+	background-color:#f6ab10;
+	color:#343743;
+	text-align:center;
+	box-sizing:border-box;
+	border-radius:50px;
+}
+
+.safetKeyMain{
+	width:100%;
+	height:200px;
+	background-color:#c6c6c5;
+	position:absolute;
+	bottom:0px;
+	left:0px;
+}
+
+.safetKeyMain>ul{
+	width:100%;
+	height:200px;
+	box-sizing:border-box;
+	padding:10px 10px 0px 10px;
+	display:flex;
+	flex-direction:row;
+	justify-content:space-between;
+	flex-wrap:wrap;
+}
+
+.safetKeyMain>ul>li{
+	width:30%;
+	height:40px;
+	line-height:40px;
+	text-align:center;
+	box-sizing:border-box;
+	background-color:#FFFFFF;
+	color:#000000;
+	font-size:18px;
+	border-radius:10px;
+}
+
+.safetKeyMain>ul>li:last-child{
+	background:url(../img/delete.png) no-repeat;
+	background-size:40px 25px;
+	background-position:center center;
+}
+
+.ListNotData{
+	width:100%;
+	height:30px;
+	line-height:30px;
+	text-align:center;
+}

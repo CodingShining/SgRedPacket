@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>修改密码</title>
+  <link rel="stylesheet" href="../../plug_in/base.css">
+  <link rel="stylesheet" href="css/editPwd.css">
+</head>
+
+<body>
+  <div class="m-edit-pwd">
+    <div class="m-title">
+      <span class="u-return" id="kingBack"><img src="imgs/icon_return.png" width="24px" alt=""></span>
+      <h2 class="u-title"></h2>
+    </div>
+    <ul class="m-list">
+      <li>
+        <input type="password" placeholder="请输入原密码" class="u-input" id="edlodePw">
+        <span class="u-eye edu-eye" data-toggle="0" data-control="edlodePw"><img src="imgs/eye_close.png" width="20px" alt=""></span>
+      </li>
+      <li>
+        <input type="password" placeholder="设置新密码" class="u-input" id="ednewPw">
+        <span class="u-eye edu-eye" data-toggle="0" data-control="ednewPw"><img src="imgs/eye_close.png" width="20px" alt=""></span>
+      </li>
+      <li>
+        <input type="password" placeholder="确认新密码" class="u-input" id="edrePw">
+        <span class="u-eye edu-eye" data-toggle="0" data-control="edrePw"><img src="imgs/eye_close.png" width="20px" alt=""></span>
+      </li>
+    </ul>
+    <p class="u-forget"><a style="display:inline-block">忘记密码?</a></p>
+    <button type="button" class="u-btn-edit">确认修改</button>
+  </div>
+  <script src="../../plug_in/zepto.min.js"></script>
+  <script src="../../plug_in/touch.js"></script>
+  <script src="../../plug_in/public.js"></script>
+  <script src="js/editPwd.js"></script>
+</body>
+
+</html>

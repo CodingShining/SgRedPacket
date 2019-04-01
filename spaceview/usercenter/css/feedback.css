@@ -1,0 +1,89 @@
+.m-feedback {
+  width: 100%;
+  min-height: 100%;
+  padding: 25px 20px;
+  background: rgba(39, 40, 54, 1);
+  background: linear-gradient(180deg, rgba(39, 40, 54, 1) 0%, rgba(24, 25, 29, 1) 100%);
+  background: -webkit-linear-gradient(180deg, rgba(39, 40, 54, 1) 0%, rgba(24, 25, 29, 1) 100%);
+}
+
+.m-title {
+  position: relative;
+  height: 40px;
+  line-height: 40px;
+  margin-bottom: 30px;
+}
+
+.m-title>span.u-return {
+  position: absolute;
+  top: 0;
+  left: -15px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+}
+
+.m-title .u-title {
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-size: 16px;
+}
+
+.m-info {
+  position: relative;
+  min-height: 140px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #555869;
+}
+
+.m-info>textarea {
+  width: 100%;
+  min-height: 110px;
+  background: transparent;
+  outline: none;
+  color: #fff;
+  font-size: 14px;
+  box-sizing:border-box;
+}
+
+.m-info>textarea:focus,
+.u-email:focus {
+  color: #fff;
+}
+
+.m-info>textarea::-webkit-input-placeholder,
+.u-email::-webkit-input-placeholder {
+  color: #555869;
+}
+
+.u-num {
+  position: absolute;
+  bottom: 10px;
+  right: 5px;
+  z-index: 1;
+  text-align: right;
+  color: #535666;
+  font-size: 12px;
+}
+
+.u-email {
+  width: 100%;
+  height: 51px;
+  line-height: 50px;
+  border-bottom: 1px solid #555869;
+  margin-bottom: 40px;
+  color: #fff;
+}
+
+.u-btn-submit {
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 30px;
+  text-align: center;
+  background: #f6ab10;
+  color: #343743;
+  font-size: 14px;
+}

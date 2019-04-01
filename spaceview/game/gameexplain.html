@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head> 
+		<meta charset="UTF-8">
+		  <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,width=device-width,initial-scale=1.0" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../plug_in/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="../../plug_in/public_style.css" />
+		<link rel="stylesheet" type="text/css" href="style/gameexplain.css" />
+	</head>
+	<body>
+		<div class="spaceHeadBox">
+			<a id="kingBack"></a>
+			<h1>游戏说明</h1>
+		</div>
+		<div class="spaceContentBox">
+			<div class="gameexplainText" id="invitationText">
+				
+			</div>
+		</div>
+ 
+	</body>
+	<script type="text/javascript" src="../../plug_in/zepto.min.js"></script>
+	<script type="text/javascript" src="../../plug_in/touch.js"></script>
+	<script type="text/javascript" src="../../plug_in/public.js"></script>
+	<script>
+		$(document).bind("plusready",function(){
+				var invitaUrl = mainUrl + "cms/aboutus";
+				//发起请求获取数据
+				requestToken(invitaUrl,"get",{id:"3"},function(data){
+					if(data.code == 1){
+						$("#invitationText").html(data.data.pageInfo.content);
+					}else{
+						toast(data.msg);
+					}
+					plus.nativeUI.closeWaiting();
+				});
+			});
+	</script>
+</html>

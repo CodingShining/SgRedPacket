@@ -1,0 +1,94 @@
+body{
+	background-color:#232430;	
+}
+
+body::before{
+	content:"";
+	display:inline-block;
+	width:100%;
+	height:70px;
+}
+
+i{
+	font-style:normal;
+}
+
+.gameHbHomeDb{
+	width:100%;
+	overflow:hidden;
+	margin-top:20px;
+	box-sizing:border-box;
+	padding:0px 20px;
+}
+
+.gameHbHomeDb>img{
+	width:100%;
+	height:auto;
+}
+
+.gameMainBox{
+	width:100%;
+	box-sizing:border-box;
+	padding:0px 20px;
+}
+
+.gameItem{
+	width:100%;
+	height:110px;
+	background-color:#31323c;
+	box-sizing:border-box;
+	border:1px solid #494b5c;
+	border-radius:5px;
+	padding:20px 10px;
+	display:flex;
+	flex-direction:row;
+	justify-content:flex-start;
+	position:relative;
+	margin-bottom:10px;
+}
+
+.gameItemIcon{
+	width:57px;
+	height:70px;
+	overflow:hidden;
+}
+
+.gameItemIcon>img{
+	width:100%;
+	height:100%;
+}
+
+.gameItemText{
+	width:60%;
+	height:80px;
+	margin-left:10px;
+}
+
+.gameItemText>div{
+	width:100%;
+	height:60px;
+	line-height:60px;
+	color:#FFFFFF;
+}
+
+.gameItemBut{
+	width:90px;
+	height:30px;
+	line-height:30px;
+	position:absolute;
+	top:35px;
+	right:10px;
+}
+
+.gameItemBut>a{
+	display:inline-block;
+	width:100%;
+	height:30px;
+	line-height:30px;
+	text-align:center;
+	font-size:14px;
+	color:#FFFFFF;
+	background-color:#f6ab10;
+	box-sizing:border-box;
+	border-radius:30px;;
+}

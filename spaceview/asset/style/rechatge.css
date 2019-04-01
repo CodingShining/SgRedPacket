@@ -1,0 +1,95 @@
+.rechargeTitleBox{
+	width:100%;
+	height:60px;
+	box-sizing:border-box;
+	padding:20px;
+	border-radius:10px;
+	background-color:#303344;
+	display:flex;
+	flex-direction:row;
+	justify-content:start;
+}
+
+.rechargeTitleBox>i{
+	display:inline-block;
+	width:20px;
+	height:20px;
+	background:url(../img/titleicon.png) no-repeat;
+	background-size:100%;
+}
+
+.rechargeTitleBox>div{
+	width:40px;
+	height:20px;
+	line-height:20px;
+	text-align:center;
+}
+
+.rechargeTitleBox>span{
+	margin:3px 0px 0px 10px;
+	color:#9596a5;
+	font-size:12px;
+}
+
+.rechargeRqBox{
+	width:150px;
+	height:150px;
+	margin:30px auto 0px auto;
+}
+
+.rechargeRqBox>img{
+	width:100%;
+	height:100%;
+}
+
+.saveRqBox{
+	width:100%;
+	height:30px;
+	text-align:center;
+	margin-top:30px;
+	color:#f6ab10;
+}
+
+.rechargeLocalAndTitle{
+	width:100%;
+	height:150px;
+	background-color:#303344;
+	box-sizing:border-box;
+	border-radius:10px;
+	padding:20px;
+}
+
+.rechargeLocal,.rechargeTitle,.saveLocal{
+	width:100%;
+	height:30px;
+	line-height:30px;
+	text-align:center;
+}
+
+.saveLocal>a{
+	color:#f5aa10;
+}
+
+.rechargeAlert{
+	color:#9a9ab3;
+	font-size:12px;
+	margin-top:30px;
+}
+
+.recharTypeHeadBut{
+	width:100%;
+	height:40px;
+	margin:20px 0px 20px 0px;
+}
+
+.recharTypeHeadBut>a{
+	display:inline-block;
+	width:120px;
+	height:40px;
+	line-height:40px;
+	text-align:center;
+	color:#FFFFFF!important;
+	box-sizing:border-box;
+	border-radius:40px;
+	background-color:#303344;
+}

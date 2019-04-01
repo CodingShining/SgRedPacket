@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+p,
+blockquote,
+pre,
+hr,
+figure,
+table,
+caption,
+th,
+td,
+form,
+fieldset,
+legend,
+input,
+button,
+textarea,
+menu {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background: #212124;
+  font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+table,
+th,
+td {
+  border: none;
+}
+
+ul,
+ol,
+dl,
+li {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+  margin: 0;
+}
+
+input,
+button,
+select {
+  border: none;
+  background: transparent;
+  outline: none;
+}
+
+a,
+a:hover {
+  display: block;
+  text-decoration: none;
+}
+
+i {
+  font-style: normal;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+.clear-ft:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.clear-mg {
+  content: "";
+  display: table;
+}
+
+.g-lf {
+  float: left;
+}
+
+.g-rt {
+  float: right;
+}
+
+.in-block {
+  display: inline-block;
+  vertical-align: middle;
+}

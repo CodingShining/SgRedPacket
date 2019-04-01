@@ -1,0 +1,71 @@
+body{
+	background-color:#32333d;
+}
+
+ul,li{
+	list-style:none;
+	margin:0px;
+	padding:0px;
+}
+
+.bulletinHeadBox{
+	width:100%;
+	height:40px;
+	background-color:#1a1b20;
+	position:fixed;
+	left:0px;
+	top:20px;
+}
+
+.bulletinHeadBox>h1{
+	width:100%;
+	height:40px;
+	line-height:40px;
+	text-align:center;
+	color:#FFFFFF;
+	font-weight:normal;
+	font-size:20px;
+}
+
+.bulletinListBox{
+	width:100%;
+	box-sizing:border-box;
+	padding:20px;
+}
+
+.bulletinListBox::before{
+	content:"";
+	display:inline-block;
+	width:100%;
+	height:40px;
+}
+
+.bulletinListBox>ul{
+	width:100%;
+}
+
+.bulletinListBox>ul>li{
+	width:100%;
+	height:80px;
+	box-sizing:border-box;
+	border-bottom:1px solid #343743;
+	padding-top:15px;
+	background:url(../../../img/leftGo.png)no-repeat;
+	background-position:right 10px center;
+	background-size:10px 10px;
+}
+
+.bulletinListBox>ul>li>div{
+	width:100%;
+	height:30px;
+	line-height:30px;
+	font-size:14px;
+	color:#FFFFFF;
+	overflow:hidden;
+	padding-right:20px;
+}
+
+.bulletinListBox>ul>li>span{
+	color:#4e5161;
+	font-size:12px;
+}

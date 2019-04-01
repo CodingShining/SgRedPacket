@@ -1,0 +1,52 @@
+.m-basic-edit {
+  width: 100%;
+  min-height: 100%;
+  padding: 25px 20px;
+  background: rgba(39, 40, 54, 1);
+  background: linear-gradient(180deg, rgba(39, 40, 54, 1) 0%, rgba(24, 25, 29, 1) 100%);
+  background: -webkit-linear-gradient(180deg, rgba(39, 40, 54, 1) 0%, rgba(24, 25, 29, 1) 100%);
+}
+
+.m-title {
+  position: relative;
+  height: 40px;
+  line-height: 40px;
+  margin-bottom: 30px;
+}
+
+.m-title>span {
+  position: absolute;
+  top: 0;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+}
+
+.m-title>span.u-return {
+  width: 40px;
+  left: -15px;
+}
+
+.m-title>span.u-save {
+  right: -15px;
+  padding: 0 15px;
+  color: #f6ab10;
+  font-size: 12px;
+}
+
+.m-title .u-title {
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-size: 16px;
+}
+
+.u-input {
+  width: 100%;
+  height: 51px;
+  line-height: 50px;
+  border-bottom: 1px solid #555869;
+  color: #fff;
+  font-size: 14px;
+  caret-color: #f6ab10;
+}

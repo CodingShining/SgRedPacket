@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head> 
+		<meta charset="UTF-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,width=device-width,initial-scale=1.0" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../plug_in/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="../../plug_in/public_style.css" />
+		<link rel="stylesheet" type="text/css" href="style/gameHbGive.css" />
+	</head>
+	<body>
+		<div class="spaceHeadBox">
+			<a id="kingBack"></a>
+			<h1>发红包</h1>
+		</div>
+		<div class="gameHbGiveInput">
+			<div class="gameHbGiveInputTitle">总金额</div>
+			<div class="gameHbGiveInputBox">
+				<input type="number" placeholder="请输入红包金额" id="gameHbGiveInput1" />
+				<span>SGB</span>
+			</div>
+		</div>
+		<div class="gameHbGiveMes">
+			<span>余额：<i id="gameHbGiveShow0">0.00</i>&nbsp;SGB</span>
+		</div>
+		<div class="gameGiveSelectNum">
+			<div class="gameGiveSeletTitle">选择红包个数/赔率</div>
+			<ul class="gameGiveSeletUl">
+				<!-- <li><span class="gameGiveSeletSed">5个/2倍</span></li>-->
+			</ul>
+		</div>
+		<div class="gameGiveSelectLei">
+			<div class="gameGiveSeletTitle">选择雷号</div>
+			<ul class="gameGiveLeiUl">
+				<li><span>0</span></li>
+				<li><span>1</span></li>
+				<li><span>2</span></li>
+				<li><span>3</span></li>
+				<li><span>4</span></li>
+				<li><span>5</span></li>
+				<li><span>6</span></li>
+				<li><span>7</span></li>
+				<li><span>8</span></li>
+				<li><span>9</span></li>
+			</ul>
+		</div>
+		<div class="gameGiveBottomMes">
+			<span>红包金额：<i id="gameHbGiveShow1"></i></span>
+			<span>个数/赔率：<i id="gameHbGiveShow2"></i></span>
+			<span>雷号：<i id="gameHbGiveShow3"></i></span>
+		</div>
+		<div class="gameGiveButBox">
+			<a id="gameGiveBut1">取消</a>
+			<a id="gameGiveBut2" class="gameGiveSeletSed">确认发包</a>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../plug_in/zepto.min.js"></script>
+	<script type="text/javascript" src="../../plug_in/touch.js"></script>
+	<script type="text/javascript" src="../../plug_in/public.js"></script>
+	<script type="text/javascript" src="script/gameHbGive.js"></script>
+</html>

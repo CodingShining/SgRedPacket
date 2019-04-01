@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head> 
+		<meta charset="UTF-8">
+		  <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,width=device-width,initial-scale=1.0" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../plug_in/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="../../plug_in/public_style.css" />
+		<link rel="stylesheet" type="text/css" href="style/bulletioncontent.css" />
+	</head>
+	<body>
+		<div class="spaceHeadBox" style="background:inherit;">
+			<a id="kingBack"></a>
+		</div>
+		<div class="spaceContentBox">
+			<div class="bulletinTitleBox">
+				<h1 id="invitationTitle"></h1>
+				<span id="invitationTime"></span>
+			</div>
+			<div class="bulletinContentText" id="invitationText">
+				 
+			</div>
+		</div>
+ 
+	</body>
+	<script type="text/javascript" src="../../plug_in/zepto.min.js"></script>
+	<script type="text/javascript" src="../../plug_in/touch.js"></script>
+	<script type="text/javascript" src="../../plug_in/public.js"></script>
+	<script type="text/javascript">
+		$(document).bind("plusready",function(){
+				var invitaUrl = mainUrl + "cms/aboutus";
+				//发起请求获取数据
+				requestToken(invitaUrl,"get",{id:"1"},function(data){
+					if(data.code == 1){
+						$("#invitationTitle").text(data.data.pageInfo.title);
+						var TimeValue = SwitchTime(data.data.pageInfo.createtime);
+						$("#invitationTime").text(TimeValue);
+						$("#invitationText").html("<p>"+data.data.pageInfo.content+"</p>");
+					}else{
+						toast(data.msg);
+					}
+					plus.nativeUI.closeWaiting();
+				});
+			});
+	</script>
+</html>

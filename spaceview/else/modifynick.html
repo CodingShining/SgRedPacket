@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head> 
+		<meta charset="UTF-8">
+		  <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,width=device-width,initial-scale=1.0" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../plug_in/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="../../plug_in/public_style.css" />
+		<style>
+			.modifynickBox{width:100%;height:40px;margin-top:20px;box-sizing:border-box;border:1px solid #37394d;border-radius:5px;}
+			.modifynickBox>input{width:100%;height:40px;line-height:40px;border:none;box-sizing:border-box;padding:0px 10px;}
+			.modifynickBut{width:100%;height:40px;text-align:center;margin-top:50px;}
+			.modifynickBut>a{display:inline-block;width:90%;height:40px;line-height:40px;text-align:center;background-color:#f6ab10;color:#343743;border-radius:40px;}
+		</style>
+	</head>
+	<body>
+		<div class="spaceHeadBox">
+			<a id="kingBack"></a>
+			<h1>修改昵称</h1>
+		</div>
+		<div class="spaceContentBox">
+			 <div class="modifynickBox">
+			 	<input id="modifyInput" type="text" placeholder="输入昵称"/>
+			 </div>
+			 <div class="modifynickBut">
+			 	<a>确定</a>
+			 </div>
+		</div>
+ 
+	</body>
+	<script type="text/javascript" src="../../plug_in/zepto.min.js"></script>
+	<script type="text/javascript" src="../../plug_in/touch.js"></script>
+	<script type="text/javascript" src="../../plug_in/public.js"></script>
+	<script type="text/javascript">
+		$(document).bind("tap",function(){
+			
+			//定义接口
+			var modifynickUrl = mainUrl + "user/profile";
+			
+			//为确定按钮绑定事件
+			$(".modifynickBut>a").bind("tap",function(){
+				//获取用户输入：
+				var nickValue = $("#modifyInput").val();
+				if(!nickValue){
+					toast("请输入昵称！");
+					return;
+				}
+				
+				//发起请求
+				requestToken(modifynickUrl,"get",{nickname:nickValue},function(data){
+					if(data.code == 1){
+						toast("设定成功！");
+						UpLocalData("nickname",nickValue);
+						resLoadParent();
+						reloadView("usercenter");
+						BackView();
+					}else{
+						toast(data.msg);
+					}
+				});
+			});
+		});
+	</script>
+</html>

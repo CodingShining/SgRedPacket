@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head> 
+		<meta charset="UTF-8">
+		  <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,width=device-width,initial-scale=1.0" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../plug_in/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="../../plug_in/public_style.css" />
+		<link rel="stylesheet" type="text/css" href="style/issue.css" />
+	</head>
+	<body>
+		<div class="spaceHeadBox">
+			<a id="kingBack"></a>
+			<h1>发布广告</h1>
+		</div>
+		<div class="spaceContentBox">
+			 <div class="issueBalance">
+			 	<span>可用余额：</span>
+			 	<span><i id="issueMoney">00.00</i>&nbsp;SVGC</span>
+			 </div>
+			 <div class="issueInputBox">
+			 	<div class="issueInputTitle">出售价格</div>
+			 	<div class="issueInputCon">
+			 		<input type="number" disabled="disabled" id="issueInput1" />
+			 	</div>
+			 	<span class="issueUnit">CNY</span>
+			 </div>
+			 <div class="issueInputBox">
+			 	<div class="issueInputTitle">出售数量</div>
+			 	<div class="issueInputCon">
+			 		<input type="number" placeholder="请输入出售数量" id="issueInput2" />
+			 	</div>
+			 	<span class="issueUnit">SVGC</span>
+			 	<div class="issueConvers">≈<i id="ConversText">0.00</i>&nbsp;CNY</div>
+			 </div>
+			 <div class="issueInputBox">
+			 	<div class="issueInputTitle">付款方式</div>
+			 	<div class="issuePayType">
+			 		<span id="issuePayText">微信支付</span>
+			 	</div>
+			 </div>
+			 <div class="issueInputBox">
+			 	<div class="issueInputTitle">收款账号</div>
+			 	<div class="issueInputCon">
+			 		<input type="text" placeholder="请输入收款方账号" id="issueInput3" />
+			 	</div>
+			 	<div class="issueConvers">手续费：<i id="sxfText">0.00</i>&nbsp;SVGC</div>
+			 </div>
+			 <div class="issueInputBox khh" style="display:none">
+			 	<div class="issueInputTitle">开户行</div>
+			 	<div class="issuekhh" data-toggle="0">
+			 		<span id="khhName" data-toggle="0">请选择卡户行</span>
+			 	</div>
+			 </div>
+			 <div class="issueInputBox">
+			 	<div class="issueInputTitle">备注（选填）</div>
+			 	<div class="issueInputCon">
+			 		<input type="text" placeholder="可备注交易条款或注意事项" id="issueInput4" />
+			 	</div>
+			 </div>
+			 <div class="issueInputBox">
+			 	<div class="issueInputTitle">姓名</div>
+			 	<div class="issueInputCon">
+			 		<input type="text" placeholder="请输入收款账号的姓名" id="issueInput5" />
+			 	</div>
+			 </div>
+			  <div class="issueInputBox">
+			 	<div class="issueInputTitle">联系电话</div>
+			 	<div class="issueInputCon">
+			 		<input type="number" placeholder="请输入自己的联系电话" id="issueInput6" />
+			 	</div>
+			 </div>
+			 
+			 <!--安全小键盘开始-->
+			<div class="safetyKey">
+				<div class="safetKeyTopImg">
+					<span id="safetyDownBut"></span>
+				</div>
+				<div class="safetyKeyTitle">安全验证</div>
+				<div class="safetyKeyBrief">输入支付密码</div>
+				<ul class="pwshow">
+					<li class="mm"></li>
+					<li class="mm"></li>
+					<li class="mm"></li>
+					<li class="mm"></li>
+					<li class="mm"></li>
+					<li class="mm"></li>
+				</ul>
+				<div class="safetyKeyBut">
+					<a>确定</a>
+				</div>
+				<div class="safetKeyMain">
+					<ul>
+						<li class="safetKeyItem">1</li>
+						<li class="safetKeyItem">2</li>
+						<li class="safetKeyItem">3</li>
+						<li class="safetKeyItem">4</li>
+						<li class="safetKeyItem">5</li>
+						<li class="safetKeyItem">6</li>
+						<li class="safetKeyItem">7</li>
+						<li class="safetKeyItem">8</li>
+						<li class="safetKeyItem">9</li>
+						<li class="safetClean">取消</li>
+						<li class="safetKeyItem">0</li>
+						<li class="safetKeyDelete"></li>
+					</ul>
+				</div>
+			</div>
+			
+			 <div class="issueBut">
+			 	<a>立即发布</a>
+			 </div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../plug_in/zepto.min.js"></script>
+	<script type="text/javascript" src="../../plug_in/touch.js"></script>
+	<script type="text/javascript" src="../../plug_in/public.js"></script>
+	<script type="text/javascript" src="script/issue.js"></script>
+</html>

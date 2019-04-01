@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>登录</title>
+  <link rel="stylesheet" href="../../plug_in/base.css">
+  <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+  <div class="m-login">
+    <div class="m-bd">
+      <h2 class="u-title">您好，</h2>
+      <p class="u-subtitle">欢迎来到天宝娱乐</p>
+      <p class="u-input">
+        <input type="text" placeholder="请输入手机号" maxlength="11" id="kingUserName">
+        <span class="u-clear" id="clearName"><img src="imgs/icon_clear.png" width="20px" alt=""></span>
+      </p>
+      <p class="u-input u-pwd">
+        <input type="password" placeholder="请输入密码" maxlength="12px" id="kingUserPw">
+        <span class="u-eye" id="showPw" data-toggle="0"><img src="imgs/eye_close.png" width="20px" alt=""></span>
+      </p>
+      <p class="u-prompt clear-ft">
+        <span class="u-text g-lf"><img src="imgs/icon_error.png" width="16px" alt=""><i class="in-block">账号或密码错误</i></span>
+        <span class="u-forget g-rt">忘记密码?</span>
+      </p>
+      <button type="button" class="u-btn" id="loginBut">登录</button>
+      <p class="u-register">还没有账号？<a href="javascript:void(0);">立即注册</a></p>
+    </div>
+  </div>
+  <script src="../../plug_in/zepto.min.js"></script>
+  <script src="../../plug_in/base.js"></script>
+  <script src="../../plug_in/touch.js"></script>
+  <script src="../../plug_in/public.js"></script>
+  <script src="../../plug_in/base.js"></script>
+  <script src="js/login.js"></script>
+</body>
+
+</html>

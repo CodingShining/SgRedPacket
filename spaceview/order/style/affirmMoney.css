@@ -1,0 +1,113 @@
+.affirmHeadTitle{
+	width:100%;
+	height:40px;
+	display:flex;
+	flex-direction:row;
+	justify-content:space-between;
+	box-sizing:border-box;
+	border-bottom:1px solid #343743;
+}
+
+.affirmHeadTitle>span{
+	display:inline-block;
+	height:40px;
+	line-height:40px;
+}
+
+.affirmHeadTitle>span:last-child{
+	color:#ea2f2f;
+}
+
+.affirmMessage{
+	width:100%;
+	box-sizing:border-box;
+	padding:20px 0px;
+	border-bottom:1px solid #343743;
+}
+
+.affirmMesgItem{
+	width:100%;
+	height:30px;
+	display:flex;
+	flex-direction:row;
+	justify-content:flex-start;
+}
+
+.affirmMesgItem>span{
+	display:inline-block;
+	height:30px;
+	line-height:30px;
+	color:#9697a7;
+}
+
+.affirmMesgItem>span>i{
+	color:#FFFFFF;
+}
+
+.affirmMesgItem>span:first-child::after{
+	content:"";
+	display:inline-block;
+	width:100%;
+	height:30px;
+}
+
+.affirmMesgItem>span:first-child{
+	width:80px;
+	text-align:justify;
+}
+
+.affirmEndMoney{
+	width:100%;
+	height:30px;
+	display:flex;
+	flex-direction:row;
+	justify-content:space-between;
+	margin-top:20px;
+}
+
+.affirmEndMoney>span{
+	display:inline-block;
+	height:30px;
+	line-height:30px;
+}
+
+.affirmEndMoney>span:first-child{
+	color:#999aaa;
+}
+
+.affirmEndMoney>span:last-child{
+	color:#f6ab10;
+}
+
+.affirmImg{
+	width:100%;
+	height:155px;
+	background-color:#343743;
+	box-sizing:border-box;
+	border-radius:10px;
+	margin-top:20px;
+}
+
+.affirmImg>img{
+	width:100%;
+	height:100%;
+}
+
+.affirmBut{
+	width:100%;
+	height:40px;
+	display:flex;
+	flex-direction:row;
+	justify-content:space-around;
+	text-align:center;
+	margin-top:30px;
+}
+
+.affirmBut>a{
+	display:inline-block;
+	width:40%;
+	height:40px;
+	line-height:40px;
+	text-align:center;
+	border-radius:40px;
+}

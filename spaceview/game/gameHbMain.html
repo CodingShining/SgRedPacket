@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+	<head> 
+		<meta charset="UTF-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,width=device-width,initial-scale=1.0" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../plug_in/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="../../plug_in/public_style.css" />
+		<link rel="stylesheet" type="text/css" href="style/gameHbMain.css" />
+	</head>
+	<body>
+		<div class="spaceHeadBox">
+			<a id="gameHbBack"></a>
+			<h1><i id="gameRoomNum"></i>(<i id="gameRoomPerson">0</i>)</h1>
+		</div>
+		<div class="audioBox" style="display:none">
+			<audio id="audioObj" src="../../plug_in/money.mp3"></audio>
+		</div>
+		<div class="gameHbMainNotice">
+			<div class="gameHbNoticeIcon">
+				<img src="../../img/team2.png" />
+			</div>
+			<div class="gameHbNoticeText">
+				<span id="gameHbMark">这个是公告，这个是公告</span>
+			</div>
+		</div>
+		<div class="gameHbMainBody">
+			<ul class="gameHbBodyUl">
+				<!--其他用户发的红包没有被抢完-->
+				<!--<li>
+					<div class="gameUserHead gameItemLeft">
+						<img src="../../img/meicon2.png"/>
+					</div>
+					<div class="gameHbMainItem gameItemLeft gameHbBG1Left">
+						<div class="gameHbCont1">
+							<div><img src="img/hbitemIcon.png"></div>
+							<div>
+								<span><i>50</i>SVGC/<i>5</i>个</span>
+								<span>游戏红包</span>
+							</div>
+						</div>
+						<div class="gameHbCont2">
+							<span>雷号：<i>8</i></span>
+							<span>赔率：<i>2</i>倍</span>
+						</div>
+					</div>
+					<div class="userNick">用户昵称</div>
+				</li>-->
+				<!--自己发的红包没有被抢完-->
+				<!--<li>
+					<div class="gameUserHead gameItemRight">
+						<img src="../../img/meicon2.png"/>
+					</div>
+					<div class="gameHbMainItem gameItemRight gameHbBG1Right">
+						<div class="gameHbCont1">
+							<div><img src="img/hbitemIcon.png"></div>
+							<div>
+								<span><i>50</i>SVGC/<i>5</i>个</span>
+								<span>游戏红包</span>
+							</div>
+						</div>
+						<div class="gameHbCont2">
+							<span>雷号：<i>8</i></span>
+							<span>赔率：<i>2</i>倍</span>
+						</div>
+					</div>
+				</li>-->
+				<!--别人发的红包被抢完-->
+				<!--<li>
+					<div class="gameUserHead gameItemLeft">
+						<img src="../../img/meicon2.png"/>
+					</div>
+					<div class="gameHbMainItem gameItemLeft gameHbBG2Left">
+						<div class="gameHbCont1">
+							<div><img src="img/hbitemIcon2.png"></div>
+							<div>
+								<span><i>50</i>SVGC/<i>5</i>个</span>
+								<span>游戏红包</span>
+							</div>
+						</div>
+						<div class="gameHbCont2">
+							<span>雷号：<i>8</i></span>
+							<span>赔率：<i>2</i>倍</span>
+						</div>
+					</div>
+				</li>-->
+				<!--自己发的红包被抢往完-->
+				<!--<li>
+					<div class="gameUserHead gameItemRight">
+						<img src="../../img/meicon2.png"/>
+					</div>
+					<div class="gameHbMainItem gameItemRight gameHbBG2Right">
+						<div class="gameHbCont1">
+							<div><img src="img/hbitemIcon2.png"></div>
+							<div>
+								<span><i>50</i>SVGC/<i>5</i>个</span>
+								<span>游戏红包</span>
+							</div>
+						</div>
+						<div class="gameHbCont2">
+							<span>雷号：<i>8</i></span>
+							<span>赔率：<i>2</i>倍</span>
+						</div>
+					</div>
+				</li>-->
+			</ul>
+		</div>
+		<div class="gameHbMainBottom">
+			<div class="gameHbMainuseMesage">可用余额：<i id="userBalean">0.00</i>&nbsp;SGB</div>
+			<div class="gameHbBottomItem2">
+				<a>发红包</a>
+			</div>
+		</div>
+		<!--点击获得红包-->
+		<div class="gameFloat1 haveHb" style="display:none">
+			<div class="gameFloatCont1">
+				<div class="gameFloatCont1_Item1">
+					<div><img class="gameUserMes1" src=""/></div>
+				</div>
+				<div class="gameFloatCont1_Item2">
+					<span class="gameUserMes2"></span>
+				</div>
+				<div class="gameFloatCont1_Item3">
+					<span>
+						<p>发了一个红包，金额随机个数：<i class="gameUserMes3"></i>，赔率：<i class="gameUserMes4"></i>倍</p>
+					</span>
+				</div>
+				<div class="gameFloatCont1_Item4">
+					<img src="img/openHbIcon.png" />
+				</div>
+				<div class="HbcleanBut" id="cleatHb1">
+					<img src="img/hbcleanIcon.png" />
+				</div>
+			</div>
+		</div>
+		<!--参与的红包记录-->
+		<div class="gameFloat1 notHb" style="display:none">
+			<div class="gameFloatCont1">
+				<div class="gameFloatCont1_Item1">
+					<div><img class="gameUserMes1" src=""/></div>
+				</div>
+				<div class="gameFloatCont1_Item2">
+					<span><i  class="gameUserMes2"></i>的红包</span>
+				</div>
+				<div class="hbResultText">
+					<span>获得红包:<i id="getHbMoney">0.00</i></span>
+				</div>
+				<div class="HbResultBur">
+					<span>查看红包结果&nbsp;></span>
+				</div>
+				<div class="HbcleanBut" id="cleatHb2">
+					<img src="img/hbcleanIcon.png" />
+				</div>
+			</div>
+		</div>
+		<!--手气太差被抢完了-->
+		<div class="gameFloat1 overHb" style="display:none">
+			<div class="gameFloatCont1">
+				<div class="gameFloatCont1_Item1">
+					<div><img class="gameUserMes1" src="img/1.jpg"/></div>
+				</div>
+				<div class="gameFloatCont1_Item2">
+					<span><i class="gameUserMes2"></i>的红包</span>
+				</div>
+				<div class="hbResultText">
+					<span>手速太慢，红包被抢完了</span>
+				</div>
+				<div class="HbResultBur">
+					<span>查看红包结果&nbsp;></span>
+				</div>
+				<div class="HbcleanBut" id="cleatHb3">
+					<img src="img/hbcleanIcon.png" />
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../plug_in/zepto.min.js"></script>
+	<script type="text/javascript" src="../../plug_in/touch.js"></script>
+	<script type="text/javascript" src="../../plug_in/public.js"></script>
+	<script type="text/javascript" src="script/gameHbMain.js"></script>
+</html>

@@ -1,0 +1,114 @@
+.gameRoomListBox{
+	width:100%;
+	box-sizing:border-box;
+	display:flex;
+	flex-direction:row;
+	flex-wrap:wrap;
+	justify-content:space-between;
+}
+
+.gameRoomItem{
+	width:48%;
+	height:100px;
+	background-color:#31323c;
+	box-sizing:border-box;
+	border:1px solid #494b5c;
+	border-radius:10px;
+	margin-bottom:20px;
+}
+
+.gameRoomItemHead{
+	width:100%;
+	height:30px;
+	line-height:30px;
+	box-sizing:border-box;
+	padding-left:10px;
+	position:relative;
+}
+
+.gameRoomRightIcon{
+	width:15px;
+	height:15px;
+	position:absolute;
+	top:5px;
+	right:15px;
+}
+
+.gameRoomRightIcon>img{
+	width:100%;
+	height:100%;
+}
+
+.gameRoomTextBox{
+	width:100%;
+	height:30px;
+	line-height:30px;
+	box-sizing:border-box;
+	padding-left:10px;
+	color:#67697e;
+}
+
+.gameRoomPbarBox{
+	width:100%;
+	height:30px;
+	box-sizing:border-box;
+	padding:0px 10px;
+	display:flex;
+	flex-direction:row;
+	justify-content:space-between;
+}
+
+.gameRoomPbar{
+	width:70%;
+	height:10px;
+	line-height:10px;
+	background-color:#494b5c;
+	margin-top:10px;
+	overflow:hidden;
+}
+
+.gameRoomStatusText{
+	width:40px;
+	height:30px;
+	line-height:30px;
+	text-align:center;
+	font-size:12px;
+}
+
+.gameRoomPbarValue{
+	display:inline-block;
+	height:10px;
+	background-color:#40a046;
+}
+
+.gameRoomStatusColor1{
+	background-color:#459dd1;  /*空闲*/
+}
+
+.gameRoomStatusColor2{
+	background-color:#40a046;  /*流畅*/
+}
+
+.gameRoomStatusColor3{
+	background-color:#db4f09;  /*拥挤*/
+}
+
+.gameRoomStatusColor4{
+	background-color:#dc3030;  /*爆满*/
+}
+
+.gameRoomStatusTextColor1{
+	color:#459dd1!important;  /*空闲*/
+}
+
+.gameRoomStatusTextColor2{
+	color:#40a046!important;  /*流畅*/
+}
+
+.gameRoomStatusTextColor3{
+	color:#db4f09!important;  /*拥挤*/
+}
+
+.gameRoomStatusTextColor4{
+	color:#dc3030!important;  /*爆满*/
+}

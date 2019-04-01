@@ -1,0 +1,146 @@
+.extractTitleBox{
+	width: 100%;
+    height: 60px;
+    box-sizing: border-box;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #303344;
+   	display:flex;
+	flex-direction:row;
+	justify-content:start;
+}
+
+.extractTitleBox>i{
+	display:inline-block;
+	width:20px;
+	height:20px;
+	background:url(../img/PTB-icon.png) no-repeat;
+	background-size:100%;
+}
+
+.extractTitleBox>div{
+	width:40px;
+	height:20px;
+	line-height:20px;
+	text-align:center;
+}
+
+.extractBalance{
+	width:100%;
+	box-sizing:border-box;
+	padding-top:20px;
+}
+
+.extractBalance>span{
+	display:inline-block;
+	width:100%;
+	height:30px;
+	line-height:30px;
+	text-align:center;
+}
+
+.extractBalance>span:first-child{
+	color:#999aaa;
+}
+
+.extractBalance>span:last-child{
+	color:#555869;
+}
+
+.extractInputBox{
+	width:100%;
+	height:60px;
+	box-sizing:border-box;
+	border-bottom:1px solid #414153;
+	position:relative;
+	margin-top:30px;
+}
+
+.extractInputTitle{
+	width:100%;
+	height:30px;
+	line-height:30px;
+	color:#999aaa;
+}
+
+.extractInputTitle>i{
+	font-size:12px;
+	color:#f24646;
+}
+
+.extractInput{
+	width:90%;
+	height:30px;
+	overflow:hidden;
+}
+
+.extractInput>input{
+	width:100%;
+	height:30px;
+	line-height:30px;
+	border:none;
+	color:#9b9ba2;
+}
+
+.extractInput>input::-webkit-input-placeholder{
+	color:#4e4e61;
+}
+
+.extractRightBox{
+	width:25px;
+	height:25px;
+	position:absolute;
+	right:0px;
+	top:25px;
+}
+
+.extractRightBox>img{
+	width:100%;
+	height:100%;
+}
+
+.extractRightText{
+	width:30px;
+	height:30px;
+	line-height:30px;
+	text-align:center;
+	position:absolute;
+	right:0px;
+	top:30px;
+	color:#999aaa;
+}
+
+.extractMat{
+	width:100%;
+	height:30px;
+	line-height:30px;
+	color:#f6ab10;
+}
+
+.extractAlert{
+	width:100%;
+	padding:10px 0px;
+	color:#9999b2;
+}
+
+.extractResult{
+	width:100%;
+	height:30px;
+	display:flex;
+	flex-direction:row;
+	justify-content:space-between;
+}
+
+.extractResult>span{
+	display:inline-block;
+	height:30px;
+	line-height:30px;
+}
+
+.extractResult>span:first-child{
+	color:#9a9ab3;
+}
+
+.extractResult>span:last-child{
+	color:#f6ab10;
+}

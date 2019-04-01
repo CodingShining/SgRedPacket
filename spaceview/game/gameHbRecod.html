@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head> 
+		<meta charset="UTF-8">
+		  <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,width=device-width,initial-scale=1.0" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../plug_in/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="../../plug_in/public_style.css" />
+		<link rel="stylesheet" type="text/css" href="style/gameHbRecod.css" />
+	</head>
+	<body>
+		<div class="spaceHeadBox">
+			<a id="kingBack"></a>
+			<h1>红包记录</h1>
+		</div>
+		<div class="gameHbRecodHeadNav">
+			<span class="gameHbRecodSelect" data-AjaxType="1">抢到的红包</span>
+			<span data-AjaxType="2">发出的红包</span>
+		</div>
+		<div class="gameHbRecodTitle">
+			<span>总额：<i id="gameHbRecodData1">0</i></span>
+			<span>总雷：<i id="gameHbRecodData2">0</i></span>
+		</div>
+		<div class="gameHbRecodItemTitle gameHbRecodItemTitle1">
+			<span style="width:20%">房号</span>
+			<span style="width:20%">时间</span>
+			<span style="width:20%;text-align:center;">昵称</span>
+			<span style="width:20%;text-align:right">金额</span>
+			<span style="width:20%;text-align:right">中雷</span>
+		</div>
+		<div class="gameHbRecodItemTitle gameHbRecodItemTitle2" style="display:none">
+			<span style="width:25%">房号</span>
+			<span style="width:25%">时间</span>
+			<span style="width:25%">金额</span>
+			<span style="width:25%;text-align:right">中雷</span>
+		</div>
+		<ul class="gameHbRecodUl">
+			<!--<li class="gameHbRecodItem1">
+				<span style="width:20%">08</span>
+				<span style="width:20%">17:29:56</span>
+				<span style="width:20%">我是不一样</span>
+				<span style="width:20%;text-align:right">+100.00</span>
+				<span style="width:20%;text-align:right">-120</span>
+			</li>
+			<li class="gameHbRecodItem2" style="display:none">
+				<span style="width:25%">08</span>
+				<span style="width:25%">17:29:56</span>
+				<span style="width:25%">-100.00</span>
+				<span style="width:25%;text-align:right">+120</span>
+			</li>-->
+		</ul>
+	</body>
+	<script type="text/javascript" src="../../plug_in/zepto.min.js"></script>
+	<script type="text/javascript" src="../../plug_in/touch.js"></script>
+	<script type="text/javascript" src="../../plug_in/public.js"></script>
+	<script type="text/javascript" src="script/gameHbRecod.js"></script>
+</html>

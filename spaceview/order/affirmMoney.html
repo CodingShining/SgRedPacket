@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head> 
+		<meta charset="UTF-8">
+		  <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,width=device-width,initial-scale=1.0" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../plug_in/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="../../plug_in/public_style.css" />
+		<link rel="stylesheet" type="text/css" href="style/affirmMoney.css" />
+	</head>
+	<body>
+		<div class="spaceHeadBox">
+			<a id="kingBack"></a>
+			<h1>订单详情</h1>
+		</div>
+		<div class="spaceContentBox">
+			 <div class="affirmHeadTitle">
+			 	<span>编号：<i id="affData1"></i></span>
+			 	<span id="affData2"></span>
+			 </div>
+			 <div class="affirmMessage">
+			 	<div class="affirmMesgItem">
+			 		<span>买家</span>
+			 		<span>：<i id="affData3"></i></span>
+			 	</div>
+			 	<div class="affirmMesgItem">
+			 		<span>支付方式</span>
+			 		<span>：<i id="affData4"></i></span>
+			 	</div>
+			 	<div class="affirmMesgItem">
+			 		<span>类型</span>
+			 		<span>：<i>买入</i></span>
+			 	</div>
+			 	<div class="affirmMesgItem">
+			 		<span>单价</span>
+			 		<span>：<i id="affData5"></i>&nbsp;<i>CNY</i></span>
+			 	</div>
+			 	<div class="affirmMesgItem">
+			 		<span>数量</span>
+			 		<span>：<i id="affData6"></i>&nbsp;<i>SVGC</i></span>
+			 	</div>
+			 </div>
+			 <div class="affirmEndMoney">
+			 	<span>总额</span>
+			 	<span><i id="affData7"></i>&nbsp;CNY</span>
+			 </div>
+			 <div class="affirmImg">
+			  
+			 </div>
+			 <div class="affirmBut">
+			 	<a id="affirmBut1" style="background-color:#f6ab10;display:none;">确认收款</a>
+			 	<a id="affirmBut2" style="background-color:#ea2f2f;display:none;">撤销交易</a>
+			 </div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../plug_in/zepto.min.js"></script>
+	<script type="text/javascript" src="../../plug_in/touch.js"></script>
+	<script type="text/javascript" src="../../plug_in/public.js"></script>
+	<script type="text/javascript" src="script/affirmMoney.js"></script>
+</html>

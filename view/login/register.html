@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>注册</title>
+  <link rel="stylesheet" href="../../plug_in/base.css">
+  <link rel="stylesheet" href="css/register.css">
+</head>
+
+<body>
+  <div class="m-register">
+    <span class="u-return" id="kingBack"><img src="imgs/icon_return.png" width="30px" alt=""></span>
+    <div class="m-form">
+      <h2 class="u-title">您好，</h2>
+      <p class="u-subtitle">欢迎注册天宝娱乐</p>
+      <p class="u-input">
+        <input type="text" placeholder="请输入手机号" maxlength="11" id="userphone">
+      </p>
+      <p class="u-input">
+        <input type="text" placeholder="请输入昵称" maxlength="11" id="usernikname">
+      </p>
+      <p class="u-input">
+        <input type="password" id="newPw" placeholder="请设置6-12位登录密码" maxlength="12">
+        <span class="u-eye" data-toggle="0" data-contorl="newPw"><img src="imgs/eye_close.png" width="20px" alt=""></span>
+      </p>
+      <p class="u-input">
+        <input type="password" id="oldPw" placeholder="确认登录密码" maxlength="12">
+        <span class="u-eye" data-toggle="0" data-contorl="oldPw"><img src="imgs/eye_close.png" width="20px" alt=""></span>
+      </p>
+      <p class="u-input">
+        <input type="text" placeholder="短信验证码" maxlength="6" id="ckeckNmuber">
+        <button type="button" class="u-sms" data-toggle="0">短信验证码</button>
+      </p>
+      <p class="u-input">
+        <input type="text" placeholder="推荐码" id="indexMan">
+      </p>
+      <button type="button" class="u-btn">注册</button>
+      <p class="u-login">已有账号？<a href="javascript:void(0);">立即登录</a></p>
+    </div>
+  </div>
+  <script src="../../plug_in/zepto.min.js"></script>
+  <script src="../../plug_in/base.js"></script>
+  <script src="../../plug_in/touch.js"></script>
+  <script src="../../plug_in/public.js"></script>
+  <script src="js/register.js"></script>
+</body>
+
+</html>

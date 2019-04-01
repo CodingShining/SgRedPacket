@@ -1,0 +1,112 @@
+.m-register {
+  width: 100%;
+  min-height: 100%;
+  padding-top: 70px;
+  background-color:#27282f;
+}
+
+.m-register .u-return {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+}
+
+.m-form {
+	width:100%
+  margin: 0 auto 50px;
+  padding: 26px;
+}
+
+.m-form .u-title {
+  margin-bottom: 10px;
+  color: #fff;
+  font-size: 20px;
+}
+
+.m-form .u-subtitle {
+  margin-bottom: 30px;
+  color: #f6ab10;
+  font-size: 16px;
+}
+
+.m-form .u-input {
+  position: relative;
+  width: 100%;
+  height: 44px;
+  line-height: 44px;
+  margin-bottom: 15px;
+  box-sizing:border-box;
+  border-bottom:1px solid #414153;
+}
+
+.m-form .u-input>input {
+  width: 100%;
+  height: 100%;
+  padding: 0 50px 0 15px;
+  color: #555869;
+  font-size: 14px;
+}
+
+.m-form .u-input>input:focus {
+  outline: none;
+  color: #f6ab10;
+}
+
+.m-form .u-input>span {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 44px;
+  line-height: 44px;
+  text-align: center;
+}
+
+.m-form .u-sms {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  width: 80px;
+  height: 44px;
+  line-height: 44px;
+  text-align: center;
+  color: #f6ab10;
+  font-size: 12px;
+}
+
+.m-form .u-sms.u-countdown {
+  color: #555869;
+}
+
+.m-form .u-btn {
+  display: block;
+  width: 80%;
+  height: 44px;
+  line-height: 44px;
+  background-color:#f6ab10;
+  border-radius:44px;
+  color:#FFFFFF;
+  margin:0 auto 30px auto;
+}
+
+.m-form .u-btn.u-pass {
+  background-image: url(../imgs/btn_bg_02.png);
+}
+
+.m-form .u-login {
+  margin-bottom: 10px;
+  text-align: center;
+  color: #fff;
+  font-size: 12px;
+}
+
+.m-form .u-login>a {
+  display: inline-block;
+  color: #f6ab10;
+  text-decoration: underline;
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head> 
+		<meta charset="UTF-8">
+		  <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,width=device-width,initial-scale=1.0" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../plug_in/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="../../plug_in/public_style.css" />
+		<link rel="stylesheet" type="text/css" href="style/extract.css" />
+	</head>
+	<body>
+		<div class="spaceHeadBox">
+			<a id="kingBack"></a>
+			<h1>赠送</h1>
+			<span id="giftsList">赠送记录</span>
+		</div>
+		<div class="spaceContentBox">
+			<div class="extractBalance">
+				<span>可用余额</span>
+				<span style="color:#FFFFFF"><i id="giftsAsst"></i>&nbsp;PTB</span>
+			</div>
+			<div class="extractInputBox">
+				<div class="extractInputTitle">对方用户名</div>
+				<div class="extractInput">
+					<input id="giftsInput1" type="text" placeholder="输入对方手机号码"/>
+				</div>
+			</div>
+			<div class="extractInputBox">
+				<div class="extractInputTitle">赠送数量</div>
+				<div class="extractInput">
+					<input id="giftsInput2" type="text" placeholder="输入赠送数量"/>
+				</div>
+				<div class="extractRightText">PTB</div>
+			</div>
+			<div class="extractInputBox">
+				<div class="extractInputTitle">手续费</div>
+				<div class="extractInput">
+					<input id="giftsInput3" type="text" value="0.0000000" disabled="true" />
+				</div>
+				<div class="extractRightText">PTB</div>
+			</div>
+			<div class="extractAlert">
+				<p>温馨提示：</p>
+				<p>在上面的输入框中，输入您要赠送的用户名和赠送数额，在确认填写无误后，点击"确定赠送"按钮提交。</p>
+			</div>
+			<div class="extractResult">
+				<span>到账数量</span>
+				<span><i id="giftsCharg">0.00</i>&nbsp;PTB</span>
+			</div>
+			<div class="publicBut">
+				<a class="butStyle1" id="giftsConfirm">确定赠送</a>
+			</div>
+		</div>
+		<!--安全小键盘开始-->
+		<div class="safetyKey">
+			<div class="safetKeyTopImg">
+				<span></span>
+			</div>
+			<div class="safetyKeyTitle">安全验证</div>
+			<div class="safetyKeyBrief">输入支付密码</div>
+			<ul class="pwshow">
+				<li class="mm"></li>
+				<li class="mm"></li>
+				<li class="mm"></li>
+				<li class="mm"></li>
+				<li class="mm"></li>
+				<li class="mm"></li>
+			</ul>
+			<div class="safetyKeyBut">
+				<a>确定</a>
+			</div>
+			<div class="safetKeyMain">
+				<ul>
+					<li class="safetKeyItem">1</li>
+					<li class="safetKeyItem">2</li>
+					<li class="safetKeyItem">3</li>
+					<li class="safetKeyItem">4</li>
+					<li class="safetKeyItem">5</li>
+					<li class="safetKeyItem">6</li>
+					<li class="safetKeyItem">7</li>
+					<li class="safetKeyItem">8</li>
+					<li class="safetKeyItem">9</li>
+					<li class="safetClean">取消</li>
+					<li class="safetKeyItem">0</li>
+					<li class="safetKeyDelete"></li>
+				</ul>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../plug_in/zepto.min.js"></script>
+	<script type="text/javascript" src="../../plug_in/touch.js"></script>
+	<script type="text/javascript" src="../../plug_in/public.js"></script>
+	<script type="text/javascript" src="script/gifts.js"></script>
+</html>

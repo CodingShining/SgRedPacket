@@ -1,0 +1,189 @@
+{
+  "index.html": {
+    "refer": [
+      "view/gameview/gameview.html",
+      "view/bulletin/bulletin.html",
+      "view/asset/asset.html",
+      "view/usercenter/usercenter.html",
+      "spaceview/usercenter/team.html"
+    ],
+    "resources": [
+      "view/gameview/gameview.html"
+    ]
+  },
+  "view/login/login.html": {
+    "refer": [
+      "index.html",
+      "view/login/register.html",
+      "view/login/forget.html"
+    ],
+    "resources": [
+      "view/login/imgs/eye_close.png",
+      "view/login/imgs/hd_logo.png",
+      "view/login/css/login.css",
+      "view/login/js/login.js",
+      "view/login/imgs/icon_clear.png",
+      "view/login/imgs/icon_error.png"
+    ]
+  },
+  "view/login/register.html": {
+    "refer": [
+      "view/login/login.html"
+    ]
+  },
+  "view/asset/asset.html": {
+    "refer": [
+      "spaceview/asset/recharge.html",
+      "spaceview/asset/conversion.html",
+      "spaceview/asset/extract.html",
+      "spaceview/asset/gifts.html",
+      "spaceview/lottery/lotteryList.html",
+      "spaceview/ctoc/ctoc.html"
+    ]
+  },
+  "spaceview/asset/recharge.html": {
+    "refer": [
+      "spaceview/asset/detail.html",
+      "spaceview/asset/rechargeList.html"
+    ]
+  },
+  "spaceview/asset/detail.html": {
+    "refer": [
+      "spaceview/asset/detailcont.html"
+    ]
+  },
+  "view/gameview/gameview.html": {
+    "refer": [
+      "spaceview/game/gamemain.html",
+      "spaceview/game/gameHbHome.html",
+      "spaceview/game/gameRoom.html",
+      "spaceview/ctoc/ctoc.html",
+      "spaceview/bulletin/bulletincontent.html"
+    ]
+  },
+  "spaceview/game/gamemain.html": {
+    "refer": [
+      "spaceview/game/gameexplain.html",
+      "spaceview/asset/recharge.html",
+      "spaceview/game/recordput.html",
+      "spaceview/game/recordcomm.html",
+      "spaceview/usercenter/invested.html",
+      "spaceview/game/gameRanking.html",
+      "spaceview/usercenter/forgetPwd.html"
+    ]
+  },
+  "view/bulletin/bulletin.html": {
+    "refer": [
+      "spaceview/bulletin/bulletincontent.html"
+    ]
+  },
+  "view/usercenter/usercenter.html": {
+    "refer": [
+      "spaceview/usercenter/invested.html",
+      "spaceview/usercenter/team.html",
+      "spaceview/usercenter/safeSet.html",
+      "spaceview/usercenter/invitation.html",
+      "spaceview/usercenter/aboutUs.html",
+      "spaceview/usercenter/basicInfo.html",
+      "spaceview/lottery/lotteryList.html",
+      "spaceview/lottery/lotteryResult.html",
+      "spaceview/asset/detail.html",
+      "spaceview/usercenter/blockNode.html",
+      "spaceview/order/orderList.html",
+      "spaceview/game/gameHbRecod.html"
+    ]
+  },
+  "spaceview/usercenter/safeSet.html": {
+    "refer": [
+      "spaceview/usercenter/editPwd.html",
+      "spaceview/usercenter/forgetPwd.html"
+    ]
+  },
+  "spaceview/usercenter/editPwd.html": {
+    "refer": [
+      "spaceview/usercenter/forgetPwd.html"
+    ]
+  },
+  "spaceview/usercenter/invitation.html": {
+    "refer": [
+      "spaceview/bulletin/invitationText.html"
+    ]
+  },
+  "spaceview/usercenter/aboutUs.html": {
+    "refer": [
+      "spaceview/bulletin/feedbbackText.html",
+      "spaceview/usercenter/feedback.html",
+      "spaceview/bulletin/helpText.html"
+    ]
+  },
+  "spaceview/usercenter/basicInfo.html": {
+    "refer": [
+      "spaceview/else/modifynick.html"
+    ]
+  },
+  "spaceview/asset/rechargeList.html": {
+    "refer": [
+      "spaceview/asset/rechargeContent.html"
+    ]
+  },
+  "spaceview/asset/gifts.html": {
+    "refer": [
+      "spaceview/asset/giftsList.html"
+    ]
+  },
+  "spaceview/asset/giftsList.html": {
+    "refer": [
+      "spaceview/asset/giftsContent.html"
+    ]
+  },
+  "spaceview/asset/extract.html": {
+    "refer": [
+      "spaceview/scanview/scanview.html",
+      "spaceview/asset/detail.html"
+    ]
+  },
+  "spaceview/asset/conversion.html": {
+    "refer": [
+      "spaceview/asset/detail.html"
+    ]
+  },
+  "spaceview/ctoc/ctoc.html": {
+    "refer": [
+      "spaceview/ctoc/issue.html",
+      "spaceview/ctoc/ctocin.html"
+    ]
+  },
+  "spaceview/order/orderList.html": {
+    "refer": [
+      "spaceview/order/payCont.html",
+      "spaceview/order/outCont.html"
+    ]
+  },
+  "spaceview/order/outCont.html": {
+    "refer": [
+      "spaceview/order/outList.html"
+    ]
+  },
+  "spaceview/order/outList.html": {
+    "refer": [
+      "spaceview/order/affirmMoney.html"
+    ]
+  },
+  "spaceview/game/gameHbHome.html": {
+    "refer": [
+      "spaceview/game/gameRoom.html"
+    ]
+  },
+  "spaceview/game/gameRoom.html": {
+    "refer": [
+      "spaceview/game/gameHbMain.html",
+      "spaceview/game/gameexplain.html"
+    ]
+  },
+  "spaceview/game/gameHbMain.html": {
+    "refer": [
+      "spaceview/game/gameHbResult.html",
+      "spaceview/game/gameHbGive.html"
+    ]
+  }
+}

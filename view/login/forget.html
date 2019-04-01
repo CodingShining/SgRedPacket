@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>忘记密码</title>
+  <link rel="stylesheet" href="../../plug_in/base.css">
+  <link rel="stylesheet" href="css/forget.css">
+</head>
+
+<body>
+  <div class="m-forget">
+    <span class="u-return" id="kingBack"><img src="imgs/icon_return.png" width="30px" alt=""></span>
+    <h2 class="u-title">忘记登录密码</h2>
+    <div class="m-form">
+      <p class="u-input">
+        <input type="text" placeholder="请输入手机号" maxlength="11" id="forgetPhone">
+      </p>
+      <p class="u-input">
+        <input type="text" placeholder="请输入短信验证码" maxlength="6" id="checkNumber">
+        <button type="button" data-toggle="0" class="u-sms u-countdown" id="forgetCheck">短信验证码</button>
+      </p>
+      <p class="u-input">
+        <input type="password" placeholder="请输入6-12位密码" maxlength="12" id="newPws">
+        <span class="u-eye ru-eye" data-toggle="0" data-contorl="newPws"><img src="imgs/eye_close.png" width="20px" alt=""></span>
+      </p>
+      <p class="u-input">
+        <input type="password" placeholder="确认新密码" maxlength="12" id="oldPws">
+        <span class="u-eye ru-eye" data-toggle="0" data-contorl="oldPws"><img src="imgs/eye_close.png" width="20px" alt=""></span>
+      </p>
+      <button type="button" class="u-btn" id="confirm">确认修改</button>
+    </div>
+  </div>
+  <script src="../../plug_in/zepto.min.js"></script>
+  <script src="../../plug_in/base.js"></script>
+  <script src="../../plug_in/touch.js"></script>
+  <script src="../../plug_in/public.js"></script>
+  <script src="js/forget.js"></script>
+</body>
+
+</html>

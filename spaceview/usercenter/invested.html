@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>我的投入</title>
+  <link rel="stylesheet" href="../../plug_in/base.css">
+  <link rel="stylesheet" href="css/invested.css">
+</head>
+
+<body>
+  <div class="m-invested">
+    <div class="m-hd">
+      <div class="m-title">
+        <span class="u-return" id="kingBack"><img src="imgs/icon_return.png" width="24px" alt=""></span>
+        <h2 class="u-title">我的投入/分红</h2>
+        <!--<span class="u-screen"><img src="imgs/icon_screen.png" width="24px" alt=""></span>-->
+      </div>
+      <ul class="m-list-total clear-ft">
+        <li>
+          <p>总投入</p>
+          <h3><span id="investedData1"></span>KVGC</h3>
+        </li>
+        <li>
+          <p>总分红</p>
+          <h3><span id="investedData2"></span>SVGC</h3>
+        </li>
+      </ul>
+    </div>
+    <div class="m-bd">
+      <table class="m-table">
+        <thead>
+          <tr>
+            <th>时间</th>
+            <th>游戏名称</th>
+            <th>已投(KVGC)</th>
+            <th>已分红(SVGC)</th>
+          </tr>
+        </thead>
+        <tbody id="investedListBox">
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <script src="../../plug_in/zepto.min.js"></script>
+  <script src="../../plug_in/touch.js"></script>
+  <script src="../../plug_in/public.js"></script>
+  <script src="js/invested.js"></script>
+</body>
+
+</html>

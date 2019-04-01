@@ -1,0 +1,137 @@
+.lotteryResultHead{
+	width:100%;
+	height:200px;
+	background:url(../../../view/asset/img/assethead.png) no-repeat;
+	background-size:100% 100%;
+	overflow:hidden;
+}
+
+.lotterResultTitle{
+	width:100%;
+	height:40px;
+	margin-top:40px;
+	position:relative;
+}
+
+.lotterResultTitle>h1{
+	width:100%;
+	height:40px;
+	line-height:40px;
+	text-align:center;
+	font-size:18px;
+}
+
+.lotterResultTitle>a{
+	display:inline-block;
+	width:30px;
+	height:30px;
+	background:url(../../../img/backicon.png) no-repeat;
+	position:absolute;
+	bottom:0px;
+	left:20px;
+}
+
+.lotterResultMsg{
+	width:100%;
+	height:35px;
+	overflow:hidden;
+	margin-top:20px;
+	display:flex;
+	flex-direction:row;
+	justify-content:space-around;
+}
+
+.lotterResultMsg>span{
+	display:inline-block;
+	width:50%;
+	height:35px;
+	line-height:35px;
+	text-align:center;
+}
+
+.lotterResultData{
+	width:100%;
+	height:40px;
+	overflow:hidden;
+	display:flex;
+	flex-direction:row;
+	justify-content:space-around;
+}
+
+.lotterResultData>div{
+	width:50%;
+	height:40px;
+	line-height:40px;
+	text-align:center;
+}
+
+.lotterResultListContentBox{
+	width:100%;
+	box-sizing:border-box;
+	padding:20px;
+}
+
+.lotterResultData>div>i{
+	display:inline-block;
+	width:30px;
+	height:30px;
+	line-height:30px;
+	text-align:center;
+	background-color:#FFFFFF;
+	box-sizing:border-box;
+	border-radius:40px;
+	color:#f3a309;
+	margin-right:5px;
+}
+
+.lotterResultListTitle{
+	width:100%;
+	height:30px;
+	line-height:30px;
+	display:flex;
+	flex-direction:row;
+	justify-content:space-between;
+}
+
+.lotterResultListTitle>span{
+	width:33.33%;
+	height:30px;
+	line-height:30px;
+	color:#555869;
+}
+
+.lotterResultListTitle>span:last-child{
+	text-align:right;
+}
+
+.lotterResultUl{
+	width:100%;
+	box-sizing:border-box;
+	padding:20px 0px;
+}
+
+.lotterResultUl>li{
+	width:100%;
+	height:50px;
+	margin-bottom:20px;
+	box-sizing:border-box;
+	border-bottom:1px solid #343743;
+	display:flex;
+	flex-direction:row;
+	justify-content:space-between;
+}
+
+.lotterResultUl>li>span{
+	display:inline-block;
+	width:33.33%;
+	height:50px;
+	line-height:50px;
+}
+
+.lotterResultUl>li>span:last-child{
+	text-align:right;
+}
+
+.lotterResultUl>li>span:first-child{
+	line-height:20px;
+}

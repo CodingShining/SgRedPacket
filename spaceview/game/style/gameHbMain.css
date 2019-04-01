@@ -1,0 +1,364 @@
+body::before{
+	content:"";
+	display:inline-block;
+	width:100%;
+	height:70px;
+}
+
+.gameHbMainNotice{
+	width:100%;
+	height:45px;
+	display:flex;
+	background-color:#31323c;
+	flex-direction:row;
+	justify-content:space-between;
+	box-sizing:border-box;
+	padding:0px 20px;
+}
+
+.gameHbNoticeIcon{
+	width:10%;
+	height:45px;
+	line-height:45px;
+	overflow:hidden;
+	box-sizing:border-box;
+	padding-top:5px;
+}
+
+.gameHbNoticeIcon>img{
+	width:30px;
+	height:30px;
+}
+
+.gameHbNoticeText{
+	width:85%;
+	height:45px;
+	overflow:hidden;
+	position:relative;
+	color:#9495a6;
+}
+
+@keyframes gameNotice{
+	from{left:100%;}
+	to{left:-100%;}
+}
+
+.gameHbNoticeText>span{
+	display:inline-block;
+	width:100%;
+	height:45px;
+	line-height:45px;
+	position:absolute;
+	left:100%;
+	top:0px;
+	animation:gameNotice 10s;
+	animation-iteration-count:infinite;
+	animation-timing-function:linear;
+}
+
+.gameHbMainBody{
+	width:100%;
+	overflow-y:scroll;
+	box-sizing:border-box;
+	padding:0px 20px;
+}
+
+.gameHbMainBottom{
+	width:100%;
+	height:100px;
+	background-color:#32333d;
+	box-sizing:border-box;
+	padding:10px 20px 0px 20px;
+	overflow:hidden;
+	position:fixed;
+	bottom:0px;
+	left:0px;
+}
+
+.gameHbBottomItem1{
+	width:100%;
+	height:30px;
+	display:flex;
+	flex-direction:row;
+	justify-content:space-between;
+}
+
+.gameHbBottomItem1>span{
+	display:inline-block;
+	height:30px;
+	line-height:30px;
+}
+
+.gameHbBottomItem1>span:last-child{
+	color:#f6ab10;
+}
+
+.gameHbBottomItem2{
+	width:100%;
+	height:40px;
+	text-align:center;
+	margin-top:10px;
+}
+
+.gameHbBottomItem2>a{
+	display:inline-block;
+	width:80%;
+	height:40px;
+	line-height:40px;
+	text-align:center;
+	background-color:#f6ab10;
+	border-radius:40px;
+}
+
+.gameHbBodyUl{
+	width:100%;
+	box-sizing:border-box;
+	padding:20px 0px;
+}
+
+.gameHbBodyUl>li{
+	width:100%;
+	height:100px;
+	margin-bottom:20px;
+	box-sizing:border-box;
+	padding-top:10px;
+	position:relative;
+}
+
+.gameUserHead{
+	width:40px;
+	height:40px;
+}
+
+.gameUserHead>img{
+	width:100%;
+	height:100%;
+}
+
+.gameHbMainItem{
+	width:200px;
+	height:80px;
+	position:absolute;
+	left:40px;
+	top:20px;
+}
+
+.gameItemLeft{
+	float:left;  /*左边对齐*/
+}
+
+.gameItemRight{
+	float:right;  /*右边对齐*/
+}
+
+.gameHbBG1Left{
+	background:url(../img/hb1left.png);   /*其他用户发送的未开封红包*/
+	background-size:100% 100%;
+}
+
+.gameHbBG1Right{
+	background:url(../img/hb1right.png);  /*用户发送的未开封红包*/
+	background-size:100% 100%;
+}
+
+.gameHbBG2Left{
+	background:url(../img/hb2left.png);  /*其他用户发送的抢完的红包*/
+	background-size:100% 100%;
+}
+
+.gameHbBG2Right{
+	background:url(../img/hb2right.png); /*用户发送的抢完的红包*/
+	background-size:100% 100%;
+}
+
+.gameHbCont1{
+	width:100%;
+	height:40px;
+	box-sizing:border-box;
+	padding:10px 20px 0px 20px;
+	display:flex;
+	flex-direction:row;
+	justify-content:flex-start;
+}
+
+.gameHbCont1>div>img{
+	width:34px;
+	height:40px;
+	border-radius:10px;
+}
+
+.gameHbCont1>div:last-child{
+	margin-left:10px;
+}
+
+.gameHbCont1>div>span{
+	display:block;
+	height:20px;
+	line-height:20px;
+	font-size:12px;
+}
+
+.gameHbCont2{
+	width:100%;
+	height:20px;
+	margin-top:20px;
+	box-sizing:border-box;
+	padding:0px 20px;
+	display:flex;
+	flex-direction:row;
+	justify-content:space-between;
+}
+
+.gameHbCont2>span{
+	display:inline-block;
+	height:20px;
+	line-height:20px;
+	color:#535565;
+	font-size:12px;
+}
+
+.gameFloat1{
+	width:100%;
+	height:100%;
+	overflow:hidden;
+ 	display:flex;
+ 	flex-direction:row;
+ 	box-sizing:border-box;
+ 	padding-top:120px;
+ 	justify-content:center;
+ 	background-color:rgba(0,0,0,0.5);
+	position:fixed;
+	top:0px;
+	left:0px;
+	z-index:999;
+}
+
+.gameFloatCont1{
+	width:280px;
+	height:390px;
+	background:url(../img/hbBgimg.png);
+	background-size:100% 100%;
+	box-sizing:border-box;
+	padding:40px 20px 0px 20px;
+	position:relative;
+}
+
+.gameFloatCont1_Item1{
+	width:100%;
+	height:80px;
+	display:flex;
+	flex-direction:row;
+	justify-content:center;
+}
+
+.gameFloatCont1_Item1>div{
+	width:80px;
+	height:80px;
+	overflow:hidden;
+}
+
+.gameFloatCont1_Item1>div>img{
+	width:80px;
+	height:80px;
+	border-radius:10px;
+}
+
+.gameFloatCont1_Item2{
+	width:100%;
+	height:30px;
+	margin-top:10px;
+}
+
+.gameFloatCont1_Item2>span{
+	display:inline-block;
+	width:100%;
+	height:30px;
+	line-height:30px;
+	text-align:center;
+	color:#eeac7a;
+}
+
+.gameFloatCont1_Item3{
+	width:100%;
+	text-align:center;
+}
+
+.gameFloatCont1_Item3>span{
+	display:inline-block;
+	width:70%;
+	text-align:center;
+	color:#eeac7a;
+}
+
+.gameFloatCont1_Item4{
+	width:100%;
+	height:80px;
+	overflow:hidden;
+	text-align:center;
+	margin-top:20px;
+}
+
+.gameFloatCont1_Item4>img{
+	width:80px;
+	height:80px;
+}
+
+.HbcleanBut{
+	width:15px;
+	height:15px;
+	overflow:hidden;
+	position:absolute;
+	top:10px;
+	right:10px;
+}
+
+.HbcleanBut>img{
+	width:15px;
+	height:15px;
+}
+
+.hbResultText{
+	width:100%;
+	height:30px;
+	text-align:center;
+}
+
+.hbResultText>span{
+	display:inline-block;
+	height:30px;
+	line-height:30px;
+	color:#eead7a;
+}
+
+.HbResultBur{
+	width:100%;
+	height:30px;
+	text-align:center;
+	margin-top:30px;
+}
+
+.HbResultBur>span{
+	display:inline-block;
+	height:30px;
+	line-height:30px;
+}
+
+.userNick{
+	width:100px;
+	height:20px;
+	line-height:20px;
+	font-size:12px;
+	position:absolute;
+	top:0px;
+	left:45px;
+	z-index:999;
+	color:#FFFFFF;
+}
+
+.gameHbMainuseMesage{
+	width:100%;
+	height:20px;
+	line-height:20px;
+	text-align:center;
+	font-size:12px;
+}

@@ -1,0 +1,219 @@
+.recordputHead{
+	width:100%;
+	height:180px;
+	background:url(../../../view/asset/img/assethead.png)no-repeat;
+	background-size:100% 100%;
+	overflow:hidden;
+}
+
+.recordTitleAndBack{
+	width:100%;
+	height:40px;
+	margin-top:15px;
+	position:relative;
+}
+
+.recordTitleAndBack>a{
+	display:inline-block;
+	width:24px;
+	height:24px;
+	background:url(../../../img/backicon.png)no-repeat;
+	position:absolute;
+	top:10px;
+	left:20px;
+}
+
+.recordTitleAndBack>h1{
+	width:100%;
+	height:40px;
+	line-height:40px;
+	font-size:18px;
+	text-align:center;
+}
+
+.recordDataTitle,.recordDataContent{
+	width:100%;
+	height:30px;
+	box-sizing:border-box;
+	padding-left:20px;
+	display:flex;
+	flex-direction:row;
+	justify-content:start;
+	margin-top:10px;
+}
+
+.recordDataTitle>span,.recordDataContent>span{
+	display:inline-block;
+	width:45%;
+	height:30px;
+	line-height:30px;
+}
+
+.recordDataContent>span>i{
+	font-size:20px;
+}
+
+.recordListBox{
+	width:100%;
+	box-sizing:border-box;
+	padding:20px 20px;
+	font-size:12px;	
+}
+
+.recordListTitle{
+	width:100%;
+	height:30px;
+	display:flex;
+	flex-direction:row;
+	justify-content:space-between;
+}
+
+.recordListTitle>span{
+	display:inline-block;
+	width:33.33%;
+	height:30px;
+	line-height:30px;
+	color:#555869;
+}
+
+.recordListTitle>span:last-child{
+	text-align:right;
+}
+
+.recordListUl{
+	width:100%;
+	padding:10px 0px;
+}
+
+.recordListUl>li{
+	width:100%;
+	height:50px;
+	box-sizing:border-box;
+	border-bottom:1px solid #343743;
+	display:flex;
+	flex-direction:row;
+	justify-content:space-between;
+	margin-top:20px;
+}
+
+.recordListUl>li>span{
+	display:inline-block;
+	width:33.33%;
+	height:50px;
+	line-height:50px;
+}
+
+.recordListUl>li>span:first-child{
+	line-height:25px;
+}
+
+.recordListUl>li>span:last-child{
+	text-align:right;
+	color:#f6ab10;
+}
+
+.recordcommTitle{
+	width:100%;
+	height:25px;
+	line-height:25px;
+	box-sizing:border-box;
+	padding-left:20px;
+	margin-top:10px;
+}
+
+.recordcommNumber{
+	width:100%;
+	height:30px;
+	line-height:30px;
+	box-sizing:border-box;
+	padding-left:20px;
+}
+
+.recordcommNumber>i{
+	font-size:20px;
+}
+
+.recordcommTot{
+	width:100%;
+	height:25px;
+	line-height:25px;
+	box-sizing:border-box;
+	padding-left:20px;
+}
+
+.recordNav{
+	width:100%;
+	height:40px;
+	background-color:#2a2c35;
+	box-sizing:border-box;
+	padding:0px 20px;
+	box-shadow:0px 0px 50px #000000;
+	display:flex;
+	flex-direction:row;
+	justify-content:space-between;
+}
+
+.recordNav>span{
+	width:33.33%;
+	height:40px;
+	line-height:40px;
+	text-align:center;
+	box-sizing:border-box;
+}
+
+.navSelsected{
+	border-bottom:2px solid #f3a309;
+	color:#f3a309;
+}
+
+.recordcommDataTitle{
+	width:100%;
+	height:30px;
+	display:flex;
+	flex-direction:row;
+	justify-content:space-between;
+}
+
+.recordcommDataTitle>span{
+	display:inline-block;
+	width:25%;
+	height:30px;
+	line-height:30px;
+	color:#555869;
+}
+
+.recordcommDataTitle>span:last-child{
+	text-align:right;
+}
+
+.recordcommUl{
+	width:100%;
+	box-sizing:border-box;
+	padding:10px 0px;
+}
+
+.recordcommUl>li{
+	width:100%;
+	height:50px;
+	box-sizing:border-box;
+	border-bottom:1px solid #343743;
+	display:flex;
+	flex-direction:row;
+	justify-content:space-between;
+	margin-top:20px;
+}
+
+.recordcommUl>li>span{
+	display:inline-block;
+	width:25%;
+	height:50px;
+	line-height:50px;
+}
+
+.recordcommUl>li>span:first-child{
+	line-height:25px;
+}
+
+.recordcommUl>li>span:last-child{
+	text-align:right;
+}

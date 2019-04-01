@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head> 
+		<meta charset="UTF-8">
+		  <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,width=device-width,initial-scale=1.0" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../plug_in/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="style/asset.css" />
+	</head>
+	<body>
+		<div class="assetHeadBox">
+			<h1>我的资产</h1>
+			<div>
+				<div>总资产折合</div>
+				<span><i id="assetHeadData1"></i>&nbsp;SGB</span>
+			</div>
+			<span>≈<i id="assetHeadData2"></i>&nbsp;CNY</span>
+			<a class="sysBox" data-toggle="0">
+				<img src="../../img/openeye.png" />
+			</a>
+		</div>
+		<div class="assetContentBox">
+			<!--平台币-->
+			<div class="assetContentItem">
+				<div class="assetItemHead">
+					<div class="assetBtype">
+						<div class="typeIcon">
+							<img src="img/PTBicon.png">
+						</div>
+						<div class="typeText">
+							<h1>SGB</h1>
+							<span><i id="assetPtbData1"></i>&nbsp;CNY</span>
+						</div>
+					</div>
+					<div class="assetNumber">
+						<div class="assetValue" id="assetPtbData2"></div>
+						<span>≈<i id="assetPtbData3"></i>&nbsp;CNY</span>
+					</div>
+				</div>
+				<div class="assetItemBottom">
+					<a class="conversion" data-convType="1" style="border:none">闪兑</a>
+					<a class="gifts">赠送</a>
+				</div>
+			</div>
+			<!--瑞波币-->
+			<div class="assetContentItem">
+				<div class="assetItemHead">
+					<div class="assetBtype">
+						<div class="typeIcon">
+							<img src="img/XRPicon.png">
+						</div>
+						<div class="typeText">
+							<h1>XRP</h1>
+							<span><i id="assetXrpData1"></i>&nbsp;CNY</span>
+						</div>
+					</div>
+					<div class="assetNumber">
+						<div class="assetValue" id="assetXrpData2"></div>
+						<span>≈<i id="assetXrpData3"></i>&nbsp;CNY</span>
+					</div>
+				</div>
+				<div class="assetItemBottom">
+					<a class="recharge" data-reType="2">充币</a>
+					<a class="extract" data-exrType="2">提币</a>
+					<a class="conversion" data-convType="3">闪兑</a>
+				</div>
+			</div>
+			<!--EOS-->
+			<div class="assetContentItem">
+				<div class="assetItemHead">
+					<div class="assetBtype">
+						<div class="typeIcon">
+							<img src="img/EOSicon.png">
+						</div>
+						<div class="typeText">
+							<h1>EOS</h1>
+							<span><i id="assetEosData1"></i>&nbsp;CNY</span>
+						</div>
+					</div>
+					<div class="assetNumber">
+						<div class="assetValue" id="assetEosData2"></div>
+						<span>≈<i id="assetEosData3"></i>&nbsp;CNY</span>
+					</div>
+				</div>
+				<div class="assetItemBottom">
+					<a class="recharge" data-reType="1">充币</a>
+					<a class="extract" data-exrType="1">提币</a>
+					<a class="conversion" data-convType="2">闪兑</a>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../plug_in/zepto.min.js"></script>
+	<script type="text/javascript" src="../../plug_in/touch.js"></script>
+	<script type="text/javascript" src="../../plug_in/public.js"></script>
+	<script type="text/javascript" src="script/asset.js"></script>
+</html>

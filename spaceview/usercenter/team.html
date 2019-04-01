@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>我的团队</title>
+  <link rel="stylesheet" href="../../plug_in/base.css">
+  <link rel="stylesheet" href="css/team.css">
+</head>
+
+<body>
+  <div class="m-invested">
+    <div class="m-hd">
+      <div class="m-title">
+    <!--    <span class="u-return" id="kingBack"><img src="imgs/icon_return.png" width="24px" alt=""></span>-->
+        <h2 class="u-title">我的团队</h2>
+      </div>
+      <ul class="m-list-total clear-ft">
+        <li>
+          <p>直接客户</p>
+          <h3><span id="teamZtCn"></span>人</h3>
+        </li>
+        <li>
+          <p>团队</p>
+          <h3><span id="teamZdCn"></i></span>人</h3>
+        </li>
+      </ul>
+      <p class="u-referee">我的推荐人：<span id="teamParent"></span></p>
+    </div>
+    <div class="m-bd">
+      <table class="m-table">
+        <thead>
+          <tr>
+            <th>用户名</th>
+            <th>级别</th>
+            <th>注册时间</th>
+          </tr>
+        </thead>
+        <tbody id="teamListMain">
+         
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <script src="../../plug_in/zepto.min.js"></script>
+  <script src="../../plug_in/touch.js"></script>
+  <script src="../../plug_in/public.js"></script>
+  <script src="js/team.js"></script>
+</body>
+
+</html>
