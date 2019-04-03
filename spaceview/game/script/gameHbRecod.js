@@ -7,7 +7,7 @@ $(document).bind("plusready",function(){
 	var requestUrl2 = mainUrl + "hbgame/outhblist";
 	
 	//初始化请求数据
-	getHbRecodData("2");
+	getHbRecodData("1");
 	
 	//为顶部菜单按钮绑定事件
 	$(".gameHbRecodHeadNav>span").bind("tap",function(){

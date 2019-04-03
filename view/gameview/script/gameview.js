@@ -11,13 +11,13 @@ window.addEventListener("load",function(){
 		var NoticeMoveValue = 0;
 		
 		//发起请求获取图片
-		requestToken(swiperImgUrl,"get",{},function(data){
+		requestToken(swiperImgUrl,"get",{},function(data){ 
 			if(data.code == 1){
 				var imgList = data.data.roteimg;
 				var fuliData = data.data.fl_area;
 				if(imgList.length){
-					for(var i=0;i<imgList.length;i++){ 
-						$(".gameviewSwInBox").append('<div class="swiper-slide"><img src="'+(ImgUrl+imgList[i].imgurl)+'"></div>');
+					for(var i=0;i<imgList.length;i++){
+						$(".gameviewSwInBox").append('<div class="swiper-slide tapGoUrl" data-type="'+imgList[i].type+'" data-value="'+imgList[i].url+'"><img src="'+(ImgUrl+imgList[i].imgurl)+'"></div>');
 					}
 					//初始化轮播
 					var mySwiper = new Swiper('.swiper-container',{
@@ -34,16 +34,30 @@ window.addEventListener("load",function(){
 					    }
 					});
 					
-					$(".gameviewFuli").attr({"data-type":fuliData.name});
-					$(".gameviewFuli").attr({"data-idName":fuliData.id});
+					//为轮播绑定事件
+					$(".tapGoUrl").bind("click",function(){
+						//获取type之
+						var type = $(this).attr("data-type");
+						var urlValue = $(this).attr("data-value");
+						if(type == "1"){
+							goView("../../spaceview/bulletin/bulletincontent.html","bulletincontent",{spaceValue:"true",contIdValue:urlValue});
+						}else if(type == "2"){
+							plus.runtime.openURL(urlValue);
+						}
+					});
+					
+					$(".gameviewFuli").attr({"data-idName":fuliData.id}); 
+					$(".gameviewFuli").attr({"data-titleName":fuliData.name});
+					$(".gameviewFuli").attr({"data-num":fuliData.number});
 					
 					//为福利入口绑定事件
 					$(".gameviewFuli").bind("tap",function(){
-						//获取自定义属性
-						var roomType = $(this).attr("data-type");
-						var roomid = $(this).attr("data-idName");
-						//前往房间
-						goView("../../spaceview/game/gameRoom.html","gameRoom",{spaceValue:"true",roomTitle:roomType,roomIdValue:roomid,toggle:"1"});
+						//获取数据
+						var mainName = $(this).attr("data-titleName");
+						var mainIdName = $(this).attr("data-idName");
+						var mainNum = $(this).attr("data-num");
+						//前往红包游戏页面
+						goView("../../spaceview/game/gameHbMain.html","gameHbMain",{spaceValue:"true",roomIdValue:mainIdName,roomTitle:mainName,roomNum:mainNum,toggle:"true"});
 					});
 				}
 			}else{ 

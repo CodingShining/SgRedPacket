@@ -24,7 +24,7 @@ window.addEventListener("load",function(){
 		
 		//循环创建页面
 		for(var i=0;i<spaceView.length;i++){
-			viewObj[i] = plus.webview.create(spaceView[i],spaceId[i],{top:"0px",bottom:"90px"});
+			viewObj[i] = plus.webview.create(spaceView[i],spaceId[i],{top:"0px",bottom:"70px"});
 		}
 		
 		//循环添加子页面
@@ -43,6 +43,8 @@ window.addEventListener("load",function(){
 			if(viewName == "asset"){
 				reloadView(viewName);
 			}else if(viewName == "usercenter"){
+				reloadView(viewName);
+			}else if(viewName == "team"){
 				reloadView(viewName);
 			}
 			

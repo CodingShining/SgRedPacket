@@ -11,64 +11,64 @@
 	<body>
 		<div class="spaceHeadBox">
 			<a id="kingBack"></a>
-			<h1>付款信息</h1>
+			<h1>订单详情</h1>
 		</div>
 		<div class="spaceContentBox">
 			<div class="payContTitle">
-				<span>请转账<i id="payContData1"></i>&nbsp;<i>CNY</i>到以下账号</span>
-				<span id="payContData2" style="color:#ea2f2f;"></span>
+				<span>当前订单状态：&nbsp;<i id="orderStatus"></i></span>
 			</div>
 			<div class="payContMessage">
 				<div class="payMesItem">
-				 	<span>商家</span>
-				 	<span>：<i id="payContData3"></i></span>
-				</div>
-				<div class="payMesItem">
-				 	<span>支付方式</span>
-				 	<span>：<i id="payContData4"></i></span>
-				</div>
-				<div class="payMesItem">
-				 	<span>收款账号</span>
-				 	<span>：<i id="payContData5" style="color:#f6ab10"></i></span>
-				 	<a class="copyPay">复制</a>
+				 	<span>买家</span>
+				 	<span>：<i id="orderAdata1"></i></span>
 				</div>
 				<div class="payMesItem">
 				 	<span>备注</span>
-				 	<span>：<i id="payContData6"></i></span>
+				 	<span>：<i id="orderAdata2"></i></span>
 				</div>
 				<div class="payMesItem">
 				 	<span>姓名</span>
-				 	<span>：<i id="payContData7"></i></span>
+				 	<span>：<i id="orderAdata3"></i></span>
 				</div>
 				<div class="payMesItem">
 				 	<span>联系电话</span>
-				 	<span>：<i id="payContData8"></i></span>
+				 	<span>：<i id="orderAdata4"></i></span>
 				</div>
 				<div class="payMesItem">
-				 	<span>类型</span>
-				 	<span>：<i id="payContData9"></i></span>
-				</div>
-				<div class="payMesItem">
-				 	<span>单价</span>
-				 	<span>：<i id="payContData10"></i>&nbsp;<i>CNY</i></span>
-				</div>
-				<div class="payMesItem">
-				 	<span>数量</span>
-				 	<span>：<i id="payContData11"></i>&nbsp;<i>SVGC</i></span>
+				 	<span>购买单价</span>
+				 	<span>：<i id="orderAdata5"></i>&nbsp;<i>CNY</i></span>
 				</div>
 			</div>
-			<div class="payVoucher" style="display:none">
-				<label id="payLable" for="upFile">
-					<img id="upImgDome" src="img/Updata.png">
-				</label>
-				<input id="upFile" type="file" style="display:none" />
+			<div class="payContMessage">
+				<div class="payMesItem">
+				 	<span>卖家姓名</span>
+				 	<span>：<i id="orderBdata1"></i></span>
+				</div>
+				<div class="payMesItem">
+				 	<span>联系电话</span>
+				 	<span>：<i id="orderBdata2"></i></span>
+				</div>
+				<div class="payMesItem">
+				 	<span>收款方式</span>
+				 	<span>：<i id="orderBdata3"></i></span>
+				</div>
+				<div class="payMesItem">
+				 	<span>收款账号</span>
+				 	<span>：<i id="orderBdata4"></i></span>
+				</div>
+				<div class="payMesItem">
+				 	<span>出售数量</span>
+				 	<span>：<i id="orderBdata5"></i></span>
+				</div>
 			</div>
+			
+			<div class="payContBut">
+				<a id="payContSubmit" style="display:none">确认</a>
+				<a id="payContRep"  style="display:none">撤销</a>
+			</div>
+			
 			<div class="payImgBox" style="display:none">
-				<img src="" id="payImgShow"/>
-			</div>
-			<div class="payContBut" style="display:none">
-				<a id="payContSubmit">提交</a>
-				<a id="payContRep">撤销</a>
+				<img src="" />
 			</div>
 		</div>
 	</body> 

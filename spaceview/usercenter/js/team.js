@@ -48,7 +48,15 @@ $(document).bind("plusready",function(){
 					IconType = "imgs/level_06.png";
 				break;
 			}
-			$("#teamListMain").append('<tr><td>'+ArrayData[i].username+'</td><td><img src="'+IconType+'" width="20px" alt=""><span>'+ArrayData[i].level+'</span></td><td><span>'+SwitchTime(ArrayData[i].jointime)+'</span></td></tr>');
+			$(".teamMainList").append('<li><span>'+ArrayData[i].usernames+'</span><span style="text-align:center">'+ArrayData[i].level+'</span><span>'+ArrayData[i].nickname+'</span><span>'+SwitchYeat(ArrayData[i].jointime)+'</span><span style="text-align:right;"><a class="teamContBut" data-phone="'+ArrayData[i].username+'">赠送</a></span></li>');
 		}
+		
+		//为操作按钮绑定事件
+		$(".teamContBut").bind("tap",function(){
+			//获取电话号码
+			var PhoneValue = $(this).attr("data-phone");
+			//前往赠送页面
+			goView("../asset/gifts.html","gifts",{spaceValue:"true",viewData:PhoneValue});
+		});
 	}
 });

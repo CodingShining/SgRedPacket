@@ -30,8 +30,14 @@ window.addEventListener("load",function(){
 			goView("../../spaceview/usercenter/invested.html","invested",{spaceValue:"true"});
 		});
 		
+		//为我的广告绑定事件
 		$("#adver").bind("tap",function(){
 			goView("../../spaceview/order/orderList.html","orderList",{spaceValue:"true"});
+		});
+		
+		//为区长报单绑定事件
+		$("#warden").bind("tap",function(){
+			goView("../login/warden.html","warden",{spaceValue:"true"});
 		});
 		
 		//为区块节点绑定事件
@@ -90,7 +96,7 @@ window.addEventListener("load",function(){
 					//渲染电话号码
 					$("#userCenterId").text(data.data.mobile);
 					//渲染等级名称
-					$("#userCenterLevelText").text(data.data.level);
+					$("#userCenterLevelText").text(data.data.levels);
 					//渲染等级图标
 					switch(data.data.level){
 						case "游客":
@@ -120,6 +126,10 @@ window.addEventListener("load",function(){
 						$("#blockNode").show();
 					}else{
 						$("#blockNode").hide();
+					}
+					
+					if(data.data.level == 2){
+						$("#warden").show();
 					}
 					
 					thisView.endPullToRefresh();

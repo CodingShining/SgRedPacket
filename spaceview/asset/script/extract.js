@@ -68,7 +68,8 @@ window.addEventListener("load",function(){
 		
 		//判断是否有扫描值传递过来
 		if(localStorage.getItem("scanValue")){
-			$("#extractScanInput").val(localStorage.getItem("scanValue"));
+			var dataValue = localStorage.getItem("scanValue");
+			$("#extractInput1").val(dataValue);
 		}
 		
 		//为扫描按钮绑定事件

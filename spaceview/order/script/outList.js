@@ -36,7 +36,7 @@ $(document).bind("plusready",function(){
 				 			statusColor = "stateColor_4";
 				 		break;
 				 	}
-				 	$(".spaceContentBox").append('<div data-toggle="'+toggle+'" data-Value1="'+list[i].pid+'" data-Value2="'+list[i].id+'" class="outListItem"><div class="outListHead"><span>编号：<i>'+list[i].sNo+'</i></span><span><a class="'+statusColor+'">'+statusValue+'</a></span></div><div class="outNumberBox"><div class="outListNumb"><span style="color:#f6ab10;">'+list[i].total_money+'</span><span style="color:#f6ab10;">'+list[i].num+'</span></div><div class="outListNumb"><span style="color:#9798a8;">总额(CNY)</span><span style="color:#9798a8;">数量</span></div></div><div class="outListMes"><div class="outListMesItem"><span>类型：</span><span>买入</span></div><div class="outListMesItem"><span>日期：</span><span>'+list[i].time+'</span></div></div></div>');
+				 	$(".spaceContentBox").append('<div data-toggle="'+toggle+'" data-Value1="'+list[i].pid+'" data-Value2="'+list[i].id+'" class="outListItem"><div class="outListHead"><span>编号：<i>'+list[i].sNo+'</i></span><span><a class="'+statusColor+'">'+statusValue+'</a></span></div><div class="outNumberBox"><div class="outListNumb"><span style="color:#f6ab10;">'+list[i].total_money+'</span><span style="color:#f6ab10;">'+list[i].num+'</span></div><div class="outListNumb"><span style="color:#9798a8;">总额(CNY)</span><span style="color:#9798a8;">数量</span></div></div><div class="outListMes"><div class="outListMesItem"><span>类型：</span><span>出售</span></div><div class="outListMesItem"><span>日期：</span><span>'+list[i].time+'</span></div></div></div>');
 				 }
 				 //为各个Item添加事件
 				 $(".outListItem").bind("tap",function(){

@@ -200,7 +200,8 @@
 					"spaceview/game/gameHbHome.html",
 					"spaceview/game/gameRoom.html",
 					"spaceview/ctoc/ctoc.html",
-					"spaceview/bulletin/bulletincontent.html"
+					"spaceview/bulletin/bulletincontent.html",
+					"spaceview/game/gameHbMain.html"
 				],
 				"priority": 0
 			},
@@ -238,7 +239,8 @@
 					"spaceview/asset/detail.html",
 					"spaceview/usercenter/blockNode.html",
 					"spaceview/order/orderList.html",
-					"spaceview/game/gameHbRecod.html"
+					"spaceview/game/gameHbRecod.html",
+					"view/login/warden.html"
 				],
 				"priority": 0
 			},
@@ -349,7 +351,8 @@
 			"spaceview/game/gameHbHome.html": {
 				"resources": [],
 				"refer": [
-					"spaceview/game/gameRoom.html"
+					"spaceview/game/gameRoom.html",
+					"spaceview/game/gameHbMain.html"
 				],
 				"priority": 0
 			},
@@ -365,7 +368,15 @@
 				"resources": [],
 				"refer": [
 					"spaceview/game/gameHbResult.html",
-					"spaceview/game/gameHbGive.html"
+					"spaceview/game/gameHbGive.html",
+					"spaceview/else/serverUser.html"
+				],
+				"priority": 0
+			},
+			"spaceview/usercenter/team.html": {
+				"resources": [],
+				"refer": [
+					"spaceview/asset/gifts.html"
 				],
 				"priority": 0
 			}

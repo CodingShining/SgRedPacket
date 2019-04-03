@@ -116,7 +116,7 @@ window.addEventListener("load",function(){
 	 				//渲染平台币
 	 				$("#assetPtbData1").text(dataStor3);
 	 				$("#assetPtbData2").text(dataStor4);
-	 				$("#assetPtbData2").text(dataStor5);
+	 				$("#assetPtbData3").text(dataStor5);
 	 			
 	 				//渲染瑞波币
 	 				$("#assetXrpData1").text(dataStor6);
@@ -134,7 +134,7 @@ window.addEventListener("load",function(){
  				//渲染平台币
  				$("#assetPtbData1").text("*****");
  				$("#assetPtbData2").text("*****");
- 				$("#assetPtbData2").text("*****");
+ 				$("#assetPtbData3").text("*****");
  			
  				//渲染瑞波币
  				$("#assetXrpData1").text("*****");

@@ -5,7 +5,6 @@
 
 .ctocMessage{
 	width:100%;
-	height:180px;
 	box-sizing:border-box;
 	padding:10px;
 	background-color:#343743;
@@ -41,7 +40,6 @@
 
 .ctocInContor{
 	width:100%;
-	height:90px;
 	margin-top:20px;
 	position:relative;
 }
@@ -51,6 +49,7 @@
 	height:30px;
 	line-height:30px;
 	color:#999aaa;
+	margin-top:20px;
 }
 
 .ctocInInput{
@@ -102,4 +101,10 @@
 	background-color:#f6ab10;
 	border-radius:40px;
 	color:#343743;
+}
+
+.ctocInPayType{
+	width:100%;
+	height:30px;
+	line-height:30px;
 }

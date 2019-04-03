@@ -13,8 +13,7 @@ $(document).bind("plusready",function(){
 	
 	//为发布广告绑定事件
 	$("#contorlIssue").bind("tap",function(){
-		toast("暂未开放！");
-//		goView("issue.html","issue",{spaceValue:"true"});
+		goView("issue.html","issue",{spaceValue:"true"});
 	});
 	
 	//定义获取卖单数据列表
@@ -28,7 +27,7 @@ $(document).bind("plusready",function(){
 				var list = data.data.list;
 				if(list.length){
 					for(var i=0;i<list.length;i++){
-						$(".ctocUl").append('<li><span style="width:20%">'+list[i].username+'</span><span style="width:35%">'+list[i].totalnum+'<i>/'+list[i].sellnum+'</i></span><span style="width:25%;color:#f6ab10;">'+list[i].price+'</span><span style="width:20%;text-align:right"><a class="ctocCxBut" data-idValue="'+list[i].id+'">购买</a></span></li>');
+						$(".ctocUl").append('<li><span style="width:20%">'+list[i].username+'</span><span style="width:35%">'+list[i].totalnum+'<i>/'+list[i].sellnum+'</i></span><span style="width:25%;color:#f6ab10;">'+list[i].price+'</span><span style="width:20%;text-align:right"><a class="ctocCxBut" data-idValue="'+list[i].id+'">出售</a></span></li>');
 					}
 					//为所有的购买按钮绑定事件
 					$(".ctocCxBut").bind("tap",function(){

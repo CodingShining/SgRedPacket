@@ -108,6 +108,11 @@ $(document).bind("plusready",function(){
  		goView("gameHbGive.html","gameHbGive",{spaceValue:"true",roomId:roomIdValue});
  	});
  	
+ 	//为客服绑定事件
+ 	$(".gameHbMainServer").bind("tap",function(){
+   		goView("../else/serverUser.html","serverUser",{spaceValue:"true"});
+ 	});
+ 	
  		//为点击开红包绑定事件
  	$(".gameFloatCont1_Item4>img").bind("tap",function(){
  		if(OutTime){
@@ -180,6 +185,10 @@ $(document).bind("plusready",function(){
 			}else if(DataValue.code == 9000){
 				var HbValue = DataValue.data;
 				var HbId = HbValue.uid;
+				
+				//调用声音
+				payHbAudio();
+				
 				//其他用户红包
 				$(".gameHbBodyUl").append('<li><div class="gameUserHead gameItemLeft"><img src="'+ImgUrl+HbValue.headimg+'"/></div><div data-userOdd="'+HbValue.odds+'" data-userMark="'+HbValue.mark+'" data-userNum="'+HbValue.number+'" data-money="'+HbValue.money+'" data-userName="'+HbValue.nickname+'" data-userIm="'+HbValue.headimg+'" data-idName="'+HbValue.id+'" class="gameHbMainItem gameItemLeft gameHbBG1Left"><div class="gameHbCont1"><div><img src="img/hbitemIcon.png"></div><div><span><i>'+HbValue.money+'</i>/<i>'+HbValue.number+'</i>个</span><span>游戏红包</span></div></div><div class="gameHbCont2"><span>雷号：<i>'+HbValue.mark+'</i></span><span>赔率：<i>'+HbValue.odds+'</i>倍</span></div></div><div class="userNick">'+HbValue.nickname+'</div></li>');
 				//滚动滚轴到最低端
@@ -273,6 +282,12 @@ $(document).bind("plusready",function(){
 		//获取声音控件
 		var Aido = document.getElementById("audioObj");
 		Aido.play();
+	}
+	
+	function payHbAudio(){
+		//获取声音控件
+		var Aido1 = document.getElementById("audioObj1");
+		Aido1.play();
 	}
 	
 	//控制滚轴

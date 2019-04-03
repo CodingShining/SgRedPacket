@@ -20,7 +20,7 @@
 			 </div>
 			 <div class="affirmMessage">
 			 	<div class="affirmMesgItem">
-			 		<span>买家</span>
+			 		<span>卖家</span>
 			 		<span>：<i id="affData3"></i></span>
 			 	</div>
 			 	<div class="affirmMesgItem">
@@ -28,8 +28,24 @@
 			 		<span>：<i id="affData4"></i></span>
 			 	</div>
 			 	<div class="affirmMesgItem">
+			 		<span>收款账号</span>
+			 		<span>：<i id="affData8"></i></span>
+			 	</div>
+			 	<div class="affirmMesgItem">
+			 		<span>联系姓名</span>
+			 		<span>：<i id="affData9"></i></span>
+			 	</div>
+			 	<div class="affirmMesgItem">
+			 		<span>联系电话</span>
+			 		<span>：<i id="affData10"></i></span>
+			 	</div>
+			 	<div class="affirmMesgItem">
+			 		<span>备注</span>
+			 		<span>：<i id="affData11"></i></span>
+			 	</div>
+			 	<div class="affirmMesgItem">
 			 		<span>类型</span>
-			 		<span>：<i>买入</i></span>
+			 		<span>：<i>出售</i></span>
 			 	</div>
 			 	<div class="affirmMesgItem">
 			 		<span>单价</span>
@@ -37,20 +53,32 @@
 			 	</div>
 			 	<div class="affirmMesgItem">
 			 		<span>数量</span>
-			 		<span>：<i id="affData6"></i>&nbsp;<i>SVGC</i></span>
+			 		<span>：<i id="affData6"></i>&nbsp;<i>SGB</i></span>
+			 	</div>
+			 	<div class="affirmMesgItem">
+			 		<span>交易时间</span>
+			 		<span>：<i id="affData12"></i></span>
 			 	</div>
 			 </div>
 			 <div class="affirmEndMoney">
 			 	<span>总额</span>
 			 	<span><i id="affData7"></i>&nbsp;CNY</span>
 			 </div>
-			 <div class="affirmImg">
-			  
-			 </div>
-			 <div class="affirmBut">
-			 	<a id="affirmBut1" style="background-color:#f6ab10;display:none;">确认收款</a>
-			 	<a id="affirmBut2" style="background-color:#ea2f2f;display:none;">撤销交易</a>
-			 </div>
+		</div>
+		
+		<div class="UpImgBox">
+			<label id="upImgLabel" for="affirmFile">
+				<img src="img/Updata.png">
+			</label>
+			<input style="display:none" type="file" id="affirmFile"/>
+		</div>
+		
+		<div class="affirmImgBox" style="display:none">
+			<img src="" />
+		</div>
+		
+		<div class="affirmBut">
+			<a>确认付款</a>
 		</div>
 	</body>
 	<script type="text/javascript" src="../../plug_in/zepto.min.js"></script>

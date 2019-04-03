@@ -122,3 +122,60 @@
   display: inline-block;
   width: 75px;
 }
+
+.teamMainBox{
+	width:100%;
+	box-sizing:border-box;
+	padding:20px;
+}
+
+.teamMainTitle{
+	width:100%;
+	height:20px;
+	display:flex;
+	flex-direction:row;
+	justify-content:space-between;
+}
+
+.teamMainTitle>span{
+	display:inline-block;
+	width:20%;
+	height:20px;
+	line-height:20px;
+	color:#555869;
+	font-size:12px;
+}
+
+.teamMainList{
+	width:100%;
+	box-sizing:border-box;
+	padding:10px 0px;
+}
+.teamMainList>li{
+	width:100%;
+	height:30px;
+	display:flex;
+	flex-direction:row;
+	justify-content:space-between;
+	margin-bottom:20px;
+}
+
+.teamMainList>li>span{
+	display:inline-block;
+	width:20%;
+	height:30px;
+	line-height:30px;
+	color:#FFFFFF;
+	font-size:12px;
+}
+
+.teamMainList>li>span>a{
+	display:inline-block;
+	width:70%;
+	height:20px;
+	line-height:20px;
+	text-align:center;
+	box-sizing:border-box;
+	background-color:#ed9808;
+	border-radius:20px;
+}

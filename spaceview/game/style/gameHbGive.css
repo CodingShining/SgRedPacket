@@ -63,7 +63,7 @@ body::before{
 .gameGiveSelectNum,.gameGiveSelectLei{
 	width:100%;
 	box-sizing:border-box;
-	padding:20px;
+	padding:10px 20px;
 }
 
 .gameGiveSeletTitle{
@@ -98,7 +98,7 @@ body::before{
 	text-align:center;
 	border:1px solid #494b5c;
 	border-radius:5px;
-	color:#6f7186;
+	color:#FFFFFF;
 }
 
 .gameGiveSeletSed{
@@ -161,7 +161,7 @@ body::before{
 	display:flex;
 	flex-direction:row;
 	justify-content:space-between;
-	margin-top:10px;
+	margin:10px 0px;
 }
 
 .gameGiveButBox>a{

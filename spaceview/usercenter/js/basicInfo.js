@@ -17,7 +17,7 @@ $(document).bind("plusready",function(){
 		imgurl = ImgUrl + imgurl;
 		$("#basicAvatar").attr({src:imgurl});
 	}else{
-		$("#basicAvatar").attr({src:"imgs/avatar.png"});
+		$("#basicAvatar").attr({src:"imgs/headimg.png"});
 	}
 	
 	//为修改昵称绑定事件

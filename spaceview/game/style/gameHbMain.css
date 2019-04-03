@@ -362,3 +362,26 @@ body::before{
 	text-align:center;
 	font-size:12px;
 }
+
+.gameHbMainServer{
+	width:80px;
+	height:80px;
+	position:fixed;
+	bottom:200px;
+	right:0px;
+	text-align:center;
+}
+
+.gameHbMainServer>span{
+	display:inline-block;
+	width:100%;
+	height:20px;
+	line-height:20px;
+	font-size:12px;
+	text-align:center;
+}
+
+.gameHbMainServer>img{
+	width:50px;
+	height:50px;
+}

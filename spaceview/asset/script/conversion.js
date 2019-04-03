@@ -59,7 +59,7 @@ $(document).bind("plusready",function(){
 				$(".conversionSelect").hide();
 				$(".conversMoneyUp2").show();
 				$(".conversionUnti1").text("SGB");
-				var XrpAndPtb = toNumberFun(AjaxRate3) / toNumberFun(AjaxRate1);
+				var XrpAndPtb = toNumberFun(AjaxRate2) / toNumberFun(AjaxRate1);
 				XrpAndPtb = XrpAndPtb.toFixed(6);
 				$("#converRtae").text(XrpAndPtb);
 				AjaxCurr = "2";

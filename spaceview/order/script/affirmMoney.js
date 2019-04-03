@@ -2,37 +2,12 @@ $(document).bind("plusready",function(){
 	//接受页面传递值
 	var pidValue = plus.webview.currentWebview().idValue1;
 	var idValue = plus.webview.currentWebview().idValue2;
-	var toggleValue = plus.webview.currentWebview().toggle;
-	
-	if(toggleValue == "1"){
-		
-		$("#affirmBut1").hide();
-		$("#affirmBut2").show();
-		
-	}else if(toggleValue == "2"){
-		
-		$("#affirmBut1").hide();
-		$("#affirmBut2").hide();
-		
-	}else if(toggleValue == "3"){
-		
-		$("#affirmBut1").show();
-		$("#affirmBut2").hide();
-		
-	}else if(toggleValue == "4"){
-		
-		$("#affirmBut1").hide();
-		$("#affirmBut2").hide();
-	}
 	
 	//定义订单详情的数据接口
 	var getAffirmDataUrl = mainUrl + "trade/orderDetail";
 	
-	//定义订单确认收款接口
-	var affirmMoneyUrl = mainUrl + "trade/completing";
-	
-	//定义撤销广告接口
-	var affirmDeleteUrl = mainUrl + "trade/back";
+	//定义确认付款接口
+	var affirmMoneyUrl = mainUrl + "trade/upload";
 	
 	//保存id值
 	var thisIDValue = 0;
@@ -53,12 +28,20 @@ $(document).bind("plusready",function(){
 				break;
 				case 1:
 					statValue = "已完成";
+					$(".UpImgBox").hide();
+					$(".affirmBut").hide();
+					$(".affirmImgBox").show();
 				break;
 				case 2:
 					statValue = "等待收款";
+					$(".UpImgBox").hide();
+					$(".affirmBut").hide();
+					$(".affirmImgBox").show();
 				break;
 				case -1:
 					statValue = "已撤销";
+					$(".UpImgBox").hide();
+					$(".affirmBut").hide();
 				break;
 			}
 			
@@ -69,9 +52,6 @@ $(document).bind("plusready",function(){
 				case 2:
 					payType = "支付宝";
 				break;
-				case 3:
-					payType = "银行卡";
-				break;
 			}
 			
 			$("#affData1").text(data.data.sNo);
@@ -81,11 +61,14 @@ $(document).bind("plusready",function(){
 			$("#affData5").text(data.data.price);
 			$("#affData6").text(data.data.num);
 			$("#affData7").text(data.data.total_money);
+			$("#affData8").text(data.data.account);
+			$("#affData9").text(data.data.real_name);
+			$("#affData10").text(data.data.mobile);
+			$("#affData11").text(data.data.remarks);
+			$("#affData12").text(data.data.time);
 			
 			if(data.data.img){
-				var imgObj = document.createElement("img");
-				imgObj.setAttribute("src",ImgUrl+data.data.img);
-				$(".affirmImg").append(imgObj);
+				$(".affirmImgBox>img").attr({src:ImgUrl+data.data.img});
 			}
 			
 		}else{
@@ -93,32 +76,62 @@ $(document).bind("plusready",function(){
 		}
 	});
 	
-	//为确认收款按钮绑定事件
-	$("#affirmBut1").bind("tap",function(){
-		requestToken(affirmMoneyUrl,"get",{id:thisIDValue,sid:thisSidValue},function(data){
-			if(data.code == 1){
-				toast(data.msg);
-				resLoadParent();
-				reloadView("orderList");
-				BackView();
-			}else{
-				toast(data.msg);
-			}
-		});
+	//为input绑定事件
+	$("#affirmFile").bind("change",function(){
+		//获取文件
+		var inputObj = document.getElementById("affirmFile");
+		var fileObj = inputObj.files[0];
+		//获取文件路径
+		var pathValue = window.URL.createObjectURL(fileObj);
+		$("#upImgLabel>img").attr({src:pathValue});
+		$("#upImgLabel").css({lineHeight:"0px"});
+		$("#upImgLabel>img").css({width:"100%",height:"100%"});
 	});
 	
-	//为撤销广告订单绑定事件
-	$("#affirmBut2").bind("tap",function(){
-		requestToken(affirmDeleteUrl,"get",{id:thisIDValue,sid:thisSidValue},function(data){
-			if(data.code == 1){
+	//为确定付款绑定事件
+	$(".affirmBut>a").bind("tap",function(){
+		plus.nativeUI.showWaiting();
+		//获取文件
+		var inputObj = document.getElementById("affirmFile");
+		var fileObj = inputObj.files[0];
+		if(!fileObj){
+			toast("请上传汇款凭证图片！");
+			return;
+		}
+		
+		//获取Token数据
+		var info = getUserInfo();
+		var tokenvalue =info.token ;
+		var headerValue = {token:tokenvalue};
+		
+		//创建传递数据
+		var FromDataObj = new FormData();
+		FromDataObj.append("file",fileObj);
+		FromDataObj.append("id",idValue);
+		FromDataObj.append("pid",pidValue);
+		
+		$.ajax({
+			type:"post",
+			url:affirmMoneyUrl,
+			data:FromDataObj,
+			dataType:"json",
+			timeout:3000,
+			headers:headerValue,
+			contentType: false,
+			processData: false,
+			success:function(data){
+				plus.nativeUI.closeWaiting();
 				toast(data.msg);
+				plus.nativeUI.closeWaiting();
 				resLoadParent();
-				reloadView("orderList");
 				BackView();
-			}else{
-				toast(data.msg);
+			},
+			error:function(xhr){
+				plus.nativeUI.closeWaiting();
+				plus.nativeUI.toast("网络错误：请检查网络连接"+xhr.status);
 			}
 		});
+		
 	});
 	
 });

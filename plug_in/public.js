@@ -146,6 +146,18 @@ window.addEventListener("load",function(){
 		return y + "-" + m + "-" + d + " " + h + ":" + mint + ":" + s;
 	}
 	
+	//封装时间戳转换时间格式(y-m-d h-mi-s)
+	function SwitchYeat(text) {
+		var dateTime = new Date(text * 1000);
+		var y = dateTime.getFullYear();
+		var m = dateTime.getMonth() + 1 < 10 ? '0' + (dateTime.getMonth() + 1) : dateTime.getMonth() + 1;
+		var d = dateTime.getDate() < 10 ? '0' + (dateTime.getDate()) : dateTime.getDate();
+		var h = dateTime.getHours() < 10 ? '0' + (dateTime.getHours()) : dateTime.getHours();
+		var mint = dateTime.getMinutes() < 10 ? '0' + (dateTime.getMinutes()) : dateTime.getMinutes();
+		var s = dateTime.getSeconds() < 10 ? '0' + (dateTime.getSeconds()) : dateTime.getSeconds();
+		return y + "-" + m + "-" + d;
+	}
+	
 	//封装时间戳转换时间格式(m-d h-mi-s)
 	function SwitchDay(text) {
 		var dateTime = new Date(text * 1000);

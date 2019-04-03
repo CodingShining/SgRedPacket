@@ -6,13 +6,19 @@ $(document).bind("plusready",function(){
 	var parentView = plus.webview.currentWebview().opener();
 	
 	//定义获取信息接口
-	var getInMesUrl = mainUrl + "trade/buyview";
+	var getInMesUrl = mainUrl + "trade/sellview";
 	
 	//定义提交接口
-	var subUrl = mainUrl + "trade/buy";
+	var subUrl = mainUrl + "trade/sell";
 	
 	//保存单价
 	var ctocInNum = 0;
+	
+	//保存手续费
+	var taxValue = 0;
+	
+	//保存付款方式
+	var payTypeValue = null;
 	
 	//定义小键盘自增量和记住密码变量
 	var safkeyUp = 0;
@@ -25,25 +31,65 @@ $(document).bind("plusready",function(){
 			$("#gdNumb").text(data.data.totalnum);
 			$("#overnum").text(data.data.overnum);
 			$("#djnum").text(data.data.price);
+			taxValue = data.data.tax;
 			ctocInNum = data.data.price;
+			var markValue = data.data.remarks;
+			if(!markValue){
+				$(".remarksBox").hide();
+			}else{
+				$("#remarksText").text(markValue);
+			}
 		}else{
 			toast(data.msg);
 		}
 	});
 	
 	//为数量输入框绑定事件
-	$("#ctocInInput").bind("change",function(){
-		var value1 = $("#ctocInInput").val();
-		var value2 = value1 * ctocInNum;
+	$("#ctocInInput1").bind("change",function(){
+		var value1 = $("#ctocInInput1").val();
+		var value2 = toNumberFun(value1) * toNumberFun(ctocInNum);
+		var value3 = toNumberFun(value1) * toNumberFun(taxValue);
 		$("#ctocInConverCont").text(value2);
+		$("#taxText").text(value3);
 	});
 	
-	//为购买按钮绑定事件
+	//为付款方式绑定事件
+	$(".ctocInPayType").bind("tap",function(){
+		plus.nativeUI.actionSheet({title:"选择付款方式",cancel:"取消",buttons:[{title:"微信"},{title:"支付宝"}]},function(e){
+			if(e.index == 1){
+				$(".ctocInPayType").text("微信");
+				payTypeValue = "1";
+			}else if(e.index == 2){
+				$(".ctocInPayType").text("支付宝");
+				payTypeValue = "2";
+			}
+		});
+	});
+	
+	//为按钮绑定事件
 	$(".ctocInBut>a").bind("tap",function(){
-		if(!$("#ctocInInput").val()){
-			toast("请输入购买数量！");
-			return;
-		}
+		 var value1 = $("#ctocInInput1").val();
+		 var value2 = $("#ctocInInput2").val();
+		 var value3 = $("#ctocInInput3").val();
+		 var value4 = $("#ctocInInput4").val();
+		 var value5 = $("#ctocInInput5").val();
+		 if(!value1){
+		 	toast("请输入出售数量");
+		 	return;
+		 }else if(!value2){
+		 	toast("请输入收款账号");
+		 	return;
+		 }else if(!value4){
+		 	toast("请输入收款人姓名");
+		 	return;
+		 }else if(!value5){
+		 	toast("请输入收款人联系电话");
+		 	return;
+		 }else if(!payTypeValue){
+		 	toast("请选择收款方式");
+		 	return;
+		 }
+		 
 		$(".safetyKey").css({bottom:"0px"});
 	});
 	
@@ -84,8 +130,19 @@ $(document).bind("plusready",function(){
 			toast("请输入正确的支付密码！");
 			return;
 		}
+		
+		var AjaxData = {
+			id:idValue,
+			money:$("#ctocInInput1").val(),
+			paytype:payTypeValue,
+			account:$("#ctocInInput2").val(),
+			remarks:$("#ctocInInput3").val(),
+			realname:$("#ctocInInput4").val(),
+			mobile:$("#ctocInInput5").val(),
+			paypwd:safkeyPw
+		}
 		//发起请求
-		requestToken(subUrl,"get",{id:idValue,money:$("#ctocInInput").val(),paypwd:safkeyPw},function(data){
+		requestToken(subUrl,"get",AjaxData,function(data){
 			if(data.code == 1){
 				toast(data.msg);
 				parentView.reload();

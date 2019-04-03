@@ -6,6 +6,9 @@ $(document).bind("plusready",function(){
 	//定义赠送主请求
 	var giftsMainUrl = mainUrl + "user/usergive";
 	
+	//获取手机号码
+	var viewPhone = plus.webview.currentWebview().viewData;
+	
 	//定义小键盘自增量和记住密码变量
 	var safkeyUp = 0;
 	var safkeyPw = "";
@@ -24,6 +27,11 @@ $(document).bind("plusready",function(){
 			toast(data.msg);
 		}
 	});
+	
+	//判断是否有手机号码传递过来
+	if(viewPhone){
+		$("#giftsInput1").val(viewPhone);
+	}
 	
 	$("#giftsInput2").bind("change",function(){
 		//获取输入值
