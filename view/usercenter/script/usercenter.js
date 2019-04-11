@@ -30,6 +30,11 @@ window.addEventListener("load",function(){
 			goView("../../spaceview/usercenter/invested.html","invested",{spaceValue:"true"});
 		});
 		
+		//为资产明细绑定事件
+		$("#property").bind("tap",function(){
+			goView("../../spaceview/asset/detail.html","detail",{spaceValue:"true"});
+		});
+		
 		//为我的广告绑定事件
 		$("#adver").bind("tap",function(){
 			goView("../../spaceview/order/orderList.html","orderList",{spaceValue:"true"});
@@ -47,7 +52,7 @@ window.addEventListener("load",function(){
 		
 		//为订单绑定事件
 		$("#order").bind("tap",function(){
-			goView("../../spaceview/asset/detail.html","detail",{spaceValue:"true",viewType:"0"});
+			goView("../../spaceview/game/recordcomm.html","recordcomm",{spaceValue:"true"});
 		});
 		
 		//为团队绑定事件
@@ -85,6 +90,16 @@ window.addEventListener("load",function(){
 			goView("../../spaceview/game/gameHbRecod.html","gameHbRecod",{spaceValue:"true"});
 		});
 		
+		//为区长收益绑定事件
+		$("#wardenMoney").bind("tap",function(){
+			goView("../../spaceview/else/wardenMoney.html","wardenMoney",{spaceValue:"true"});
+		});
+		
+		//为在线客服绑定事件
+		$("#lineServer").bind("tap",function(){
+			goView("../../spaceview/else/serverUser.html","serverUser",{spaceValue:"true"});
+		});
+		
 		
 		//封装请求
 		function getUserInfo(){
@@ -97,39 +112,10 @@ window.addEventListener("load",function(){
 					$("#userCenterId").text(data.data.mobile);
 					//渲染等级名称
 					$("#userCenterLevelText").text(data.data.levels);
-					//渲染等级图标
-					switch(data.data.level){
-						case "游客":
-							$("#userCenterLevelImg").attr({src:"img/level_00.png"});
-						break;
-						case "会员":
-							$("#userCenterLevelImg").attr({src:"img/level_01.png"});
-						break;
-						case "青铜":
-							$("#userCenterLevelImg").attr({src:"img/level_02.png"});
-						break;
-						case "白银":
-							$("#userCenterLevelImg").attr({src:"img/level_03.png"});
-						break;
-						case "黄金":
-							$("#userCenterLevelImg").attr({src:"img/level_04.png"});
-						break;
-						case "铂金":
-							$("#userCenterLevelImg").attr({src:"img/level_05.png"});
-						break;
-						case "钻石":
-							$("#userCenterLevelImg").attr({src:"img/level_06.png"});
-						break;
-					}
-					//判断是否为股东
-					if(data.data.super == "股东"){
-						$("#blockNode").show();
-					}else{
-						$("#blockNode").hide();
-					}
 					
 					if(data.data.level == 2){
 						$("#warden").show();
+						$("#wardenMoney").show();
 					}
 					
 					thisView.endPullToRefresh();

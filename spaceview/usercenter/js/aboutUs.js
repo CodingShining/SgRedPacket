@@ -2,23 +2,17 @@ $(document).bind("plusready", function () {
 	var updateContent = "";
 	//为前往平台简介绑定事件
 	$("#aboutBrief").bind("tap", function () {
-		goView("../bulletin/feedbbackText.html", "feedbbackText", {
-			spaceValue: "true"
-		});
+		goView("../bulletin/feedbbackText.html","feedbbackText",{spaceValue: "true"});
 	});
 
 	//为前往意见反馈绑定事件
 	$("#aboutFeedback").bind("tap", function () {
-		goView("feedback.html", "feedback", {
-			spaceValue: "true"
-		});
+		goView("feedback.html", "feedback",{spaceValue:"true"});
 	});
 
 	//为前往帮助中心绑定事件
 	$("#aboutHelp").bind("tap", function () {
-		goView("../bulletin/helpText.html", "helpText", {
-			spaceValue: "true"
-		});
+		goView("../bulletin/helpText.html","helpText",{spaceValue: "true"});
 	});
 
 	//为版本号绑定事件

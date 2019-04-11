@@ -9,6 +9,10 @@ $(document).bind("plusready",function(){
 	//定义收款方式
 	var payType = 1;
 	
+	//保存限定值
+	var issueMax = 0;
+	var issueMin = 0;
+	
 	//定义小键盘自增量和记住密码变量
 	var safkeyUp = 0;
 	var safkeyPw = "";
@@ -16,12 +20,22 @@ $(document).bind("plusready",function(){
 	//获取页面父级
 	var parentView = plus.webview.currentWebview().opener();
 	
+	//获取用户信息
+	var UserMessage = getUserInfo();
+	
+	//将用户信息输入到指定输入框中
+	$("#issueInput6").val(UserMessage.mobile);
+	
 	
 	//发起请求渲染数据
 	requestToken(getCnyMoney,"get",{},function(data){
 		if(data.code == 1){
 			$("#issueMoney").text(data.data.balance);
 			$("#issueInput1").val(data.data.price);
+			$("#issueMinValue").text(data.data.min_money);
+			$("#issueMaxValue").text(data.data.max_money);
+			issueMax = data.data.max_money;
+			issueMin = data.data.min_money;
 		}else{
 			toast(data.msg);
 		}
@@ -51,6 +65,12 @@ $(document).bind("plusready",function(){
 			return;
 		}else if(!value4){
 			toast("请输入联系电话！");
+			return;
+		}else if(value1 > issueMax){
+			toast("数量超出最大值！");
+			return;
+		}else if(value1 < issueMin){
+			toast("数量低于最小值！");
 			return;
 		}
 		

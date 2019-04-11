@@ -7,7 +7,12 @@ $(document).bind("plusready",function(){
 	var getAffirmDataUrl = mainUrl + "trade/orderDetail";
 	
 	//定义确认付款接口
-	var affirmMoneyUrl = mainUrl + "trade/upload";
+	var affirmMoneyUrl = mainUrl + "obs/upload";
+	
+	//获取图片接口定义
+	var getUpImgUrl = mainUrl + "obs/img";
+	
+	var getUpPayImgUrl = mainUrl + "obs/payimg";
 	
 	//保存id值
 	var thisIDValue = 0;
@@ -52,6 +57,9 @@ $(document).bind("plusready",function(){
 				case 2:
 					payType = "支付宝";
 				break;
+				case 2:
+					payType = "银行卡";
+				break;
 			}
 			
 			$("#affData1").text(data.data.sNo);
@@ -67,9 +75,18 @@ $(document).bind("plusready",function(){
 			$("#affData11").text(data.data.remarks);
 			$("#affData12").text(data.data.time);
 			
-			if(data.data.img){
-				$(".affirmImgBox>img").attr({src:ImgUrl+data.data.img});
-			}
+			requestToken(getUpPayImgUrl,"get",{id:thisIDValue,pid:pidValue},function(data){
+				if(data.code == 1){
+ 					$(".affirmPayRq").show();
+					$(".affirmPayRqImg>img").attr({src:data.msg});
+				}
+			});
+			
+			requestToken(getUpImgUrl,"get",{id:thisIDValue,pid:pidValue},function(data){
+				if(data.code == 1){
+					$(".affirmImgBox>img").attr({src:data.msg});
+				}
+			});
 			
 		}else{
 			toast(data.msg);
@@ -86,6 +103,20 @@ $(document).bind("plusready",function(){
 		$("#upImgLabel>img").attr({src:pathValue});
 		$("#upImgLabel").css({lineHeight:"0px"});
 		$("#upImgLabel>img").css({width:"100%",height:"100%"});
+	});
+	
+	//为付款二维码绑定点击事件
+	$(".affirmPayRqImg>img").bind("tap",function(){
+		plus.nativeUI.actionSheet({title:"保存付款图片",cancel:"取消",buttons:[{title:"保存到本地"}]},function(e){
+			if(e.index == 1){
+				var pathValue = $(".affirmPayRqImg>img").attr("src");
+				plus.gallery.save( pathValue,function(){
+					toast("保存成功！");
+				},function(){
+					toast("保存失败！");
+				});
+			}
+		});
 	});
 	
 	//为确定付款绑定事件
@@ -115,7 +146,7 @@ $(document).bind("plusready",function(){
 			url:affirmMoneyUrl,
 			data:FromDataObj,
 			dataType:"json",
-			timeout:3000,
+			timeout:30000,
 			headers:headerValue,
 			contentType: false,
 			processData: false,

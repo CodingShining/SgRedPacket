@@ -116,7 +116,7 @@ body::before{
 	justify-content:flex-start;
 }
 .gameGiveLeiUl>li{
-	width:16.6%;
+	width:20%;
 	height:50px;
 	text-align:center;
 	margin-bottom:10px;
@@ -183,5 +183,15 @@ body::before{
 	width:60%;
 }
 
+.gameGiveButAlert{
+	width:100%;
+	line-height:10px 20px;
+	box-sizing:border-box;
+	padding:20px;
+	text-align:justify;
+	border-top:1px solid #414153;
+	margin-top:20px;
+	color:#6c6e82;
+}
 
 

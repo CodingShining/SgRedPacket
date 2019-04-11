@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head> 
+		<meta charset="UTF-8">
+		  <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,width=device-width,initial-scale=1.0" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../plug_in/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="../../plug_in/public_style.css" />
+		<link rel="stylesheet" type="text/css" href="style/detail.css" />
+	</head>
+	<body>
+		<div class="spaceHeadBox">
+			<a id="kingBack"></a>
+			<h1>闪兑记录</h1>
+		</div>
+		<div class="spaceContentBox">
+			<ul class="detailUl">
+				<!--<li>
+					<h1>闪兑</h1>
+					<div class="detailListTitle"> 
+						<span>数量</span>
+						<span>兑换类型</span> 
+						<span>时间</span>
+					</div>
+					<div class="detailListValue">
+						<span>5200.00789930</span>
+						<span>已完成</span>
+						<span>2019/01/25 18:56</span> 
+					</div>
+				</li>-->
+				<!--<div class="ListNotData">没有数据！</div>-->
+			</ul>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../plug_in/zepto.min.js"></script>
+	<script type="text/javascript" src="../../plug_in/touch.js"></script>
+	<script type="text/javascript" src="../../plug_in/public.js"></script>
+	<script>
+		$(document).bind("plusready",function(){
+			//定义接口
+			var getDataUrlValue = mainUrl + "user/getrecord";
+			
+			//发起请求
+			requestToken(getDataUrlValue,"get",{type:3},function(data){
+				if(data.code == 1){
+					var ListData = data.data.data;
+					if(ListData.length){
+						for(var i=0;i<ListData.length;i++){
+							$(".detailUl").append('<li><h1>'+ListData[i].type+'闪兑</h1><div class="detailListTitle"><span>数量</span><span>状态</span><span>时间</span></div><div class="detailListValue"><span>'+ListData[i].amount+'</span><span>已完成</span><span>'+SwitchTime(ListData[i].createtime)+'</span></div></li>');
+						}
+					}else{
+						$(".detailUl").html('<div class="ListNotData">没有数据！</div>');
+					}
+				}else{
+					toast(data.msg);
+				}
+			});
+		});
+	</script>
+</html>

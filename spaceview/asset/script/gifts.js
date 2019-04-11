@@ -59,10 +59,10 @@ $(document).bind("plusready",function(){
 			toast("请输入目标用户的电话！");
 			return;
 		}else if(!input2){
-			toast("请输入正确的赠送额度！");
+			toast("请输入正确的转账额度！");
 			return;
 		}else if(toNumberFun(input2) < toNumberFun(giftsMinNumb)){
-			toast("赠送额度不能小于："+giftsMinNumb);
+			toast("转账额度不能小于："+giftsMinNumb);
 			return;
 		}
 		
@@ -110,7 +110,7 @@ $(document).bind("plusready",function(){
 		//发起请求
 		requestToken(giftsMainUrl,"get",{username:$("#giftsInput1").val(),num:$("#giftsInput2").val(),password:safkeyPw},function(data){
 			if(data.code == 1){
-				toast("赠送成功！");
+				toast("转账成功！");
 				resLoadParent();
 				reloadView("usercenter");
 				window.location.reload();

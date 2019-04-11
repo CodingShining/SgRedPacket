@@ -8,15 +8,23 @@
   <title>注册</title>
   <link rel="stylesheet" href="../../plug_in/base.css">
   <link rel="stylesheet" href="css/register.css">
+  <style>
+  	.wardenAlertBox{
+  		width:100%;
+  		height:60px;
+  		font-size:14px;
+  		color:#757575;
+  	}
+  </style>
 </head>
 
 <body>
   <div class="m-register">
     <span class="u-return" id="kingBack"><img src="imgs/icon_return.png" width="30px" alt=""></span>
-    <h1 class="wardenTitle">区长报单</h1>
+    <h1 class="wardenTitle">团长报单</h1>
     <div class="m-form">
       <p class="u-input">
-        <input type="text" placeholder="请输入手机号" maxlength="11" id="userphone">
+        <input type="number" placeholder="请输入手机号" maxlength="11" id="userphone">
       </p>
       <p class="u-input">
         <input type="text" placeholder="请输入昵称" maxlength="11" id="usernikname">
@@ -30,15 +38,18 @@
         <span class="u-eye" data-toggle="0" data-contorl="oldPw"><img src="imgs/eye_close.png" width="20px" alt=""></span>
       </p>
       <p class="u-input">
-        <input type="text" placeholder="短信验证码" maxlength="6" id="ckeckNmuber">
+        <input type="number" placeholder="短信验证码" maxlength="6" id="ckeckNmuber">
         <button type="button" class="u-sms" data-toggle="0">短信验证码</button>
       </p>
       <p class="u-input">
-        <input type="text" placeholder="佣金返点" id="yonjin" />
+        <input type="number" placeholder="佣金返点" id="yonjin" />
       </p>
       <div class="wardenAlert">
-      	返点区间：0~<i id="userMaxnum"></i>
+      	返点区间：0%~<i id="userMaxnum"></i>%
       </div>
+      <div class="wardenAlertBox">
+    		<p>团长报单，请在佣金返点处输入正确的返点比例，例如：需要返点1%，请输入数字1即可，若不返点输入数字0即可</p>
+    	</div>
       <button type="button" class="u-btn" id="">确定报单</button>
     </div>
   </div>

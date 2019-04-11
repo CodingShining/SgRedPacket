@@ -1,7 +1,7 @@
 {
     "@platforms": ["android", "iPhone", "iPad"],
     "id": "H5B6B573B",/*应用的标识，创建应用时自动生成，勿手动修改*/
-    "name": "SG红包",/*应用名称，程序桌面图标名称*/
+    "name": "SG",/*应用名称，程序桌面图标名称*/
     "version": {
         "name": "1.0.0",/*应用版本名称*/
         "code": ""
@@ -201,7 +201,10 @@
 					"spaceview/game/gameRoom.html",
 					"spaceview/ctoc/ctoc.html",
 					"spaceview/bulletin/bulletincontent.html",
-					"spaceview/game/gameHbMain.html"
+					"spaceview/game/gameHbMain.html",
+					"view/bulletin/bulletin.html",
+					"spaceview/usercenter/invitation.html",
+					"spaceview/bulletin/helpText.html"
 				],
 				"priority": 0
 			},
@@ -240,7 +243,10 @@
 					"spaceview/usercenter/blockNode.html",
 					"spaceview/order/orderList.html",
 					"spaceview/game/gameHbRecod.html",
-					"view/login/warden.html"
+					"view/login/warden.html",
+					"spaceview/else/serverUser.html",
+					"spaceview/game/recordcomm.html",
+					"spaceview/else/wardenMoney.html"
 				],
 				"priority": 0
 			},
@@ -307,14 +313,16 @@
 				"resources": [],
 				"refer": [
 					"spaceview/scanview/scanview.html",
-					"spaceview/asset/detail.html"
+					"spaceview/asset/detail.html",
+					"spaceview/asset/tibiRecord.html"
 				],
 				"priority": 0
 			},
 			"spaceview/asset/conversion.html": {
 				"resources": [],
 				"refer": [
-					"spaceview/asset/detail.html"
+					"spaceview/asset/detail.html",
+					"spaceview/asset/conversionList.html"
 				],
 				"priority": 0
 			},
@@ -322,7 +330,8 @@
 				"resources": [],
 				"refer": [
 					"spaceview/ctoc/issue.html",
-					"spaceview/ctoc/ctocin.html"
+					"spaceview/ctoc/ctocin.html",
+					"spaceview/order/orderList.html"
 				],
 				"priority": 0
 			},
@@ -369,14 +378,30 @@
 				"refer": [
 					"spaceview/game/gameHbResult.html",
 					"spaceview/game/gameHbGive.html",
-					"spaceview/else/serverUser.html"
+					"spaceview/else/serverUser.html",
+					"spaceview/asset/recharge.html"
 				],
 				"priority": 0
 			},
 			"spaceview/usercenter/team.html": {
 				"resources": [],
 				"refer": [
-					"spaceview/asset/gifts.html"
+					"spaceview/asset/gifts.html",
+					"spaceview/game/gameHbRecod.html"
+				],
+				"priority": 0
+			},
+			"spaceview/asset/tibiRecord.html": {
+				"resources": [],
+				"refer": [
+					"spaceview/asset/tibiRecordContent.html"
+				],
+				"priority": 0
+			},
+			"spaceview/game/gameHbRecod.html": {
+				"resources": [],
+				"refer": [
+					"spaceview/asset/gameHbRecodContent.html"
 				],
 				"priority": 0
 			}

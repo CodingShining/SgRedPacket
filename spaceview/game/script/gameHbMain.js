@@ -69,6 +69,9 @@ $(document).bind("plusready",function(){
  	//为返回按钮绑定事件
  	$("#gameHbBack").bind("tap",function(){
  		ws.close();
+ 		if(!toggleVar){
+ 			reloadView("gameRoom");
+ 		}
  	});
  	
  	//为红包列表中的红包绑定事件
@@ -109,8 +112,20 @@ $(document).bind("plusready",function(){
  	});
  	
  	//为客服绑定事件
- 	$(".gameHbMainServer").bind("tap",function(){
+ 	$(".gameHbMainServer>img").bind("tap",function(){
    		goView("../else/serverUser.html","serverUser",{spaceValue:"true"});
+ 	});
+ 	
+ 	//为充值绑定事件
+ 	$(".toUpgoViewBut").bind("tap",function(){
+ 		//获取自定义属性
+ 		var value = $(this).attr("data-type");
+ 		goView("../asset/recharge.html","recharge",{spaceValue:"true",viewType:value});
+ 	});
+ 	
+ 	//为关闭充值窗口绑定事件
+ 	$(".toUpCleanBut").bind("tap",function(){
+ 		$(".gameHbTopup").hide();
  	});
  	
  		//为点击开红包绑定事件
@@ -138,7 +153,10 @@ $(document).bind("plusready",function(){
 	 				opHbValue(HbIdName);
 	 			}else{
 	 				toast(data.msg);
-	 				$(".haveHb").hide();
+	 				if(data.data.code == 1){
+	 					$(".haveHb").hide();
+	 			 		$(".gameHbTopup").show();
+	 			 	}
 	 			}
  			});
  		},800);
@@ -161,7 +179,7 @@ $(document).bind("plusready",function(){
 	function webSket(){
 		clearInterval(SendTime);
 		//获取游戏状态
-		ws = new WebSocket("ws://47.92.174.226:2346");
+		ws = new WebSocket("ws://ht.sgb.world:2355");
 		
 		ws.onopen = function() {
 			SendTime = window.setInterval(function(){
@@ -175,22 +193,18 @@ $(document).bind("plusready",function(){
 			if(DataValue.code == 9002){
 				var userId = DataValue.data.client_id;
 				requestToken(bindUserUrl,"get",{room_id:roomIdValue,client_id:userId},function(data){
-					if(data.code != 1){
-						toast(data.msg);
-						BackView();
-					}else if(data.code == 1){
+					if(data.code == 1){
 						$("#gameHbMark").text(data.data);
 					}
 				});
 			}else if(DataValue.code == 9000){
 				var HbValue = DataValue.data;
 				var HbId = HbValue.uid;
-				
 				//调用声音
 				payHbAudio();
 				
 				//其他用户红包
-				$(".gameHbBodyUl").append('<li><div class="gameUserHead gameItemLeft"><img src="'+ImgUrl+HbValue.headimg+'"/></div><div data-userOdd="'+HbValue.odds+'" data-userMark="'+HbValue.mark+'" data-userNum="'+HbValue.number+'" data-money="'+HbValue.money+'" data-userName="'+HbValue.nickname+'" data-userIm="'+HbValue.headimg+'" data-idName="'+HbValue.id+'" class="gameHbMainItem gameItemLeft gameHbBG1Left"><div class="gameHbCont1"><div><img src="img/hbitemIcon.png"></div><div><span><i>'+HbValue.money+'</i>/<i>'+HbValue.number+'</i>个</span><span>游戏红包</span></div></div><div class="gameHbCont2"><span>雷号：<i>'+HbValue.mark+'</i></span><span>赔率：<i>'+HbValue.odds+'</i>倍</span></div></div><div class="userNick">'+HbValue.nickname+'</div></li>');
+				$(".gameHbBodyUl").append('<li><div class="gameUserHead gameItemLeft"><img src="'+ImgUrl+HbValue.headimg+'"/></div><div data-userOdd="'+HbValue.odds+'" data-userMark="'+HbValue.mark+'" data-userNum="'+HbValue.number+'" data-money="'+HbValue.money+'" data-userName="'+HbValue.nickname+'" data-userIm="'+HbValue.headimg+'" data-idName="'+HbValue.id+'" class="gameHbMainItem gameItemLeft gameHbBG1Left"><div class="gameHbCont1"><div><img src="img/hbitemIcon.png"></div><div><span><i>'+HbValue.money+'</i>/<i>'+HbValue.number+'</i>个</span><span>恭喜发财，大吉大利</span></div></div><div class="gameHbCont2"><span>雷号：<i>'+HbValue.mark+'</i></span><span>赔率：<i>'+HbValue.odds+'</i>倍</span></div></div><div class="userNick">'+HbValue.nickname+'</div></li>');
 				//滚动滚轴到最低端
 				MoveScroll();
 				
@@ -242,7 +256,8 @@ $(document).bind("plusready",function(){
 			}else if(DataValue.code == 9001){
 				var Person = DataValue.data;
 				$("#gameRoomPerson").text(Person);
-				resLoadParent();
+			}else if(DataValue.code == 1090){
+				$("#userBalean").text(DataValue.data);
 			}
 		};
 		
@@ -292,15 +307,6 @@ $(document).bind("plusready",function(){
 	
 	//控制滚轴
 	function MoveScroll(){
-		//获取最后一个元素的高度
-	 	for(var i=0;i<$(".gameHbBodyUl>li").length;i++){
-	 		if(i == $(".gameHbBodyUl>li").length-1){
-	 			var Value = $(".gameHbBodyUl>li").eq(i).offset().top;
-	 			scrollHeight = Value;
-	 		}else{
-	 			continue;
-	 		}
-	 	}
 	 	var UlObj = document.getElementsByClassName("gameHbBodyUl")[0];
 	 	UlObj.scrollIntoView(false);
 	}

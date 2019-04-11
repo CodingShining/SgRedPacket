@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head> 
+		<meta charset="UTF-8">
+		  <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,width=device-width,initial-scale=1.0" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../plug_in/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="../../plug_in/public_style.css" />
+		<link rel="stylesheet" type="text/css" href="style/rechargeContent.css" />
+	</head>
+	<body>
+		<div class="spaceHeadBox">
+			<a id="kingBack"></a>
+		</div>
+		<div class="spaceContentBox">
+			<div class="detailcontNumberBox">
+				<span id="rechargeContAmount"></span>
+				<span id="currType"></span>
+			</div>
+			<ul class="detailcontUl">
+				<li>
+					<span>类型</span>
+					<span id="rechargeTypeMod"></span>
+				</li>
+				<li>
+					<span>实际到账</span>
+					<span id="practical"></span>
+				</li>
+				<li>
+					<span>状态</span>
+					<span id="rechargeState"></span>
+				</li>
+				<li>
+					<span>地址</span>
+					<span id="rechargeContAddress"></span>
+				</li>
+				<li>
+					<span>TAG标签</span>
+					<span id="rechargeContTixid" style="line-height:30px;"></span>
+				</li>
+				<li>
+					<span>时间</span>
+					<span id="rechargeContTime"></span>
+				</li>
+			</ul>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../plug_in/zepto.min.js"></script>
+	<script type="text/javascript" src="../../plug_in/touch.js"></script>
+	<script type="text/javascript" src="../../plug_in/public.js"></script>
+	<script>
+		$(document).bind("plusready",function(){
+			//定义请求地址
+			var getDataUrlValue = mainUrl + "user/getwithdrawdetail";
+			
+			//获取传递值
+			var RecoId = plus.webview.currentWebview().idName;
+			var CurName = plus.webview.currentWebview().currType;
+			
+			$("#currType").text(CurName);
+			
+			$("#rechargeTypeMod").text(CurName);
+					
+			requestToken(getDataUrlValue,"get",{id:RecoId},function(data){
+				if(data.code == 1){
+					var statuText = "";
+					switch(data.data.status){
+						case 0:
+							statuText = "未处理";
+						break;
+						case 1:
+							statuText = "已到账";
+						break;
+						case 2:
+							statuText = "被拒绝";
+						break;
+					}
+					$("#rechargeContAmount").text(data.data.amount);
+					$("#practical").text(data.data.money);
+					$("#rechargeState").text(statuText);
+					$("#rechargeContAddress").text(data.data.address);
+					$("#rechargeContTixid").text(data.data.label);
+					$("#rechargeContTime").text(SwitchTime(data.data.add_time));
+					
+					if(data.data.remarks){
+						$(".detailcontUl").append('<li><span>拒绝理由</span><span>'+data.data.remarks+'</span></li>');
+					}
+					
+				}else{
+					toast(data.msg);
+				}
+				
+			});
+		});
+	</script>
+</html>

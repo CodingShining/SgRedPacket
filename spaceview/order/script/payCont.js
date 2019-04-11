@@ -11,11 +11,16 @@ $(document).bind("plusready",function(){
 	//定义提交接口
 	var paySubmintUrl = mainUrl + "trade/completing";
 	
+	//定义获取图片接口
+	var getPayImgUrl = mainUrl + "obs/img";
+	
 	//发起请求
 	requestToken(payMesageUrl,"get",{id:thisValue1},function(data){
 		var dataValue = data.data;
 		var payTypeName = "";
 		var statusText = "";
+		
+		
 		
 		$(".payImgBox>img").attr({src:ImgUrl+dataValue.img});
 		
@@ -26,6 +31,9 @@ $(document).bind("plusready",function(){
 			case 2:
 				payTypeName = "支付宝";
 			break;
+			case 3:
+				payTypeName = "银行卡";
+			break;
 		}
 		
 		switch(dataValue.status){
@@ -35,10 +43,12 @@ $(document).bind("plusready",function(){
 			break;
 			case 1:
 				statusText = "交易完成";
+				getPayImgFun();
 				$(".payImgBox").show();
 			break;
 			case 2:
 				statusText = "确认收款";
+				getPayImgFun();
 				$(".payImgBox").show();
 				$("#payContSubmit").show();
 			break;
@@ -85,5 +95,16 @@ $(document).bind("plusready",function(){
 			}
 		});
 	});
+	
+	//封装函数
+	function getPayImgFun(){
+		requestToken(getPayImgUrl,"get",{id:thisValue1},function(data){
+			if(data.code == 1){
+				$(".payImgBox>img").attr({src:data.msg});
+			}else{
+				toast(data.msg);
+			}
+		});
+	}
 		
 });

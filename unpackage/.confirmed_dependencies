@@ -59,7 +59,10 @@
 			"spaceview/game/gameRoom.html",
 			"spaceview/ctoc/ctoc.html",
 			"spaceview/bulletin/bulletincontent.html",
-			"spaceview/game/gameHbMain.html"
+			"spaceview/game/gameHbMain.html",
+			"view/bulletin/bulletin.html",
+			"spaceview/usercenter/invitation.html",
+			"spaceview/bulletin/helpText.html"
 		]
 	},
 	"spaceview/game/gamemain.html": {
@@ -92,7 +95,10 @@
 			"spaceview/usercenter/blockNode.html",
 			"spaceview/order/orderList.html",
 			"spaceview/game/gameHbRecod.html",
-			"view/login/warden.html"
+			"view/login/warden.html",
+			"spaceview/else/serverUser.html",
+			"spaceview/game/recordcomm.html",
+			"spaceview/else/wardenMoney.html"
 		]
 	},
 	"spaceview/usercenter/safeSet.html": {
@@ -141,18 +147,21 @@
 	"spaceview/asset/extract.html": {
 		"refer": [
 			"spaceview/scanview/scanview.html",
-			"spaceview/asset/detail.html"
+			"spaceview/asset/detail.html",
+			"spaceview/asset/tibiRecord.html"
 		]
 	},
 	"spaceview/asset/conversion.html": {
 		"refer": [
-			"spaceview/asset/detail.html"
+			"spaceview/asset/detail.html",
+			"spaceview/asset/conversionList.html"
 		]
 	},
 	"spaceview/ctoc/ctoc.html": {
 		"refer": [
 			"spaceview/ctoc/issue.html",
-			"spaceview/ctoc/ctocin.html"
+			"spaceview/ctoc/ctocin.html",
+			"spaceview/order/orderList.html"
 		]
 	},
 	"spaceview/order/orderList.html": {
@@ -187,12 +196,24 @@
 		"refer": [
 			"spaceview/game/gameHbResult.html",
 			"spaceview/game/gameHbGive.html",
-			"spaceview/else/serverUser.html"
+			"spaceview/else/serverUser.html",
+			"spaceview/asset/recharge.html"
 		]
 	},
 	"spaceview/usercenter/team.html": {
 		"refer": [
-			"spaceview/asset/gifts.html"
+			"spaceview/asset/gifts.html",
+			"spaceview/game/gameHbRecod.html"
+		]
+	},
+	"spaceview/asset/tibiRecord.html": {
+		"refer": [
+			"spaceview/asset/tibiRecordContent.html"
+		]
+	},
+	"spaceview/game/gameHbRecod.html": {
+		"refer": [
+			"spaceview/asset/gameHbRecodContent.html"
 		]
 	}
 }

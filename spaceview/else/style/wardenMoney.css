@@ -1,0 +1,54 @@
+.wardenMoneyBox{
+	width:100%;
+	box-sizing:border-box;
+	padding:20px;
+}
+
+.wardenMoneyBox::before{
+	content:"";
+	display:inline-block;
+	width:100%;
+	height:70px;
+}
+
+.wardenItem{
+	width:100%;
+	height:80px;
+	border-radius:10px;
+	margin-bottom:20px;
+	box-sizing:border-box;
+	padding:10px 0px 0px 20px;
+}
+
+.wardenItem>h1{
+	width:100%;
+	height:30px;
+	line-height:30px;
+	font-size:14px;
+}
+
+.wardenItem>span{
+	display:inline-block;
+	width:100%;
+	height:30px;
+	line-height:30px;
+}
+
+.wardenItemBGcolor1{
+	background:#ecad3f url(../img/wardenIcon1.png)no-repeat;
+	background-position:right 30px center;
+	background-size:50px 50px;
+}
+
+.wardenItemBGcolor2{
+	background:#4378cf url(../img/wardenIcon2.png)no-repeat;
+	background-position:right 30px center;
+	background-size:50px 50px;
+}
+
+.wardenItemBGcolor3{
+	background:#d25b56 url(../img/wardenIcon3.png)no-repeat;
+	background-position:right 30px center;
+	background-size:50px 50px;
+}
+

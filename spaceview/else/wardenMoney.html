@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head> 
+		<meta charset="UTF-8">
+		  <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,width=device-width,initial-scale=1.0" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../plug_in/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="../../plug_in/public_style.css" />
+		<link rel="stylesheet" type="text/css" href="style/wardenMoney.css" />
+		<style>
+			
+		</style>
+	</head>
+	<body>
+		<div class="spaceHeadBox">
+			<a id="kingBack"></a>
+			<h1>团长收益</h1>
+		</div>
+		<div class="wardenMoneyBox">
+			<div class="wardenItem wardenItemBGcolor1">
+				 <h1>团队总人数</h1>
+				 <span id="wardenMoney1">0.00</span>
+			</div>
+			<div class="wardenItem wardenItemBGcolor2">
+				 <h1>团队总流水</h1>
+				 <span id="wardenMoney2">0.00</span>
+			</div>
+			<div class="wardenItem wardenItemBGcolor3">
+				 <h1>团队日流水</h1>
+				 <span id="wardenMoney3">0.00</span>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../plug_in/zepto.min.js"></script>
+	<script type="text/javascript" src="../../plug_in/touch.js"></script>
+	<script type="text/javascript" src="../../plug_in/public.js"></script>
+	<script>
+		$(document).bind("plusready",function(){
+			//定义接口
+			var DataGetUrl = mainUrl + "user/myteamwater";
+			
+			//发起请求
+			requestToken(DataGetUrl,"get",{},function(data){ 
+				if(data.code == 1){
+					$("#wardenMoney1").text(data.data.td_cn);
+					$("#wardenMoney2").text(data.data.allprofit);
+					$("#wardenMoney3").text(data.data.dayprofit);
+				}else{
+					toast(data.msg);
+				}
+			});
+		});
+	</script>
+</html>

@@ -16,6 +16,11 @@ $(document).bind("plusready",function(){
 		goView("issue.html","issue",{spaceValue:"true"});
 	});
 	
+	//为我的订单绑定事件
+	$(".ctocHeadDataItem2").bind("tap",function(){
+		goView("../order/orderList.html","orderList",{spaceValue:"true"});
+	});
+	
 	//定义获取卖单数据列表
 	function getCtocData(){
 		$(".ctocUl").html("");
@@ -23,7 +28,6 @@ $(document).bind("plusready",function(){
 		requestToken(ctocUrl,"get",{},function(data){
 			if(data.code == 1){
 				$("#price").text(data.data.price);
-				$("#todayamount").text(data.data.todayamount);
 				var list = data.data.list;
 				if(list.length){
 					for(var i=0;i<list.length;i++){

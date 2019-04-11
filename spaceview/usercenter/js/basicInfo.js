@@ -58,7 +58,7 @@ $(document).bind("plusready",function(){
 			url:UpImgUrl,
 			data:FromDataObj,
 			dataType:"json",
-			timeout:3000,
+			timeout:12000,
 			headers:headerValue,
 			contentType: false,
 			processData: false,

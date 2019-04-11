@@ -40,12 +40,12 @@ body::before{
 
 @keyframes gameNotice{
 	from{left:100%;}
-	to{left:-100%;}
+	to{left:-120%;}
 }
 
 .gameHbNoticeText>span{
 	display:inline-block;
-	width:100%;
+	overflow:auto;
 	height:45px;
 	line-height:45px;
 	position:absolute;
@@ -384,4 +384,81 @@ body::before{
 .gameHbMainServer>img{
 	width:50px;
 	height:50px;
+}
+
+.HbResultAlert{
+	width:100%;
+	height:20px;
+	margin-top:20px;
+}
+
+.HbResultAlert>span{
+	display:inline-block;
+	width:100%;
+	height:20px;
+	line-height:20px;
+	font-size:12px;
+	text-align:center;
+	color:#eead7a;
+}
+
+.gameHbTopup{
+	width:100%;
+	height:500px;
+	position:fixed;
+	top:0px;
+	left:0px;
+	z-index:9999;
+	display:flex;
+	flex-direction:row;
+	justify-content:center;
+	box-sizing:border-box;
+	padding-top:160px;
+}
+
+.gameHbTopupBox{
+	width:70%;
+	height:180px;
+	background-color:#FFFFFF;
+	border-radius:10px;
+	box-sizing:border-box;
+	padding:20px;
+	position:relative;
+}
+
+.gameHbTopupTitle{
+	width:100%;
+	height:40px;
+	text-align:center;
+	color:#ab4541;
+}
+
+.gameHbTopupTitle>span{
+	display:block;
+}
+
+.toUpgoViewBut{
+	width:90%;
+	height:30px;
+	line-height:30px;
+	box-sizing:border-box;
+	padding:0px 20px;
+	margin:10px auto 0px auto;
+}
+
+.toUpgoViewBut>span:last-child{
+	float:right;
+}
+
+.toUpCleanBut{
+	width:20px;
+	height:20px;
+	position:absolute;
+	top:5px;
+	right:5px;
+}
+
+.toUpCleanBut>img{
+	width:20px;
+	height:20px;
 }

@@ -15,8 +15,10 @@ $(document).bind("plusready",function(){
 			$("#rechargeContTime").text(SwitchTime(data.data.createtime));
 			if(data.data.currency_id == 1){
 				$("#rechargeTypeMod").text("EOS");
+				$("#currType").text("EOS");
 			}else if(data.data.currency_id == 2){
 				$("#rechargeTypeMod").text("XRP");
+				$("#currType").text("XRP");
 			}
 			if(data.data.type == 1){
 				$("#rechargeState").text("已完成");

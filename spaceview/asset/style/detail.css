@@ -58,15 +58,15 @@
 
 .selectNavBox{
 	width:100%;
-	height:250px;
-	overflow:hidden;
+	height:300px;
 	box-sizing:border-box;
 	border-top-left-radius:10px;
 	border-top-right-radius:10px;
 	background-color:#f2f2f4;
 	position:fixed;
-	bottom:-380px;
+	bottom:-610px;
 	left:0px;
+	overflow-y:scroll;
 }
 
 .selectNavBox>span{
@@ -92,7 +92,4 @@
 	color:#999aaa;
 	text-align:center;
 	background-color:#FFFFFF;
-	position:absolute;
-	bottom:0px;
-	left:0px;
 }

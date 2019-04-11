@@ -13,12 +13,12 @@ window.addEventListener("load",function(){
 });
 
 	//定义主接口
-//	var mainUrl = "https://game.kinsey.vip/api/";
-	var mainUrl = "http://47.92.174.226/api/"
+	var mainUrl = "http://www.sgb.world/api/";
+//	var mainUrl = "http://47.92.174.226/api/"
 	
 	//定义图片接口
-//	var ImgUrl = "https://game.kinsey.vip/";
-	var ImgUrl = "http://47.92.174.226/";
+	var ImgUrl = "http://www.sgb.world/";
+//	var ImgUrl = "http://47.92.174.226/";
 	
 	//定义退出程序自增量
 	var closeView = 0;

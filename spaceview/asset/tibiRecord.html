@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head> 
+		<meta charset="UTF-8">
+		  <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,width=device-width,initial-scale=1.0" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../plug_in/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="../../plug_in/public_style.css" />
+		<link rel="stylesheet" type="text/css" href="style/detail.css" />
+	</head>
+	<body>
+		<div class="spaceHeadBox">
+			<a id="kingBack"></a>
+			<h1>提币记录</h1>
+		</div>
+		<div class="spaceContentBox">
+			<ul class="detailUl">
+				<!--<li>
+					<h1>闪兑</h1>
+					<div class="detailListTitle">
+						<span>数量</span>
+						<span>状态</span>
+						<span>时间</span>
+					</div>
+					<div class="detailListValue">
+						<span>5200.00789930</span>
+						<span>已完成</span>
+						<span>2019/01/25 18:56</span>
+					</div>
+				</li>-->
+				<!--<div class="ListNotData">没有数据！</div>-->
+			</ul>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../plug_in/zepto.min.js"></script>
+	<script type="text/javascript" src="../../plug_in/touch.js"></script>
+	<script type="text/javascript" src="../../plug_in/public.js"></script>
+	<script>
+		$(document).bind("plusready",function(){
+			//定义请求
+			var getListData = mainUrl + "user/getwithdrawlist";
+			
+			//获取页面传递值
+			var tibiType = plus.webview.currentWebview().viewType;
+			
+			var currId = 0;
+			
+			var currName = "";
+			
+			if(tibiType == "1"){
+				currId = 2;
+				currName = "EOS";
+			}else if(tibiType == "2"){
+				currId = 3;
+				currName = "XRP";
+			}
+			
+			//发起请求获取数据
+			requestToken(getListData,"get",{curr:currId},function(data){
+				if(data.code == 1){
+					 var listData = data.data;
+					 if(listData.length){
+					 	for(var i=0;i<listData.length;i++){
+					 		var statuText = "";
+					 		switch(listData[i].status){
+					 			case 0:
+					 				statuText = "未处理";
+					 			break;
+					 			case 1:
+					 				statuText = "已完成";
+					 			break;
+					 			case 2:
+					 				statuText = "拒绝提币";
+					 			break;
+					 		}
+					 		$(".detailUl").append('<li data-idValue="'+listData[i].id+'"><h1>'+currName+'</h1><div class="detailListTitle"><span>数量</span><span>状态</span><span>时间</span></div><div class="detailListValue"><span>'+listData[i].amount+'</span><span>'+statuText+'</span><span>'+SwitchTime(listData[i].add_time)+'</span></div></li>');
+					 	}
+					 }
+				}else{
+					$(".detailUl").html('<div class="ListNotData">没有数据！</div>');
+				}
+				
+				//为li绑定事件
+				$(".detailUl>li").bind("tap",function(){
+					//获取id值
+					var idValue = $(this).attr("data-idValue");
+					//前往页面
+					goView("tibiRecordContent.html","tibiRecordContent",{spaceValue:"true",idName:idValue,currType:currName});
+				});
+				
+			});
+		
+		});
+	</script>
+</html>

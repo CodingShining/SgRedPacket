@@ -129,14 +129,21 @@ window.addEventListener("load",function(){
 		});
 		
 		//为c2c绑定事件
-		$("#gameviewCtocNav").bind("tap",function(){
+		$(".gameviewCtocNav").bind("tap",function(){
 			//前往CtoC页面
 			goView("../../spaceview/ctoc/ctoc.html","ctoc",{spaceValue:"true"});
 		});
 		
-		//为我开放的绑定事件
-		$(".NotOpen").bind("tap",function(){
-			toast("暂未开放！");
+		//为邀请好友绑定事件
+		$(".gameviewInvite").bind("tap",function(){
+			//前往CtoC页面
+			goView("../../spaceview/usercenter/invitation.html","invitation",{spaceValue:"true"});
+		});
+		
+		//为公告绑定事件
+		$(".gameviewBulletin").bind("tap",function(){
+			//前往CtoC页面
+			goView("../../spaceview/bulletin/helpText.html","helpText",{spaceValue: "true"});
 		});
 	});
 });

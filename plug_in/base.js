@@ -1,5 +1,5 @@
-//var baseUrl = "https://game.kinsey.vip/api/";
-var baseUrl = "http://47.92.174.226/api/";
+var baseUrl = "http://www.sgb.world/api/";
+//var baseUrl = "http://47.92.174.226/api/";
 (function (owner) {
   // 检查更新
   owner.check_update = function () {
@@ -16,7 +16,7 @@ var baseUrl = "http://47.92.174.226/api/";
             // console.log(newVer);
             if (wgtVer && newVer && (wgtVer != newVer)) {
               plus.nativeUI.alert(data.data.content, function () {
-                downWgt("http://down.kinsey.vip/down/data/pro/update.wgt"); // 下载升级包
+                downWgt("http://www.sgb.world/down/data/pro/update.wgt"); // 下载升级包
               }, "新版本更新提示");
             }
           }

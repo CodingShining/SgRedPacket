@@ -20,9 +20,21 @@ $(document).bind("plusready",function(){
 	//保存付款方式
 	var payTypeValue = null;
 	
+	//保存最大最小值
+	var ctocInMax = 0;
+	var ctocInMin = 0;
+	
+	//保存是否上传了付款二维码
+	var payRqImg = 0;
+	
 	//定义小键盘自增量和记住密码变量
 	var safkeyUp = 0;
 	var safkeyPw = "";
+	
+	//获取用户信息
+	var UserMessage = getUserInfo();
+	
+	$("#ctocInInput5").val(UserMessage.mobile);
 	
 	//发起请求获取数据
 	requestToken(getInMesUrl,"get",{id:idValue},function(data){
@@ -34,6 +46,10 @@ $(document).bind("plusready",function(){
 			taxValue = data.data.tax;
 			ctocInNum = data.data.price;
 			var markValue = data.data.remarks;
+			ctocInMax = data.data.max_money;
+			ctocInMin = data.data.min_money;
+			$("#ctocInMin").text(data.data.min_money);
+			$("#ctocInMax").text(data.data.max_money)
 			if(!markValue){
 				$(".remarksBox").hide();
 			}else{
@@ -55,15 +71,30 @@ $(document).bind("plusready",function(){
 	
 	//为付款方式绑定事件
 	$(".ctocInPayType").bind("tap",function(){
-		plus.nativeUI.actionSheet({title:"选择付款方式",cancel:"取消",buttons:[{title:"微信"},{title:"支付宝"}]},function(e){
+		plus.nativeUI.actionSheet({title:"选择付款方式",cancel:"取消",buttons:[{title:"微信"},{title:"支付宝"},{title:"银行卡"}]},function(e){
 			if(e.index == 1){
 				$(".ctocInPayType").text("微信");
 				payTypeValue = "1";
 			}else if(e.index == 2){
 				$(".ctocInPayType").text("支付宝");
 				payTypeValue = "2";
+			}else if(e.index == 3){
+				$(".ctocInPayType").text("银行卡");
+				payTypeValue = "3";
 			}
 		});
+	});
+	
+	//为上传付款二维码上传绑定事件
+	$("#ctocInInput6").bind("change",function(){
+		//获取图片值
+		var inputObj = document.getElementById("ctocInInput6");
+		var imgObj = inputObj.files[0];
+		var imgPath = window.URL.createObjectURL(imgObj);
+		//改变label下的图片地址
+		$(".ctocInUpRq>label>img").attr({src:imgPath});
+		$(".ctocInUpRq>label>img").css({width:"100%",height:"100%"});
+		payRqImg = 1;
 	});
 	
 	//为按钮绑定事件
@@ -87,6 +118,12 @@ $(document).bind("plusready",function(){
 		 	return;
 		 }else if(!payTypeValue){
 		 	toast("请选择收款方式");
+		 	return;
+		 }else if(value1<ctocInMin){
+		 	toast("出售数量小于最小值");
+		 	return;
+		 }else if(value1>ctocInMax){
+		 	toast("出售数量大于最大值");
 		 	return;
 		 }
 		 
@@ -131,25 +168,50 @@ $(document).bind("plusready",function(){
 			return;
 		}
 		
-		var AjaxData = {
-			id:idValue,
-			money:$("#ctocInInput1").val(),
-			paytype:payTypeValue,
-			account:$("#ctocInInput2").val(),
-			remarks:$("#ctocInInput3").val(),
-			realname:$("#ctocInInput4").val(),
-			mobile:$("#ctocInInput5").val(),
-			paypwd:safkeyPw
-		}
+		plus.nativeUI.showWaiting();
+		
+		//创建FormData
+		var FromDataObj = new FormData();
+		
+		//获取相关数据
+		var FileInput = document.getElementById("ctocInInput6");
+		
+		var fileObj = FileInput.files[0];
+		
+		FromDataObj.append("file",fileObj);
+		FromDataObj.append("id",idValue);
+		FromDataObj.append("money",$("#ctocInInput1").val());
+		FromDataObj.append("paytype",payTypeValue);
+		FromDataObj.append("account",$("#ctocInInput2").val());
+		FromDataObj.append("remarks",$("#ctocInInput3").val());
+		FromDataObj.append("realname",$("#ctocInInput4").val());
+		FromDataObj.append("mobile",$("#ctocInInput5").val());
+		FromDataObj.append("paypwd",safkeyPw);
+		
+		//获取Token数据
+		var info = getUserInfo();
+		var tokenvalue =info.token ;
+		var headerValue = {token:tokenvalue};
+		
 		//发起请求
-		requestToken(subUrl,"get",AjaxData,function(data){
-			if(data.code == 1){
+		$.ajax({
+			type:"post",
+			url:subUrl,
+			data:FromDataObj,
+			dataType:"json",
+			timeout:30000,
+			headers:headerValue,
+			contentType: false,
+			processData: false,
+			success:function(data){
+				plus.nativeUI.closeWaiting();
 				toast(data.msg);
-				parentView.reload();
+				resLoadParent();
 				BackView();
-			}else{
-				toast(data.msg);
-				window.location.reload();
+			},
+			error:function(xhr){
+				plus.nativeUI.closeWaiting();
+				plus.nativeUI.toast("网络错误：请检查网络连接"+xhr.status);
 			}
 		});
 	});

@@ -147,7 +147,7 @@ $(document).bind("plusready",function(){
 	
 	//为记录绑定事件
 	$("#converRecord").bind("tap",function(){
-		goView("detail.html","detail",{spaceValue:"true",viewType:"1"});
+		goView("conversionList.html","conversionList",{spaceValue:"true",viewType:ConversType});
 	});
 	
 	//为input绑定事件

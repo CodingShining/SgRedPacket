@@ -16,7 +16,7 @@ window.addEventListener("load",function(){
 		var MoneyType = plus.webview.currentWebview().viewType;
 		
 		if(MoneyType == "1"){
-			$(".extractUnit").text("EOC");
+			$(".extractUnit").text("EOS");
 		}else if(MoneyType == "2"){
 			$(".extractUnit").text("XRP");
 		}
@@ -29,7 +29,7 @@ window.addEventListener("load",function(){
 
 		//为记录绑定事件
 		$("#extractRecord").bind("tap",function(){
-			goView("detail.html","detail",{spaceValue:"true",viewType:"2"});
+			goView("tibiRecord.html","tibiRecord",{spaceValue:"true",viewType:MoneyType});
 		});
 		
 		//为数量输入框绑定事件

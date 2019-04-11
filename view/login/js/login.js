@@ -6,6 +6,18 @@ $(document).bind("plusready", function () {
 	//定义登录接口
 	var logingUrl = mainUrl + "user/login";
 	
+	//判断是否存在账户信息
+	var userAccssMesg = localStorage.getItem("userLogin");
+	
+	if(userAccssMesg){
+		$("#pwRemember").attr({checked:"1"});
+		var userMessage = JSON.parse(userAccssMesg);
+		$("#kingUserName").val(userMessage.name);
+		$("#kingUserPw").val(userMessage.pw);
+	}else{
+		$("#pwRemember").removeAttr("checked");
+	}
+	
 	//为忘记登录密码绑定事件
 	$(".u-forget").bind("tap",function(){
 		goView("forget.html","forget",{spaceValue:"true"});
@@ -29,6 +41,19 @@ $(document).bind("plusready", function () {
 			toast("请输入登录密码！");
 			return;
 		}
+		
+		var checkObj = document.getElementById("pwRemember");
+		
+		if(checkObj.checked){
+			var userPwMesg = {};
+			userPwMesg.name = username;
+			userPwMesg.pw = userPw;
+			userPwMesg = JSON.stringify(userPwMesg);
+			localStorage.setItem("userLogin",userPwMesg);
+		}else{
+			localStorage.removeItem("userLogin");
+		}
+		
 		//发起登录请求
 		request(logingUrl,"get",{account:username,password:userPw},{},function(data){
 			if(data.code == 1){

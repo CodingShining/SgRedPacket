@@ -137,7 +137,7 @@
 			</div>
 		</div>
 		<!--参与的红包记录-->
-		<div class="gameFloat1 notHb" style="display:none">
+		<div class="gameFloat1 notHb"  style="display:none">
 			<div class="gameFloatCont1">
 				<div class="gameFloatCont1_Item1">
 					<div><img class="gameUserMes1" src=""/></div>
@@ -150,6 +150,9 @@
 				</div>
 				<div class="HbResultBur">
 					<span>查看红包结果&nbsp;></span>
+				</div>
+				<div class="HbResultAlert">
+					<span>1小时未抢完的红包，将会自动退回</span>
 				</div>
 				<div class="HbcleanBut" id="cleatHb2">
 					<img src="img/hbcleanIcon.png" />
@@ -180,6 +183,26 @@
 		<div class="gameHbMainServer">
 			<img src="img/serverIcon.png" />
 			<span>在线客服</span>
+		</div>
+		<!--充值窗口-->
+		<div class="gameHbTopup" style="display:none">
+			<div class="gameHbTopupBox">
+				<div class="gameHbTopupTitle">
+					<span>余额不足，无法抢红包</span>
+					<span>请及时充值</span>
+				</div>
+				<div class="toUpgoViewBut" data-type="2" style="background-color:#384863;">
+					<span>XRP充值</span>
+					<span>>></span>
+				</div>
+				<div class="toUpgoViewBut" data-type="1" style="background-color:#cb5550;">
+					<span>EOS充值</span>
+					<span>>></span>
+				</div>
+				<div class="toUpCleanBut">
+					<img src="../../view/login/imgs/icon_clear.png" />
+				</div>
+			</div>
 		</div>
 	</body>
 	<script type="text/javascript" src="../../plug_in/zepto.min.js"></script>

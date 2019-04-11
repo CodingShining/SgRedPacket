@@ -14,7 +14,7 @@ window.addEventListener("load",function(){
 		
 		//为充值记录添加点击事件
 		$("#record").bind("tap",function(){
-			goView("rechargeList.html","rechargeList",{spaceValue:"true"});
+			goView("rechargeList.html","rechargeList",{spaceValue:"true",currType:typeValue});
 		});
 		
 		//为保存二维码绑定事件

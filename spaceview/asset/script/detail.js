@@ -1,45 +1,10 @@
 window.addEventListener("load",function(){
 	document.addEventListener("plusready",function(){
 		
-		//获取页面值
-		var detailType = plus.webview.currentWebview().viewType;
-		
 		//定义请求地址
-		var detailUrl = mainUrl + "user/getrecord"; 
+		var detailUrl = mainUrl + "user/getrecord";
 		
-		//定义提币请求地址
-		var detailUrl_2 = mainUrl + "user/tbRecords";
-		
-		if(detailType == "1"){
-			detailRequest("4");
-		}else if(detailType == "2"){
-			requestToken(detailUrl_2,"get",{},function(data){
-				if(data.code == 1){
-					$(".detailUl").html("");
-					var detailList = data.data.list; 
-					//判断当前数据列表是否有值
-					if(detailList.length){
-						for(var i=0;i<detailList.length;i++){
-							var statusValue = "";
-							if(detailList[i].status == 2){
-								statusValue = "拒绝";
-							}else if(detailList[i].status == 1){
-								statusValue = "完成";
-							}else if(detailList[i].status == 0){
-								statusValue = "等待";
-							}
-							$(".detailUl").append('<li><h1>会员提币</h1><div class="detailListTitle"><span>数量</span><span>状态</span><span>时间</span></div><div class="detailListValue"><span>'+detailList[i].amount+'</span><span>'+statusValue+'</span><span>'+SwitchTime(detailList[i].add_time)+'</span></div></li>');
-						}
-					}else{
-						$(".detailUl").append('<div class="ListNotData">没有数据！</div>');
-					}
-				}else{
-					toast(data.msg); 
-				}
-			});
-		}else if(detailType == "0"){
-			detailRequest("0");
-		}
+		detailRequest("0");
 		
 		//为显示筛选菜单
 		$(".screenBox>img").bind("tap",function(){
@@ -63,35 +28,8 @@ window.addEventListener("load",function(){
 			//为当前添加样式
 			$(this).addClass("selectedColor");
 			
-			if(typeValue == "5"){
-				requestToken(detailUrl_2,"get",{},function(data){
-					if(data.code == 1){
-						$(".detailUl").html("");
-						var detailList = data.data.list; 
-						//判断当前数据列表是否有值
-						if(detailList.length){
-							for(var i=0;i<detailList.length;i++){
-								var statusValue = "";
-								if(detailList[i].status == 2){
-									statusValue = "拒绝";
-								}else if(detailList[i].status == 1){
-									statusValue = "完成";
-								}else if(detailList[i].status == 0){
-									statusValue = "等待";
-								}
-								$(".detailUl").append('<li><h1>会员提币</h1><div class="detailListTitle"><span>数量</span><span>状态</span><span>时间</span></div><div class="detailListValue"><span>'+detailList[i].amount+'</span><span>'+statusValue+'</span><span>'+SwitchTime(detailList[i].add_time)+'</span></div></li>');
-							}
-						}else{
-							$(".detailUl").append('<div class="ListNotData">没有数据！</div>');
-						}
-					}else{
-						toast(data.msg); 
-					}
-				});
-			}else{
-				//发起请求
-				detailRequest(typeValue);
-			}
+			//发起请求
+			detailRequest(typeValue);
 			
 			//完成后隐藏菜单
 			hiddeNav();
@@ -99,7 +37,7 @@ window.addEventListener("load",function(){
 		
 		//为隐藏菜单添加事件
 		function hiddeNav(){
-			$(".selectNavBox").css({bottom:"-380px"});
+			$(".selectNavBox").css({bottom:"-300px"});
 		}
 		
 		//定义请求数据函数
@@ -112,9 +50,7 @@ window.addEventListener("load",function(){
 					//判断当前数据列表是否有值
 					if(detailList.length){
 						for(var i=0;i<detailList.length;i++){
-							var statusValue = "";
-							 
-							$(".detailUl").append('<li><h1>'+detailList[i].remark+'('+detailList[i].type+')</h1><div class="detailListTitle"><span>数量</span><span>状态</span><span>时间</span></div><div class="detailListValue"><span>'+detailList[i].amount+'</span><span>已完成</span><span>'+SwitchTime(detailList[i].createtime)+'</span></div></li>');
+							$(".detailUl").append('<li><h1>'+detailList[i].remark+'</h1><div class="detailListTitle"><span>数量</span><span style="text-align:center">币种</span><span>时间</span></div><div class="detailListValue"><span>'+detailList[i].amount+'</span><span style="text-align:center">'+detailList[i].type+'</span><span>'+SwitchTime(detailList[i].createtime)+'</span></div></li>');
 						}
 					}else{
 						$(".detailUl").append('<div class="ListNotData">没有数据！</div>');

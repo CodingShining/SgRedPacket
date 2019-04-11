@@ -28,7 +28,7 @@
 .extractBalance{
 	width:100%;
 	box-sizing:border-box;
-	padding-top:20px;
+	padding-top:10px;
 }
 
 .extractBalance>span{
@@ -53,7 +53,7 @@
 	box-sizing:border-box;
 	border-bottom:1px solid #414153;
 	position:relative;
-	margin-top:30px;
+	margin-top:20px;
 }
 
 .extractInputTitle{
