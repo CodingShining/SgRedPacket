@@ -74,24 +74,26 @@ $(document).bind("plusready",function(){
  		}
  	});
  	
- 	//为红包列表中的红包绑定事件
- 	$(".gameHbMainItem").bind("tap",function(){
- 		$(".haveHb").show();
+ 	//阻止事件穿透
+ 	$(".gameFloat1").bind("tap",function(e){
+ 		e.preventDefault();
+ 		return;
  	});
  	
  	//为关闭红包绑定事件
- 	$("#cleatHb1>img").bind("tap",function(){
+ 	$("#cleatHb1").bind("tap",function(){
  		$(".haveHb").hide();
  	});
  	
  	//为关闭红包绑定事件
- 	$("#cleatHb2>img").bind("tap",function(){
+ 	$("#cleatHb2").bind("tap",function(){
  		$(".notHb").hide(); 
  	});
  	
  	//为关闭红包绑定事件
- 	$("#cleatHb3>img").bind("tap",function(){
- 		$(".overHb").hide();
+ 	$("#cleatHb3").bind("tap",function(){
+		$(".overHb").hide();
+ 		
  	});
  	
  	//查看结果
@@ -137,29 +139,25 @@ $(document).bind("plusready",function(){
  		OutTime = setInterval(function(){
  			ImgDegValue = ImgDegValue+4;
  			thisObj.css({transform:"rotateY("+ImgDegValue+"deg);"});
- 			if(ImgDegValue > 360){ 
+ 			if(ImgDegValue > 360){
  				clearInterval(OutTime);
  				OutTime = null;
  				ImgDegValue = 0; 
+ 				requestToken(openHbUrl,"get",{id:HbIdName},function(data){
+		 			if(data.code == 1){
+		 				payAudio();
+		 				$(".haveHb").hide();
+		 				opHbValue(HbIdName);
+		 			}else{
+		 				toast(data.msg);
+		 				if(data.data.code == 1){
+		 					$(".haveHb").hide();
+		 			 		$(".gameHbTopup").show();
+		 			 	}
+		 			}
+	 			});
  			}
  		},1);
- 		
- 		//发起请求
- 		window.setTimeout(function(){
- 			requestToken(openHbUrl,"get",{id:HbIdName},function(data){
-	 			if(data.code == 1){
-	 				payAudio();
-	 				$(".haveHb").hide();
-	 				opHbValue(HbIdName);
-	 			}else{
-	 				toast(data.msg);
-	 				if(data.data.code == 1){
-	 					$(".haveHb").hide();
-	 			 		$(".gameHbTopup").show();
-	 			 	}
-	 			}
- 			});
- 		},800);
  	});
  	
 	//封装函数设置元素高度
@@ -204,12 +202,15 @@ $(document).bind("plusready",function(){
 				payHbAudio();
 				
 				//其他用户红包
-				$(".gameHbBodyUl").append('<li><div class="gameUserHead gameItemLeft"><img src="'+ImgUrl+HbValue.headimg+'"/></div><div data-userOdd="'+HbValue.odds+'" data-userMark="'+HbValue.mark+'" data-userNum="'+HbValue.number+'" data-money="'+HbValue.money+'" data-userName="'+HbValue.nickname+'" data-userIm="'+HbValue.headimg+'" data-idName="'+HbValue.id+'" class="gameHbMainItem gameItemLeft gameHbBG1Left"><div class="gameHbCont1"><div><img src="img/hbitemIcon.png"></div><div><span><i>'+HbValue.money+'</i>/<i>'+HbValue.number+'</i>个</span><span>恭喜发财，大吉大利</span></div></div><div class="gameHbCont2"><span>雷号：<i>'+HbValue.mark+'</i></span><span>赔率：<i>'+HbValue.odds+'</i>倍</span></div></div><div class="userNick">'+HbValue.nickname+'</div></li>');
+				$(".gameHbBodyUl").append('<li><div class="gameUserHead gameItemLeft"><img src="'+ImgUrl+HbValue.headimg+'"/></div><div data-userOdd="'+HbValue.odds+'" data-userMark="'+HbValue.mark+'" data-userNum="'+HbValue.number+'" data-money="'+HbValue.money+'" data-userName="'+HbValue.nickname+'" data-userIm="'+HbValue.headimg+'" data-idName="'+HbValue.id+'" class="gameHbMainItem gameHbMainItem'+HbValue.id+' gameItemLeft gameHbBG1Left"><div class="gameHbCont1"><div><img src="img/hbitemIcon.png"></div><div><span><i>'+HbValue.money+'</i>/<i>'+HbValue.number+'</i>个</span><span>恭喜发财，大吉大利</span></div></div><div class="gameHbCont2"><span>雷号：<i>'+HbValue.mark+'</i></span><span>赔率：<i>'+HbValue.odds+'</i>倍</span></div></div><div class="userNick">'+HbValue.nickname+'</div></li>');
+				
 				//滚动滚轴到最低端
 				MoveScroll();
 				
+				var classValue = ".gameHbMainItem"+HbValue.id;
+				
 				//为红包列表中的红包绑定事件
-			 	$(".gameHbMainItem").bind("tap",function(){
+			 	$(classValue).bind("tap",function(){
 			 		//保存Dom对象
 			 		var thisObj = $(this);
 			 		//获取红包ID
@@ -248,7 +249,6 @@ $(document).bind("plusready",function(){
 			 			 	toast(data.msg);
 			 			 }
 					});
-			 		
 			 		opHbValue(hbId);
 			 		 
 			 	});

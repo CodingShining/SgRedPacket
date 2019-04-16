@@ -207,3 +207,15 @@ i{
 .lockNumber>span:first-child{
 	color:#999aaa;
 }
+
+.explainBox{
+	display:inline-block;
+	height:30px;
+	line-height:30px;
+	position:absolute;
+	right:20px;
+	bottom:30px;
+	font-size:14px;
+	color:#FFFFFF;
+}
+

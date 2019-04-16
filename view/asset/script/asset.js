@@ -35,12 +35,23 @@ window.addEventListener("load",function(){
 			}
 		});
 		
+		//为充值说明绑定事件
+		$(".explainBox").bind("tap",function(){
+			goView("../../spaceview/bulletin/instructions.html","instructions.html",{spaceValue:"true"});
+		});
+		
 		//为充币添加点击事件
 		$(".recharge").bind("tap",function(){
 			//获取自定义属性
 			var typeValue = $(this).attr("data-reType");
 			//前往充值页面
 			goView("../../spaceview/asset/recharge.html","recharge",{spaceValue:"true",viewType:typeValue});
+		});
+		
+		//为交易提现绑定事件
+		$(".withdraw").bind("tap",function(){
+			//前往充值页面
+			goView("../../spaceview/ctoc/ctoc.html","ctoc",{spaceValue:"true"});
 		});
 		
 		//为闪兑添加点击事件

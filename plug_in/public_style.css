@@ -1,3 +1,7 @@
+html{
+	pointer-events:auto;
+}
+
 body{
 	background-color:#232430;
 	color:#FFFFFF;

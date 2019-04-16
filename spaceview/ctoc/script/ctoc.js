@@ -11,13 +11,18 @@ $(document).bind("plusready",function(){
 	//开启页面下拉刷新
 	ctocView.setPullToRefresh({support:true,style:'circle',offset:'45px'},getCtocData);
 	
+	//为交易指南绑定事件
+	$(".trading").bind("tap",function(){
+		goView("../bulletin/tradingText.html","tradingText",{spaceValue:"true"});
+	});
+	
 	//为发布广告绑定事件
-	$("#contorlIssue").bind("tap",function(){
+	$("#issueBut").bind("tap",function(){
 		goView("issue.html","issue",{spaceValue:"true"});
 	});
 	
 	//为我的订单绑定事件
-	$(".ctocHeadDataItem2").bind("tap",function(){
+	$("#MyissueBut").bind("tap",function(){
 		goView("../order/orderList.html","orderList",{spaceValue:"true"});
 	});
 	

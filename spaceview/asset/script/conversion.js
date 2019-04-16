@@ -62,7 +62,7 @@ $(document).bind("plusready",function(){
 				var XrpAndPtb = toNumberFun(AjaxRate2) / toNumberFun(AjaxRate1);
 				XrpAndPtb = XrpAndPtb.toFixed(6);
 				$("#converRtae").text(XrpAndPtb);
-				AjaxCurr = "2";
+				AjaxCurr = "1";
 				$(".conversionUnti1").text("SGB");
 			}else if(ConversType == "3"){
 				$(".conversionUnti").text("XRP");

@@ -112,8 +112,8 @@ $(document).bind("plusready",function(){
 				var pathValue = $(".affirmPayRqImg>img").attr("src");
 				plus.gallery.save( pathValue,function(){
 					toast("保存成功！");
-				},function(){
-					toast("保存失败！");
+				},function(e){
+					toast("保存失败！"+e.message);
 				});
 			}
 		});

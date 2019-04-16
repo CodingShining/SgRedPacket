@@ -38,7 +38,9 @@
 			"spaceview/asset/extract.html",
 			"spaceview/asset/gifts.html",
 			"spaceview/lottery/lotteryList.html",
-			"spaceview/ctoc/ctoc.html"
+			"spaceview/ctoc/ctoc.html",
+			"spaceview/bulletin/bulletincontent.html",
+			"spaceview/bulletin/instructions.html"
 		]
 	},
 	"spaceview/asset/recharge.html": {
@@ -161,7 +163,8 @@
 		"refer": [
 			"spaceview/ctoc/issue.html",
 			"spaceview/ctoc/ctocin.html",
-			"spaceview/order/orderList.html"
+			"spaceview/order/orderList.html",
+			"spaceview/bulletin/tradingText.html"
 		]
 	},
 	"spaceview/order/orderList.html": {
