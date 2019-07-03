@@ -6,6 +6,9 @@ $(document).bind("plusready",function(){
 	//定义订单详情的数据接口
 	var getAffirmDataUrl = mainUrl + "trade/orderDetail";
 	
+	//定义确认收款请求接口
+	var gatheringUrl = mainUrl + "trade/orderSms";
+	
 	//定义确认付款接口
 	var affirmMoneyUrl = mainUrl + "obs/upload";
 	
@@ -17,6 +20,10 @@ $(document).bind("plusready",function(){
 	//保存id值
 	var thisIDValue = 0;
 	var thisSidValue = 0;
+	
+	//刷新指定页面
+	reloadView("ctoc");
+	reloadView("gameview");
 	
 	//发起请求：
 	requestToken(getAffirmDataUrl,"get",{id:idValue,pid:pidValue},function(data){
@@ -42,6 +49,7 @@ $(document).bind("plusready",function(){
 					$(".UpImgBox").hide();
 					$(".affirmBut").hide();
 					$(".affirmImgBox").show();
+					$(".remindBut").show();
 				break;
 				case -1:
 					statValue = "已撤销";
@@ -91,6 +99,16 @@ $(document).bind("plusready",function(){
 		}else{
 			toast(data.msg);
 		}
+	});
+	
+	//为提醒收款绑定事件
+	$(".remindBut>a").bind("tap",function(){
+		plus.nativeUI.showWaiting();
+		//发起请求
+		requestToken(gatheringUrl,"get",{id:idValue},function(data){
+			plus.nativeUI.closeWaiting();
+			toast(data.msg);
+		});
 	});
 	
 	//为input绑定事件

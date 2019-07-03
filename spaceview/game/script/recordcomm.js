@@ -28,6 +28,7 @@ $(document).bind("plusready",function(){
 				var detailList = data.data.data.data;
 				$("#todayMoney").text(data.data.data.dayprofit);
 				$("#zgMoney").text(data.data.data.allprofit);
+				$("#yesterdayMobey").text(data.data.data.oldprofit);
 				//判断当前数据列表是否有值
 				if(detailList.length){
 					for(var i=0;i<detailList.length;i++){

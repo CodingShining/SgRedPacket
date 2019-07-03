@@ -10,8 +10,13 @@ window.addEventListener("load",function(){
 		//定义变量保存公告移动量
 		var NoticeMoveValue = 0;
 		
+		var gameView = plus.webview.currentWebview(); 
+		
+		//开启下拉刷新
+		gameView.setPullToRefresh({support:true,style:'circle',offset:'45px'}, getUpDataMes);
+		
 		//发起请求获取图片
-		requestToken(swiperImgUrl,"get",{},function(data){ 
+		requestToken(swiperImgUrl,"get",{},function(data){
 			if(data.code == 1){
 				var imgList = data.data.roteimg;
 				var fuliData = data.data.fl_area;
@@ -66,7 +71,7 @@ window.addEventListener("load",function(){
 		});
 		
 		//发起请求获取公告列表
-		requestToken(noticeUrl,"get",{},function(data){ 
+		requestToken(noticeUrl,"get",{},function(data){
 			if(data.code == 1){
 				var noticeList = data.data.data;
 				if(noticeList.length){
@@ -92,6 +97,9 @@ window.addEventListener("load",function(){
 				toast(data.msg);
 			}
 		});
+		
+		//第一次调用获取更新信息
+		getUpDataMes();
 		
 		//定时滚动公告
 		function moveNoctice(){
@@ -121,6 +129,26 @@ window.addEventListener("load",function(){
 				moveNoctice();
 			},3000);
 			  
+		}
+		
+		//下拉刷新需要执行的函数
+		function getUpDataMes(){
+			//发起请求
+			var urlValue = mainUrl + "trade/orderTips";
+			//发起请求
+			requestToken(urlValue,"get",{},function(data){
+				if(data.code == 1){
+					if(data.data == 1){
+						$(".upDataImg").show();
+					}else if(data.data == 0){
+						$(".upDataImg").hide();
+					}
+					gameView.endPullToRefresh();
+				}else{
+					toast(data.msg);
+					gameView.endPullToRefresh();
+				}
+			});
 		}
 		
 		//为红包游戏广告绑定事件

@@ -36,7 +36,7 @@ $(document).bind("plusready",function(){
 				var list = data.data.list;
 				if(list.length){
 					for(var i=0;i<list.length;i++){
-						$(".ctocUl").append('<li><span style="width:20%">'+list[i].username+'</span><span style="width:35%">'+list[i].totalnum+'<i>/'+list[i].sellnum+'</i></span><span style="width:25%;color:#f6ab10;">'+list[i].price+'</span><span style="width:20%;text-align:right"><a class="ctocCxBut" data-idValue="'+list[i].id+'">出售</a></span></li>');
+						$(".ctocUl").append('<li><span style="width:20%">'+list[i].username+'</span><span style="width:35%">'+list[i].totalnum+'</i></span><span style="width:25%;">'+list[i].sellnum+'</span><span style="width:20%;text-align:right"><a class="ctocCxBut" data-idValue="'+list[i].id+'">卖给他</a></span></li>');
 					}
 					//为所有的购买按钮绑定事件
 					$(".ctocCxBut").bind("tap",function(){
@@ -53,6 +53,28 @@ $(document).bind("plusready",function(){
 			}else{
 				ctocView.endPullToRefresh();
 				toast(data.msg);
+			}
+		});
+		
+		getUpDataMes();
+	}
+	
+	//下拉刷新需要执行的函数
+	function getUpDataMes(){
+		//发起请求
+		var urlValue = mainUrl + "trade/orderTips";
+		//发起请求
+		requestToken(urlValue,"get",{},function(data){
+			if(data.code == 1){
+				if(data.data == 1){
+					$(".ctocUpdata").show();
+				}else if(data.data == 0){
+					$(".ctocUpdata").hide();
+				}
+				ctocView.endPullToRefresh();
+			}else{
+				toast(data.msg);
+				ctocView.endPullToRefresh();
 			}
 		});
 	}

@@ -100,7 +100,9 @@
 			"view/login/warden.html",
 			"spaceview/else/serverUser.html",
 			"spaceview/game/recordcomm.html",
-			"spaceview/else/wardenMoney.html"
+			"spaceview/else/wardenMoney.html",
+			"spaceview/usercenter/nickList.html",
+			"view/bulletin/bulletin.html"
 		]
 	},
 	"spaceview/usercenter/safeSet.html": {

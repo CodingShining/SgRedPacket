@@ -70,6 +70,7 @@ window.addEventListener("load",function(){
 		var info = getUserInfo();
 		var tokenvalue =info.token ;
 		var headerValue = {token:tokenvalue};
+		console.log(JSON.stringify(headerValue));
 		plus.nativeUI.showWaiting();
 		$.ajax({
 			type:typevalue,

@@ -101,6 +101,11 @@ window.addEventListener("load",function(){
 		});
 		
 		
+		//为公告绑定事件
+		$("#notice").bind("tap",function(){
+			goView("../bulletin/bulletin.html","bulletin",{spaceValue:"true"});
+		});
+		
 		//封装请求
 		function getUserInfo(){
 			//发起请求获取leve

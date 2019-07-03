@@ -165,7 +165,26 @@
 	height:150px;
 	margin:10px auto 0px auto;
 }
+
 .affirmPayRqImg>img{
 	width:100%;
 	height:100%;
+}
+
+.remindBut{
+	width:100%;
+	height:80px;
+	box-sizing:border-box;
+	padding:20px 0px;
+	text-align:center;
+}
+
+.remindBut>a{
+	display:inline-block;
+	width:70%;
+	height:40px;
+	line-height:40px;
+	text-align:center;
+	background-color:#f6ab10;
+	border-radius:10px;
 }
